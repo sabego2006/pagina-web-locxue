@@ -9,6 +9,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" type="image/png" href="assets/img/logo-locxue.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Semillero de Investigación LOCXUE">
+  <meta property="og:title" content="Semillero de Investigación LOCXUE — Universidad de Cundinamarca">
+  <meta property="og:description" content="Semillero de investigación en innovación e inteligencia artificial de la Universidad de Cundinamarca.">
+  <meta property="og:url" content="https://locxue.org/">
+  <meta property="og:image" content="https://locxue.org/assets/img/og-cover.svg">
+  <meta property="og:locale" content="es_CO">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Semillero de Investigación LOCXUE">
+  <meta name="twitter:description" content="Innovación e inteligencia artificial desde la Universidad de Cundinamarca.">
+  <meta name="twitter:image" content="https://locxue.org/assets/img/og-cover.svg">
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido principal</a>
@@ -237,7 +249,27 @@
             <p>Enlaces a redes sociales (pendientes).</p>
           </article>
         </div>
-        <p class="contact__form-note">Formulario de contacto: pendiente de integración. No se envía información en esta versión.</p>
+        <p class="contact__form-note">¿Tienes una pregunta o quieres colaborar? Escríbenos y te respondemos al correo institucional.</p>
+        <form class="contact__form" action="https://formspree.io/f/FORM_ID_AQUI" method="POST" novalidate>
+          <div class="form__row">
+            <label for="contact-name">Nombre</label>
+            <input id="contact-name" name="name" type="text" required autocomplete="name" placeholder="Tu nombre completo">
+          </div>
+          <div class="form__row">
+            <label for="contact-email">Correo</label>
+            <input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="tu@correo.com">
+          </div>
+          <div class="form__row">
+            <label for="contact-subject">Asunto</label>
+            <input id="contact-subject" name="subject" type="text" placeholder="Colaboración, prensa, etc.">
+          </div>
+          <div class="form__row">
+            <label for="contact-message">Mensaje</label>
+            <textarea id="contact-message" name="message" rows="5" required placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Enviar mensaje</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
 

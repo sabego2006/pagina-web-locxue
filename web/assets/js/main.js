@@ -95,10 +95,57 @@
     sections.forEach((s) => io.observe(s));
   }
 
+  // initCountUp — anima las stat-boxes cuando entran en viewport.
+  // Lee data-value de cada .stat, anima easeOutCubic hacia el destino.
+  // Respeta prefers-reduced-motion. No-op si data-value es 0.
+  function initCountUp() {
+    const stats = document.querySelectorAll('.stat[data-value]');
+    if (!stats.length) return;
+
+    const animate = (el) => {
+      const target = parseInt(el.dataset.value, 10) || 0;
+      const valueEl = el.querySelector('.stat__value');
+      if (!valueEl || target === 0) return;
+      const duration = 1500;
+      const start = performance.now();
+      const step = (now) => {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        valueEl.textContent = Math.round(target * eased);
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    if (REDUCED_MOTION || !('IntersectionObserver' in window)) {
+      stats.forEach((el) => {
+        const valueEl = el.querySelector('.stat__value');
+        const target = parseInt(el.dataset.value, 10) || 0;
+        if (valueEl && target > 0) valueEl.textContent = target;
+      });
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    stats.forEach((s) => io.observe(s));
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initLog();
     initMobileNav();
     initSmoothScroll();
     initFadeIn();
+    initCountUp();
   });
 })();
