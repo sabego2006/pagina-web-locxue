@@ -486,6 +486,88 @@ ul {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Formulario de contacto (HU-15) — recibe envíos vía Formspree */
+.contact__form {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  max-width: 560px;
+}
+
+.form__row {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.form__row label {
+  font-weight: 500;
+  color: var(--color-text-inverse);
+  font-size: var(--fs-small);
+}
+
+.form__row input,
+.form__row textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.form__row input:focus-visible,
+.form__row textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(58, 35, 110, 0.25);
+}
+
+.form__row textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+}
+
+.form__row input::placeholder,
+.form__row textarea::placeholder {
+  color: var(--color-muted);
+}
+
+.form__status {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.form__status[data-state="success"] {
+  color: #B8E6C1;
+}
+
+.form__status[data-state="error"] {
+  color: #F5B8B8;
+}
+
+/* Banner "En construcción" — para secciones cuya área no entregó contenido a tiempo. */
+.section__notice {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  padding: var(--space-1) var(--space-2);
+  background-color: rgba(58, 35, 110, 0.08);
+  border-left: 3px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-size: var(--fs-small);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.section--dark .section__notice {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left-color: var(--color-text-inverse);
+  color: var(--color-text-inverse);
+}
+
 /* --------------------------------------------------------------------------
    7. Footer
    -------------------------------------------------------------------------- */
