@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  OG Cover provisional — 1200x630 (relación recomendada por Twitter/LinkedIn/Facebook).
+  Versión con los tokens del sistema (primario #1A2B4C, secundario #3A236E).
+  Será reemplazado por la versión oficial de Diseño.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Semillero de Investigación LOCXUE — Universidad de Cundinamarca">
+  <title>Semillero de Investigación LOCXUE</title>
+  <defs>
+    <linearGradient id="og-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2B4C"/>
+      <stop offset="100%" stop-color="#3A236E"/>
+    </linearGradient>
+    <radialGradient id="og-glow" cx="80%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fondo degradado -->
+  <rect width="1200" height="630" fill="url(#og-bg)"/>
+  <rect width="1200" height="630" fill="url(#og-glow)"/>
+
+  <!-- Marca de agua vertical derecha -->
+  <text x="1130" y="600"
+        transform="rotate(-90 1130 600)"
+        font-family="'Playfair Display', Georgia, serif"
+        font-weight="700"
+        font-size="160"
+        letter-spacing="20"
+        fill="rgba(255,255,255,0.06)">LOCXUE</text>
+
+  <!-- Wordmark -->
+  <text x="80" y="200"
+        font-family="'Playfair Display', Georgia, serif"
+        font-weight="700"
+        font-size="92"
+        letter-spacing="4"
+        fill="#FFFFFF">LOCXUE</text>
+
+  <!-- Tagline principal -->
+  <text x="80" y="320"
+        font-family="'Inter', 'Helvetica', sans-serif"
+        font-weight="600"
+        font-size="44"
+        fill="#FFFFFF">Semillero de Investigación</text>
+
+  <!-- Tagline secundaria -->
+  <text x="80" y="400"
+        font-family="'Inter', 'Helvetica', sans-serif"
+        font-weight="400"
+        font-size="32"
+        fill="rgba(255,255,255,0.85)">Universidad de Cundinamarca</text>
+
+  <!-- Acento inferior (banda secundaria) -->
+  <rect x="80" y="500" width="120" height="6" fill="#D4AF37" rx="3"/>
+  <text x="80" y="560"
+        font-family="'Inter', 'Helvetica', sans-serif"
+        font-weight="500"
+        font-size="24"
+        fill="rgba(255,255,255,0.7)">Innovación · Inteligencia Artificial · Investigación</text>
+</svg>

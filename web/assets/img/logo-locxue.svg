@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Logo LOCXUE — versión SVG provisional.
+  Construido con los tokens del sistema de diseño:
+    - Primario: #1A2B4C  (azul marino corporativo)
+    - Secundario: #3A236E (violeta institucional)
+  Será reemplazado por el logo oficial entregado por Diseño.
+  Mantener viewBox y dimensiones; el nombre de archivo no debe cambiar
+  porque ya está referenciado desde web/index.html y web/404.html.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-label="LOCXUE">
+  <title>LOCXUE</title>
+  <defs>
+    <linearGradient id="lx-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2B4C"/>
+      <stop offset="100%" stop-color="#3A236E"/>
+    </linearGradient>
+  </defs>
+  <!-- Marca/monograma "LX" estilizada como ancla visual -->
+  <g fill="url(#lx-grad)">
+    <rect x="8" y="14" width="6" height="36" rx="2"/>
+    <path d="M 22 14 L 36 14 L 22 50 L 36 50 L 22 50 L 8 50 Z" opacity="0"/>
+    <path d="M 30 14 L 30 50 M 30 32 L 52 14 M 30 32 L 52 50" stroke="url(#lx-grad)" stroke-width="6" stroke-linecap="round" fill="none"/>
+  </g>
+  <!-- Wordmark "LOCXUE" -->
+  <text x="68" y="42"
+        font-family="'Playfair Display', Georgia, serif"
+        font-weight="700"
+        font-size="28"
+        letter-spacing="2"
+        fill="#1A2B4C">LOCXUE</text>
+</svg>
