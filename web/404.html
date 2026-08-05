@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada — Semillero LOCXUE</title>
+  <meta name="description" content="La página que buscas no existe en el sitio del Semillero de Investigación LOCXUE.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .notfound { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; padding: var(--space-6); text-align: center; }
+    .notfound__code { font-family: var(--font-heading); font-size: clamp(4rem, 12vw, 8rem); color: var(--color-secondary); line-height: 1; margin-bottom: var(--space-2); }
+    .notfound__title { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: var(--space-2); }
+    .notfound__text { color: var(--color-muted); max-width: 50ch; margin-bottom: var(--space-4); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <header class="header" role="banner">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="nav__logo" href="/#hero" aria-label="LOCXUE — ir al inicio">
+        <img src="assets/img/logo-locxue.png" alt="Logo LOCXUE" width="120" height="40">
+      </a>
+      <ul class="nav__menu" id="nav-menu" style="display:flex;">
+        <li><a href="/#nosotros">Nosotros</a></li>
+        <li><a href="/#equipo">Equipo</a></li>
+        <li><a href="/#proyectos">Proyectos</a></li>
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="notfound">
+    <p class="notfound__code" aria-hidden="true">404</p>
+    <h1 class="notfound__title">Página no encontrada</h1>
+    <p class="notfound__text">La ruta que intentas abrir no existe o fue movida. Vuelve al inicio para explorar el sitio del semillero.</p>
+    <a class="btn btn--primary" href="/">Volver al inicio</a>
+  </main>
+</body>
+</html>
