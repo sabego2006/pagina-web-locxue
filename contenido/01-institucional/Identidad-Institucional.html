@@ -1,0 +1,281 @@
+<!--
+  ============================================================
+  SECCIÓN: Identidad Institucional
+  Semillero de Investigación LOCXUE — Universidad de Cundinamarca
+  ============================================================
+  Integración:
+  - Este fragmento es independiente y modular. NO incluye <head>,
+    <html> ni <body>: se inserta directamente donde corresponda
+    dentro de web/index.html.
+  - Requiere: assets/css/identidad-institucional.css
+              assets/js/identidad-institucional.js (opcional, mejora progresiva)
+  - Requiere que en el <head> global del sitio se carguen las
+    fuentes tipográficas institucionales (ver comentario en el CSS).
+  - No modifica ni depende de otras secciones del sitio.
+  ============================================================
+-->
+<section id="identidad" class="identidad" aria-labelledby="identidad__titulo">
+
+  <!-- Marca de agua lateral (elemento de marca, decorativo) -->
+  <span class="identidad__watermark" aria-hidden="true">LOCXUE</span>
+
+  <div class="identidad__container">
+
+    <!-- ============ Encabezado + tarjeta de datos rápidos ============ -->
+    <header class="identidad__intro">
+      <div class="identidad__intro-text">
+        <p class="identidad__eyebrow">Semillero de Investigación · Universidad de Cundinamarca</p>
+        <h2 id="identidad__titulo" class="identidad__titulo">Identidad Institucional</h2>
+        <p class="identidad__lead">
+          Locxue es el semillero de investigación del programa de Ingeniería de Sistemas
+          y Computación de la Universidad de Cundinamarca, sede Fusagasugá. Con una
+          trayectoria que se remonta a 2013, hoy se proyecta como el núcleo investigativo
+          que impulsa la adopción de la Inteligencia Artificial dentro de la comunidad
+          universitaria.
+        </p>
+        <a class="identidad__cta" href="#proyectos">
+          Conoce nuestros proyectos
+          <svg class="identidad__cta-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+            <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <ul class="identidad__tags" aria-label="Nuestra forma de comunicarnos">
+          <li class="identidad__tag">Cercanos y rigurosos</li>
+          <li class="identidad__tag">Aspiracionales</li>
+          <li class="identidad__tag">Colaborativos</li>
+          <li class="identidad__tag">Territoriales</li>
+        </ul>
+      </div>
+
+      <!-- Tarjeta "Datos generales": superpuesta sobre el bloque de intro (profundidad visual) -->
+      <aside class="identidad__facts" aria-label="Datos generales del semillero">
+        <div class="identidad__facts-logo" aria-hidden="true">
+          <!--
+            Logotipo institucional: cargar siempre en formato .svg.
+            Placeholder temporal (monograma) hasta disponer del archivo
+            oficial en web/assets/img/logo-locxue.svg
+          -->
+          <span class="identidad__facts-logo-mark">L</span>
+        </div>
+        <dl class="identidad__facts-list">
+          <div class="identidad__fact">
+            <dt>Institución</dt>
+            <dd>Universidad de Cundinamarca</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Facultad</dt>
+            <dd>Facultad de Ingeniería</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Programa</dt>
+            <dd>Ingeniería de Sistemas y Computación</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Sede</dt>
+            <dd>Fusagasugá, Cundinamarca</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Grupo de investigación</dt>
+            <dd>INGENIUM SUTA</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Adscripción</dt>
+            <dd>Banco de Semilleros de Investigación UDEC</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Trayectoria</dt>
+            <dd>Desde 2013</dd>
+          </div>
+        </dl>
+      </aside>
+    </header>
+
+    <!-- ============ Estructura del semillero ============ -->
+    <div class="identidad__estructura">
+      <div class="identidad__estructura-header">
+        <p class="identidad__card-eyebrow">Cómo estamos organizados</p>
+        <h3 class="identidad__card-titulo">Estructura del semillero</h3>
+      </div>
+
+      <ol class="identidad__roles">
+        <li class="identidad__rol">
+          <span class="identidad__rol-numero" aria-hidden="true">01</span>
+          <h4 class="identidad__rol-titulo">Docente Líder</h4>
+          <p class="identidad__rol-texto">
+            Coordina y supervisa formalmente la calidad científica de las
+            actividades investigativas del grupo.
+          </p>
+        </li>
+        <li class="identidad__rol">
+          <span class="identidad__rol-numero" aria-hidden="true">02</span>
+          <h4 class="identidad__rol-titulo">Estudiante Coordinador</h4>
+          <p class="identidad__rol-texto">
+            Gestiona la planeación operativa interna del semillero y hace de
+            enlace con la institución.
+          </p>
+        </li>
+        <li class="identidad__rol">
+          <span class="identidad__rol-numero" aria-hidden="true">03</span>
+          <h4 class="identidad__rol-titulo">Miembros</h4>
+          <p class="identidad__rol-texto">
+            Estudiantes que desarrollan sus competencias investigativas y
+            participan activamente en cada proyecto del semillero.
+          </p>
+        </li>
+      </ol>
+    </div>
+
+    <!-- ============ Misión y Visión ============ -->
+    <div class="identidad__mv-grid">
+      <article class="identidad__card identidad__card--mision">
+        <p class="identidad__card-eyebrow">Misión</p>
+        <h3 class="identidad__card-titulo">Nuestro propósito</h3>
+        <p class="identidad__card-texto">
+          Ser el núcleo investigativo que impulsa la adopción de la Inteligencia
+          Artificial en la Universidad de Cundinamarca, a través del aprendizaje
+          experimental, la participación en proyectos de investigación y la
+          divulgación del conocimiento, generando un ambiente de confianza y una
+          mentalidad de crecimiento entre sus integrantes.
+        </p>
+      </article>
+
+      <article class="identidad__card identidad__card--vision">
+        <p class="identidad__card-eyebrow">Visión</p>
+        <h3 class="identidad__card-titulo">Hacia dónde vamos</h3>
+        <p class="identidad__card-texto">
+          Consolidarnos como referentes en el campo de la Inteligencia Artificial
+          dentro de la Universidad de Cundinamarca, mediante el aprendizaje
+          experimental, la participación activa en proyectos de investigación y la
+          divulgación del conocimiento, en un ambiente de confianza y mentalidad
+          de crecimiento constante.
+        </p>
+      </article>
+    </div>
+
+    <!-- ============ Líneas de investigación institucionales ============ -->
+    <div class="identidad__lineas">
+      <div class="identidad__lineas-header">
+        <p class="identidad__card-eyebrow">Marco institucional</p>
+        <h3 class="identidad__card-titulo">Líneas de investigación</h3>
+      </div>
+
+      <div class="identidad__lineas-grid">
+        <article class="identidad__linea">
+          <h4 class="identidad__linea-titulo">
+            Aprendizaje, conocimiento, tecnologías, comunicación y digitalización
+          </h4>
+          <p class="identidad__linea-texto">
+            Línea translocal en la que se enmarca la apuesta del semillero por
+            la Inteligencia Artificial, los agentes cognitivos y las nuevas
+            formas de generar y transferir conocimiento.
+          </p>
+        </article>
+        <article class="identidad__linea">
+          <h4 class="identidad__linea-titulo">
+            Gestión, emprendimiento, organizaciones sociales del conocimiento y aprendizaje
+          </h4>
+          <p class="identidad__linea-texto">
+            Línea translocal orientada a la gestión y apropiación social del
+            conocimiento generado por el semillero dentro y fuera de la
+            universidad.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <!-- ============ Objetivos ============ -->
+    <div class="identidad__objetivos">
+      <div class="identidad__objetivos-header">
+        <p class="identidad__card-eyebrow">Objetivos</p>
+        <h3 class="identidad__card-titulo">Qué buscamos lograr</h3>
+      </div>
+
+      <p class="identidad__objetivo-general">
+        Impulsar la adopción de la Inteligencia Artificial en la comunidad académica
+        de la Universidad de Cundinamarca mediante la formación investigativa de sus
+        integrantes, el desarrollo de proyectos aplicados y la divulgación científica,
+        contribuyendo a la formación integral de los estudiantes y al fortalecimiento
+        de la cultura investigativa institucional.
+      </p>
+
+      <ul class="identidad__objetivo-lista">
+        <li class="identidad__objetivo-item">
+          Participar en proyectos de investigación formales que generen soluciones de
+          base tecnológica en Inteligencia Artificial con impacto social y territorial.
+        </li>
+        <li class="identidad__objetivo-item">
+          Canalizar los resultados de la investigación aplicada hacia opciones de
+          grado exitosas y publicaciones científicas indexadas.
+        </li>
+        <li class="identidad__objetivo-item">
+          Co-crear proyectos colaborativos con otros semilleros del país y de
+          distintas facultades de la Universidad de Cundinamarca.
+        </li>
+        <li class="identidad__objetivo-item">
+          Liderar, organizar y participar en congresos científicos y convocatorias
+          de financiamiento de proyectos de investigación.
+        </li>
+        <li class="identidad__objetivo-item">
+          Formar a los estudiantes semilleristas en metodología científica, bases
+          indexadas y gestores de referencia bibliográfica.
+        </li>
+        <li class="identidad__objetivo-item">
+          Fortalecer la identidad institucional del semillero mediante su imagen
+          corporativa, presencia web y estrategia de redes sociales.
+        </li>
+      </ul>
+    </div>
+
+    <!-- ============ Valores ============ -->
+    <div class="identidad__valores">
+      <div class="identidad__valores-header">
+        <p class="identidad__card-eyebrow">Valores</p>
+        <h3 class="identidad__card-titulo">Lo que nos define</h3>
+      </div>
+
+      <ul class="identidad__valores-grid">
+        <li class="identidad__valor">
+          <span class="identidad__valor-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2l2.6 6.6L22 9l-5.4 4.6L18 22l-6-4-6 4 1.4-8.4L2 9l7.4-.4L12 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <h4 class="identidad__valor-titulo">Confianza y crecimiento</h4>
+          <p class="identidad__valor-texto">Un ambiente donde cada semillerista puede experimentar, equivocarse y aprender.</p>
+        </li>
+        <li class="identidad__valor">
+          <span class="identidad__valor-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h4 class="identidad__valor-titulo">Pensamiento crítico</h4>
+          <p class="identidad__valor-texto">Cultura investigativa que cuestiona, analiza y busca evidencia antes de concluir.</p>
+        </li>
+        <li class="identidad__valor">
+          <span class="identidad__valor-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 12a4 4 0 100-8 4 4 0 000 8zM3 21c0-3.3 2.7-6 5-6s5 2.7 5 6M16 12a3 3 0 100-6 3 3 0 000 6zM14 21c.2-2.6 1.9-4.6 4-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h4 class="identidad__valor-titulo">Trabajo colaborativo</h4>
+          <p class="identidad__valor-texto">Compromiso y responsabilidad compartidos entre docentes y estudiantes.</p>
+        </li>
+        <li class="identidad__valor">
+          <span class="identidad__valor-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 19h16M6 19V9l4-3 4 3v10M14 19v-6h4v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <h4 class="identidad__valor-titulo">Apropiación social</h4>
+          <p class="identidad__valor-texto">Transferencia del conocimiento generado hacia la comunidad universitaria y su territorio.</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ============ Propuesta de valor ============ -->
+    <div class="identidad__propuesta">
+      <p class="identidad__propuesta-texto">
+        Ofrecemos a los estudiantes un espacio de formación investigativa práctica en
+        Inteligencia Artificial y agentes cognitivos, con acompañamiento docente,
+        participación en redes académicas nacionales como RedCOLSI, y la posibilidad
+        de transformar proyectos formativos en opciones de grado y publicaciones
+        científicas.
+      </p>
+    </div>
+
+  </div>
+</section>

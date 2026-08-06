@@ -1,0 +1,597 @@
+/* ============================================================
+   SECCIÓN: Identidad Institucional
+   Semillero de Investigación LOCXUE — Universidad de Cundinamarca
+   ============================================================
+   Notas de integración:
+   - Estilos completamente encapsulados bajo el bloque BEM ".identidad"
+     para no colisionar con otras secciones del sitio.
+   - Las variables --locxue-* están namespaced; si el proyecto ya
+     define un archivo global de tokens (p. ej. tokens.css), estas
+     declaraciones locales pueden eliminarse y heredar las globales
+     sin tocar ninguna otra regla de este archivo.
+   - Fuentes tipográficas: cargar globalmente en el <head> del sitio,
+     por ejemplo:
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+     Se incluye un fallback de sistema por si aún no están cargadas.
+   ============================================================ */
+
+.identidad {
+  /* --- Tokens de marca (obligatorios, manual de identidad) --- */
+  --locxue-azul: #1A2B4C;
+  --locxue-azul-suave: #26375c;
+  --locxue-morado: #3A236E;
+  --locxue-morado-hover: #4d2f8f;
+  --locxue-bg: #FFFFFF;
+  --locxue-bg-alt: #F4F6F9;
+  --locxue-texto-claro: #f4f6f9;
+  --locxue-borde: #e2e6ee;
+
+  --locxue-font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --locxue-font-body: "Inter", "Roboto", Helvetica, Arial, sans-serif;
+
+  --locxue-radio: 4px;
+  --locxue-sombra: 0 24px 48px -24px rgba(26, 43, 76, 0.35);
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--locxue-bg);
+  color: var(--locxue-azul);
+  font-family: var(--locxue-font-body);
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+/* ---------------------------------------------------------
+   Marca de agua lateral (firma visual del semillero)
+--------------------------------------------------------- */
+.identidad__watermark {
+  position: absolute;
+  top: 50%;
+  right: clamp(0.5rem, 2vw, 1.75rem);
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: 0.12em;
+  color: var(--locxue-bg-alt);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.identidad__container {
+  position: relative;
+  z-index: 1;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* ---------------------------------------------------------
+   Encabezado + tarjeta de datos generales (superposición)
+--------------------------------------------------------- */
+.identidad__intro {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: start;
+  column-gap: 2.5rem;
+  padding-bottom: clamp(3rem, 8vw, 5.5rem);
+}
+
+.identidad__intro-text {
+  max-width: 36rem;
+}
+
+.identidad__eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--locxue-morado);
+}
+
+.identidad__titulo {
+  margin: 0 0 1.25rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  line-height: 1.1;
+  color: var(--locxue-azul);
+}
+
+.identidad__lead {
+  margin: 0 0 1.75rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--locxue-azul-suave);
+}
+
+.identidad__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--locxue-radio);
+  background: var(--locxue-morado);
+  color: var(--locxue-texto-claro);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.identidad__cta-icon {
+  transition: transform 0.2s ease;
+}
+
+.identidad__cta:hover,
+.identidad__cta:focus-visible {
+  background: var(--locxue-morado-hover);
+  transform: translateX(2px);
+}
+
+.identidad__cta:hover .identidad__cta-icon,
+.identidad__cta:focus-visible .identidad__cta-icon {
+  transform: translateX(3px);
+}
+
+.identidad__cta:focus-visible {
+  outline: 3px solid var(--locxue-morado);
+  outline-offset: 3px;
+}
+
+/* Chips de tono de voz institucional */
+.identidad__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.identidad__tag {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--locxue-borde);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--locxue-azul-suave);
+  background: var(--locxue-bg-alt);
+}
+
+/* Tarjeta de datos generales: superpuesta con profundidad (z-index) */
+.identidad__facts {
+  position: relative;
+  z-index: 2;
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: var(--locxue-azul);
+  color: var(--locxue-texto-claro);
+  border-radius: var(--locxue-radio);
+  box-shadow: var(--locxue-sombra);
+}
+
+.identidad__facts-logo {
+  margin-bottom: 1.25rem;
+}
+
+.identidad__facts-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 2px solid var(--locxue-texto-claro);
+  border-radius: 50%;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.identidad__facts-list {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.identidad__fact {
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(244, 246, 249, 0.18);
+}
+
+.identidad__fact:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.identidad__fact dt {
+  margin: 0 0 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(244, 246, 249, 0.65);
+}
+
+.identidad__fact dd {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------
+   Encabezados reutilizables de bloque (Misión/Visión, Objetivos, Valores)
+--------------------------------------------------------- */
+.identidad__card-eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--locxue-morado);
+}
+
+.identidad__card-titulo {
+  margin: 0;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--locxue-azul);
+}
+
+/* ---------------------------------------------------------
+   Estructura del semillero (roles)
+--------------------------------------------------------- */
+.identidad__estructura {
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--locxue-borde);
+}
+
+.identidad__estructura-header {
+  margin-bottom: 1.5rem;
+}
+
+.identidad__roles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.identidad__rol {
+  position: relative;
+  padding-top: 0.25rem;
+}
+
+.identidad__rol-numero {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--locxue-borde);
+}
+
+.identidad__rol-titulo {
+  margin: 0 0 0.5rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--locxue-azul);
+}
+
+.identidad__rol-texto {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--locxue-azul-suave);
+}
+
+.identidad__rol:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -0.9rem;
+  bottom: 0;
+  width: 1px;
+  background: var(--locxue-borde);
+}
+
+/* ---------------------------------------------------------
+   Líneas de investigación institucionales
+--------------------------------------------------------- */
+.identidad__lineas {
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--locxue-borde);
+}
+
+.identidad__lineas-header {
+  margin-bottom: 1.5rem;
+}
+
+.identidad__lineas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.identidad__linea {
+  padding: 1.75rem;
+  border-radius: var(--locxue-radio);
+  background: var(--locxue-bg);
+  border: 1px solid var(--locxue-borde);
+  border-top: 3px solid var(--locxue-azul);
+}
+
+.identidad__linea-titulo {
+  margin: 0 0 0.75rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--locxue-azul);
+}
+
+.identidad__linea-texto {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--locxue-azul-suave);
+}
+
+/* ---------------------------------------------------------
+   Misión y Visión
+--------------------------------------------------------- */
+.identidad__mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--locxue-borde);
+}
+
+.identidad__card {
+  padding: 2rem;
+  background: var(--locxue-bg-alt);
+  border-radius: var(--locxue-radio);
+  border-left: 3px solid var(--locxue-morado);
+}
+
+.identidad__card .identidad__card-titulo {
+  margin: 0.35rem 0 1rem;
+}
+
+.identidad__card-texto {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--locxue-azul-suave);
+}
+
+/* ---------------------------------------------------------
+   Objetivos
+--------------------------------------------------------- */
+.identidad__objetivos {
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--locxue-borde);
+}
+
+.identidad__objetivos-header {
+  margin-bottom: 1.25rem;
+}
+
+.identidad__objetivo-general {
+  max-width: 52rem;
+  margin: 0 0 1.75rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--locxue-azul-suave);
+}
+
+.identidad__objetivo-lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem 1.75rem;
+}
+
+.identidad__objetivo-item {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--locxue-azul-suave);
+}
+
+.identidad__objetivo-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 1px;
+  background: var(--locxue-morado);
+  transform: rotate(45deg);
+}
+
+/* ---------------------------------------------------------
+   Valores
+--------------------------------------------------------- */
+.identidad__valores {
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--locxue-borde);
+}
+
+.identidad__valores-header {
+  margin-bottom: 1.5rem;
+}
+
+.identidad__valores-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.identidad__valor {
+  padding: 1.75rem 1.5rem;
+  background: var(--locxue-bg);
+  border: 1px solid var(--locxue-borde);
+  border-radius: var(--locxue-radio);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.identidad__valor:hover,
+.identidad__valor:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--locxue-morado);
+  box-shadow: 0 16px 32px -20px rgba(58, 35, 110, 0.45);
+}
+
+.identidad__valor-icon {
+  display: inline-flex;
+  color: var(--locxue-morado);
+  margin-bottom: 0.85rem;
+}
+
+.identidad__valor-titulo {
+  margin: 0 0 0.5rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--locxue-azul);
+}
+
+.identidad__valor-texto {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--locxue-azul-suave);
+}
+
+/* ---------------------------------------------------------
+   Propuesta de valor (cita destacada)
+--------------------------------------------------------- */
+.identidad__propuesta {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  background: var(--locxue-azul);
+  border-radius: var(--locxue-radio);
+  position: relative;
+}
+
+.identidad__propuesta::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.5rem;
+  left: 1.5rem;
+  font-family: var(--locxue-font-display);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--locxue-morado);
+  opacity: 0.85;
+}
+
+.identidad__propuesta-texto {
+  margin: 0;
+  max-width: 48rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  line-height: 1.55;
+  color: var(--locxue-texto-claro);
+}
+
+/* ---------------------------------------------------------
+   Animaciones de aparición (mejora progresiva vía JS)
+   Estado por defecto: totalmente visible sin JS.
+--------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .identidad[data-js-ready] .identidad__reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .identidad[data-js-ready] .identidad__reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   Responsive: tablet
+--------------------------------------------------------- */
+@media (max-width: 960px) {
+  .identidad__intro {
+    grid-template-columns: 1fr;
+  }
+
+  .identidad__facts {
+    margin-top: 0;
+  }
+
+  .identidad__valores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .identidad__objetivo-lista {
+    grid-template-columns: 1fr;
+  }
+
+  .identidad__roles {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .identidad__rol:not(:last-child)::after {
+    display: none;
+  }
+
+  .identidad__lineas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .identidad__watermark {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+}
+
+/* ---------------------------------------------------------
+   Responsive: móvil
+--------------------------------------------------------- */
+@media (max-width: 560px) {
+  .identidad {
+    padding-block: 3rem;
+  }
+
+  .identidad__watermark {
+    display: none; /* evita interferir con la lectura en pantallas pequeñas */
+  }
+
+  .identidad__mv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .identidad__valores-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .identidad__card,
+  .identidad__facts {
+    padding: 1.5rem;
+  }
+}
