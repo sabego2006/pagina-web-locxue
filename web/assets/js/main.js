@@ -95,10 +95,90 @@
     sections.forEach((s) => io.observe(s));
   }
 
+  function initEventFilters() {
+    const filterContainer = document.querySelector('.events-filter');
+    if (!filterContainer) return;
+
+    const filterBtns = filterContainer.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.timeline__item[data-category]');
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        filterBtns.forEach((b) => {
+          b.classList.remove('filter-btn--active');
+          b.setAttribute('aria-selected', 'false');
+        });
+
+        btn.classList.add('filter-btn--active');
+        btn.setAttribute('aria-selected', 'true');
+
+        items.forEach((item) => {
+          const cat = item.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            item.removeAttribute('hidden');
+          } else {
+            item.setAttribute('hidden', 'true');
+          }
+        });
+      });
+    });
+  }
+
+  function initStatsCounter() {
+    const statsContainer = document.querySelector('.stats-grid[data-component="stats"]');
+    if (!statsContainer) return;
+
+    const statValues = statsContainer.querySelectorAll('.stat__value[data-target]');
+    if (!statValues.length) return;
+
+    let animated = false;
+
+    function animateNumbers() {
+      statValues.forEach((el) => {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        if (isNaN(target)) return;
+        let count = 0;
+        const speed = Math.max(1, Math.floor(target / 25));
+        const originalText = el.textContent.trim();
+        const hasPlus = originalText.includes('+');
+
+        const timer = setInterval(() => {
+          count += speed;
+          if (count >= target) {
+            el.textContent = target + (hasPlus ? '+' : '');
+            clearInterval(timer);
+          } else {
+            el.textContent = count;
+          }
+        }, 40);
+      });
+    }
+
+    if (!('IntersectionObserver' in window) || REDUCED_MOTION) {
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+          animateNumbers();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(statsContainer);
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initLog();
     initMobileNav();
     initSmoothScroll();
     initFadeIn();
+    initEventFilters();
+    initStatsCounter();
   });
 })();

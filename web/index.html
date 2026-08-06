@@ -172,48 +172,205 @@
       </div>
     </section>
 
-    <!-- Logros y Eventos — Contenido final desde contenido/05-logros-eventos/ -->
+    <!-- Logros y Eventos — Módulo integrado desde contenido/05-logros-eventos/ -->
     <section id="logros" class="section achievements section--alt" data-section="logros" aria-labelledby="ach-title">
       <div class="section__container">
         <h2 id="ach-title">Logros y Eventos</h2>
-        <p class="section__lede">Contenido pendiente por integrar — texto provisto por el área de Logros, Eventos y Convocatorias.</p>
+        <p class="section__lede">Trayectoria, reconocimientos y participaciones académicas del Semillero de Investigación LOCXUE en la comunidad ágil e investigación formativa.</p>
 
+        <!-- Estadísticas destacadas del semillero -->
         <div class="stats-grid" data-component="stats" aria-label="Cifras destacadas del semillero">
-          <div class="stat" data-stat="proyectos" data-value="0">
-            <span class="stat__value">0</span>
-            <span class="stat__label">Proyectos</span>
+          <div class="stat" data-stat="eventos" data-value="11">
+            <span class="stat__value" data-target="11">11</span>
+            <span class="stat__label">Eventos Académicos</span>
           </div>
-          <div class="stat" data-stat="publicaciones" data-value="0">
-            <span class="stat__value">0</span>
-            <span class="stat__label">Publicaciones</span>
+          <div class="stat" data-stat="reconocimientos" data-value="1">
+            <span class="stat__value" data-target="1">1</span>
+            <span class="stat__label">Premio Nacional</span>
           </div>
-          <div class="stat" data-stat="eventos" data-value="0">
-            <span class="stat__value">0</span>
-            <span class="stat__label">Eventos</span>
+          <div class="stat" data-stat="redcolsi" data-value="2">
+            <span class="stat__value" data-target="2">2</span>
+            <span class="stat__label">Clasificaciones RedCOLSI</span>
           </div>
-          <div class="stat" data-stat="integrantes" data-value="0">
-            <span class="stat__value">0</span>
-            <span class="stat__label">Integrantes</span>
+          <div class="stat" data-stat="comunidad" data-value="10">
+            <span class="stat__value" data-target="10">10+</span>
+            <span class="stat__label">Años de Trayectoria</span>
           </div>
         </div>
 
-        <ol class="timeline" data-component="timeline">
-          <li class="timeline__item">
-            <time class="timeline__date" datetime="2026-01-01">2026</time>
-            <h3 class="timeline__title">Hito 1</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Logros, Eventos y Convocatorias.</p>
-          </li>
-          <li class="timeline__item">
-            <time class="timeline__date" datetime="2025-01-01">2025</time>
-            <h3 class="timeline__title">Hito 2</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Logros, Eventos y Convocatorias.</p>
-          </li>
-          <li class="timeline__item">
-            <time class="timeline__date" datetime="2024-01-01">2024</time>
-            <h3 class="timeline__title">Hito 3</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Logros, Eventos y Convocatorias.</p>
-          </li>
-        </ol>
+        <!-- Subsección: Reconocimientos y Logros Destacados -->
+        <div class="achievements-section" style="margin-top: var(--space-6);">
+          <h3 style="margin-bottom: var(--space-3); font-size: 1.5rem;">Reconocimientos y Logros</h3>
+          <div class="cards-grid">
+            <article class="card card--achievement" data-component="card">
+              <span class="card__badge">1er Puesto</span>
+              <h4 class="card__title">Premio Rymel Serrano Uribe</h4>
+              <p class="card__meta">Universidad Cooperativa de Colombia · Octubre 2014</p>
+              <p>Reconocimiento en categoría Estudiantes por el proyecto <strong>ASJUREM – Asistencia Jurídica Empresarial</strong>, desarrollado en Startup Weekend Ibagué como solución de emprendimiento solidario e innovación social.</p>
+            </article>
+
+            <article class="card card--achievement" data-component="card">
+              <span class="card__badge">Comunidad</span>
+              <h4 class="card__title">Consolidación de la Comunidad LOCXUE</h4>
+              <p class="card__meta">Universidad de Cundinamarca · Diciembre 2019</p>
+              <p>Consolidación del semillero como comunidad académica activa y colaborativa para el desarrollo de proyectos de software, investigación formativa y metodología ágil.</p>
+            </article>
+
+            <article class="card card--achievement" data-component="card">
+              <span class="card__badge">RedCOLSI</span>
+              <h4 class="card__title">Participación Destacada RedCOLSI</h4>
+              <p class="card__meta">Encuentros Institucionales y Nacionales · 2013 – 2014</p>
+              <p>Selección de proyectos de investigación formativa para representar a la Universidad de Cundinamarca en encuentros nacionales de la Red Colombiana de Semilleros de Investigación.</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Subsección: Cronología de Eventos Académicos -->
+        <div class="events-section" style="margin-top: var(--space-6);">
+          <h3 style="margin-bottom: var(--space-2); font-size: 1.5rem;">Cronología de Eventos</h3>
+          <p class="section__lede" style="margin-bottom: var(--space-3);">Explora las participaciones, talleres y congresos en los que el semillero ha estado presente.</p>
+
+          <!-- Filtros de eventos -->
+          <div class="events-filter" role="tablist" aria-label="Filtrar eventos por categoría">
+            <button type="button" class="filter-btn filter-btn--active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+            <button type="button" class="filter-btn" data-filter="agile" role="tab" aria-selected="false">Congresos Ágiles</button>
+            <button type="button" class="filter-btn" data-filter="workshop" role="tab" aria-selected="false">Talleres y Foros</button>
+            <button type="button" class="filter-btn" data-filter="research" role="tab" aria-selected="false">RedCOLSI e Investigación</button>
+          </div>
+
+          <ol class="timeline" data-component="timeline">
+            <!-- Evento 11 -->
+            <li class="timeline__item" data-category="agile">
+              <time class="timeline__date" datetime="2018-08-19">Agosto 2018</time>
+              <div class="timeline__header">
+                <h4 class="timeline__title">Ágiles Colombia 2018 (AgilesCo2018)</h4>
+                <span class="badge badge--participant">Participante</span>
+              </div>
+              <p class="card__meta">Universidad del Magdalena · Santa Marta</p>
+              <p>Participación de la delegación de LOCXUE en el encuentro nacional de metodologías ágiles, fortaleciendo lazos con la comunidad agilista colombiana.</p>
+            </li>
+
+            <!-- Evento 10 -->
+            <li class="timeline__item" data-category="workshop">
+              <time class="timeline__date" datetime="2018-05-08">Mayo 2018</time>
+              <div class="timeline__header">
+                <h4 class="timeline__title">Actividad "Super Agentes de Cambio"</h4>
+                <span class="badge badge--participant">Formación</span>
+              </div>
+              <p class="card__meta">Universidad de Cundinamarca</p>
+              <p>Jornada de formación en liderazgo y transformación institucional, impulsando dinámicas colaborativas y desarrollo de competencias blandas en el equipo.</p>
+            </li>
+
+            <!-- Evento 9 -->
+            <li class="timeline__item" data-category="workshop">
+              <time class="timeline__date" datetime="2018-04-29">Abril 2018</time>
+              <div class="timeline__header">
+                <h4 class="timeline__title">Taller Canvas – Semana de Ingeniería Soacha</h4>
+                <span class="badge badge--facilitator">Facilitador</span>
+              </div>
+              <p class="card__meta">UDEC Sede Soacha</p>
+              <p>Realización del Taller Canvas para el diseño de modelos de negocio con estudiantes, promoviendo el pensamiento estructurado y trabajo en equipo.</p>
+            </li>
+
+            <!-- Evento 8 -->
+            <li class="timeline__item" data-category="agile">
+              <time class="timeline__date" datetime="2016-10-06">Octubre 2016</time>
+              <div class="timeline__header">
+                <h4 class="timeline__title">Ágiles 2016 (Ecuador)</h4>
+                <span class="badge badge--speaker">Expositor Internacional</span>
+              </div>
+              <p class="card__meta">Centro de Convenciones Eugenio Espejo · Quito, Ecuador</p>
+              <p>Ponencia internacional <em>"LocXue: Cinco generaciones de agilidad en la Educación"</em> y desarrollo ágil de videojuegos, compartiendo experiencias pedagógicas en América Latina.</p>
+            </li>
+
+            <!-- Evento 7 -->
+            <li class="timeline__item" data-category="agile">
+              <time class="timeline__date" datetime="2014-10-23">Octubre 2014</time>
+              <div class="timeline__header">
+                <h4 class="timeline__title">Ágiles 2014</h4>
+                <span class="badge badge--participant">Participante</span>
+              </div>
+              <p class="card__meta">Congreso de Metodologías Ágiles</p>
+              <p>Asistencia e intercambio de conocimientos con la comunidad regional agilista en tendencias de ingeniería de software y agilidad.</p>
+            </li>
+
+            <!-- Evento 6 -->
+            <li class="timeline__item" data-category="research">
+              <time class="timeline__date" datetime="2014-10-10">Octubre 2014</time>
+              <div class="timeline__header">
+                <h4 class="timeline__title">XVII RedCOLSI Nacional y XI Internacional</h4>
+                <span class="badge badge--speaker">Ponente RedCOLSI</span>
+              </div>
+              <p class="card__meta">Universidad Santo Tomás · Tunja, Colombia</p>
+              <p>Representación institucional de la Universidad de Cundinamarca en el encuentro de semilleros de investigación, socializando avances de proyectos formativos.</p>
+            </li>
+
+            <!-- Evento 5 -->
+            <li class="timeline__item" data-category="agile">
+              <time class="timeline__date" datetime="2014-10-04">Octubre 2014</time>
+              <div class="timeline__header">
+                <h4 class="timeline__title">1er Agile Open Education Colombia</h4>
+                <span class="badge badge--participant">Participante</span>
+              </div>
+              <p class="card__meta">Encuentro de Agilidad en Educación</p>
+              <p>Jornada enfocada en la transformación ágil de los espacios educativos, conectando directamente con las prácticas aplicadas en el curso de Ingeniería de Software I.</p>
+            </li>
+
+            <!-- Evento 4 -->
+            <li class="timeline__item" data-category="workshop">
+              <time class="timeline__date" datetime="2014-09-27">Septiembre 2014</time>
+              <div class="timeline__header">
+                <h4 class="timeline__title">Taller de Gamificación – Agile Open Bucaramanga</h4>
+                <span class="badge badge--facilitator">Facilitador</span>
+              </div>
+              <p class="card__meta">Agile Open Bucaramanga, Santander</p>
+              <p>Taller participativo sobre el uso de técnicas de gamificación y aprendizaje basado en juegos para mejorar la motivación en la enseñanza de software.</p>
+            </li>
+
+            <!-- Evento 3 -->
+            <li class="timeline__item" data-category="workshop">
+              <time class="timeline__date" datetime="2014-05-30">Mayo 2014</time>
+              <div class="timeline__header">
+                <h4 class="timeline__title">IV Foro Internacional de Ingeniería de Software</h4>
+                <span class="badge badge--participant">Participante</span>
+              </div>
+              <p class="card__meta">Foro Internacional Académico</p>
+              <p>Participación en paneles sobre avances y estándares de calidad en el desarrollo de software a nivel internacional.</p>
+            </li>
+
+            <!-- Evento 2 -->
+            <li class="timeline__item" data-category="agile">
+              <time class="timeline__date" datetime="2014-04-27">Abril 2014</time>
+              <div class="timeline__header">
+                <h4 class="timeline__title">1er Agile Open Fusagasugá</h4>
+                <span class="badge badge--organizer">Organizador y Anfitrión</span>
+              </div>
+              <p class="card__meta">Universidad de Cundinamarca · Fusagasugá</p>
+              <p>LOCXUE fue organizador y sede del primer Agile Open Fusagasugá junto a la comunidad de Ágiles Colombia, ofreciendo conferencias y dinámicas ágiles comunitarias.</p>
+            </li>
+
+            <!-- Evento 1 -->
+            <li class="timeline__item" data-category="agile">
+              <time class="timeline__date" datetime="2014-03-08">Marzo 2014</time>
+              <div class="timeline__header">
+                <h4 class="timeline__title">Agile Open Bogotá</h4>
+                <span class="badge badge--participant">Participante</span>
+              </div>
+              <p class="card__meta">Bogotá, Colombia</p>
+              <p>Participación en mesas de discusión sobre metodologías ágiles, sentando las bases del networking e investigación del semillero.</p>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Subsección: Próximos Eventos / Convocatorias -->
+        <div class="upcoming-card" style="margin-top: var(--space-6);">
+          <div class="upcoming-card__content">
+            <h4 class="upcoming-card__title">Próximos Eventos y Convocatorias</h4>
+            <p>La agenda de eventos futuros y convocatorias abiertas de incorporación al Semillero LOCXUE se actualizará periódicamente. ¡Mantente atento a nuestras redes institucionales!</p>
+          </div>
+          <a class="btn btn--secondary" href="#contacto">Contacto y Consultas</a>
+        </div>
+
       </div>
     </section>
 

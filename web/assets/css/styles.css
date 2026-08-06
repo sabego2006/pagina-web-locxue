@@ -649,3 +649,121 @@ ul {
     opacity: 1;
   }
 }
+
+/* --------------------------------------------------------------------------
+   10. Módulo de Eventos y Logros
+   -------------------------------------------------------------------------- */
+.card--achievement {
+  position: relative;
+  border-inline-start: 4px solid var(--color-secondary);
+}
+
+.events-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--color-primary);
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+}
+
+.filter-btn:hover,
+.filter-btn:focus-visible {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.filter-btn--active {
+  background-color: var(--color-secondary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-secondary);
+}
+
+.filter-btn--active:hover,
+.filter-btn--active:focus-visible {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.timeline__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.badge--organizer {
+  background-color: rgba(58, 35, 110, 0.12);
+  color: var(--color-secondary);
+}
+
+.badge--speaker {
+  background-color: rgba(26, 43, 76, 0.12);
+  color: var(--color-primary);
+}
+
+.badge--facilitator {
+  background-color: #EBF5FF;
+  color: #0055B3;
+}
+
+.badge--participant {
+  background-color: #F0F2F5;
+  color: var(--color-muted);
+}
+
+.timeline__item[hidden] {
+  display: none !important;
+}
+
+.upcoming-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 768px) {
+  .upcoming-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .upcoming-card__content {
+    max-width: 75%;
+  }
+}
+
+.upcoming-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
