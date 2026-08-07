@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redes Sociales, Contacto y Pie de Página — LOCXUE (Vista Previa)</title>
+  
+  <!-- Tipografía Institucional Exigida -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="contacto-footer.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+      background-color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Inclusión de la Sección de Contacto, Redes Sociales y Footer -->
+  <div class="contacto-footer-wrapper">
+
+    <!-- ============================================================
+         SECCIÓN: CONTACTO & REDES SOCIALES
+         ============================================================ -->
+    <section id="contacto" class="contacto" aria-labelledby="contacto__titulo">
+
+      <!-- Marca de agua lateral (Estructura de texto vertical) -->
+      <span class="contacto__watermark" aria-hidden="true">LOCXUE</span>
+
+      <div class="contacto__container">
+
+        <!-- Encabezado de la Sección -->
+        <header class="contacto__header">
+          <p class="contacto__eyebrow">Canales Oficiales · Universidad de Cundinamarca</p>
+          <h2 id="contacto__titulo" class="contacto__titulo">Contacto y Redes Sociales</h2>
+          <p class="contacto__lead">
+            Conéctate con el Semillero de Investigación <strong>LOCXUE</strong>. Estamos abiertos a consultas académicas, 
+            propuestas de investigación en Inteligencia Artificial, colaboraciones institucionales y participación estudiantil.
+          </p>
+        </header>
+
+        <!-- Rejilla Principal: Formulario + Hub de Redes Sociales -->
+        <div class="contacto__grid">
+
+          <!-- Columna 1: Formulario de Contacto Interactivo -->
+          <div class="contacto__card contacto__card--form">
+            <div class="contacto__card-header">
+              <div class="contacto__badge">Formulario Web</div>
+              <h3 class="contacto__card-titulo">Envíanos un mensaje</h3>
+              <p class="contacto__card-desc">
+                Diligencia este formulario y nuestro equipo o investigadores principales se pondrán en contacto contigo.
+              </p>
+            </div>
+
+            <form id="contacto__form" class="contacto__form" novalidate>
+              <div class="contacto__form-group">
+                <label for="contacto-nombre" class="contacto__label">Nombre Completo <span class="contacto__req">*</span></label>
+                <div class="contacto__input-wrapper">
+                  <input type="text" id="contacto-nombre" name="nombre" class="contacto__input" placeholder="Ej. Maria Fernanda Gómez" required aria-required="true">
+                  <svg class="contacto__input-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <span class="contacto__error-msg" id="err-nombre">Por favor ingresa tu nombre completo.</span>
+              </div>
+
+              <div class="contacto__form-group">
+                <label for="contacto-email" class="contacto__label">Correo Electrónico / Institucional <span class="contacto__req">*</span></label>
+                <div class="contacto__input-wrapper">
+                  <input type="email" id="contacto-email" name="email" class="contacto__input" placeholder="ejemplo@ucundinamarca.edu.co" required aria-required="true">
+                  <svg class="contacto__input-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <span class="contacto__error-msg" id="err-email">Por favor ingresa un correo electrónico válido.</span>
+              </div>
+
+              <div class="contacto__form-group">
+                <label for="contacto-rol" class="contacto__label">Perfil / Rol Académico <span class="contacto__req">*</span></label>
+                <div class="contacto__input-wrapper">
+                  <select id="contacto-rol" name="rol" class="contacto__select" required aria-required="true">
+                    <option value="" disabled selected>Selecciona tu perfil...</option>
+                    <option value="estudiante">Estudiante UDEC / Externo</option>
+                    <option value="docente">Docente / Investigador</option>
+                    <option value="semillerista">Aspirante a Semillerista</option>
+                    <option value="empresa">Empresa / Aliado Institucional</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                  <svg class="contacto__input-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <span class="contacto__error-msg" id="err-rol">Por favor selecciona una opción.</span>
+              </div>
+
+              <div class="contacto__form-group">
+                <label for="contacto-mensaje" class="contacto__label">Mensaje o Consulta <span class="contacto__req">*</span></label>
+                <textarea id="contacto-mensaje" name="mensaje" class="contacto__textarea" rows="4" placeholder="Escribe aquí tu duda, propuesta de proyecto o solicitud de información..." required aria-required="true"></textarea>
+                <span class="contacto__error-msg" id="err-mensaje">Por favor escribe un mensaje (mínimo 10 caracteres).</span>
+              </div>
+
+              <button type="submit" class="contacto__btn-submit">
+                <span>Enviar Mensaje</span>
+                <svg class="contacto__btn-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              </button>
+            </form>
+
+            <!-- Respuesta / Feedback al enviar -->
+            <div id="contacto__status" class="contacto__status" aria-live="polite" hidden>
+              <div class="contacto__status-icon">✓</div>
+              <div class="contacto__status-body">
+                <strong>¡Mensaje recibido con éxito!</strong>
+                <p>Gracias por comunicarte con el Semillero LOCXUE. Te responderemos a la brevedad posible.</p>
+              </div>
+            </div>
+
+            <!-- Enlace Alternativo a Formulario Google -->
+            <div class="contacto__google-form-banner">
+              <div class="contacto__gform-info">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <span>¿Prefieres diligenciar el borrador oficial en Google Forms?</span>
+              </div>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScqPQmMn4Ein_AdMww7K2ErjHBQUYcgxhZ6rcK56AzbHb35BA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="contacto__btn-gform">
+                Abrir Formulario Google
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna 2: Redes Sociales Institucionales Recomendadas -->
+          <div class="contacto__social-column">
+            <div class="contacto__social-intro">
+              <h3 class="contacto__social-titulo">Redes Sociales Oficiales</h3>
+              <p class="contacto__social-sub">
+                Sigue nuestros canales de divulgación científica, repositorios de código y eventos académicos.
+              </p>
+            </div>
+
+            <div class="contacto__social-grid">
+
+              <!-- Instagram -->
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contacto__social-card contacto__social-card--instagram">
+                <div class="contacto__social-icon-box">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </div>
+                <div class="contacto__social-info">
+                  <span class="contacto__social-name">Instagram</span>
+                  <span class="contacto__social-desc">Noticias, imágenes, historias y actividades del semillero</span>
+                </div>
+                <svg class="contacto__social-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contacto__social-card contacto__social-card--linkedin">
+                <div class="contacto__social-icon-box">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </div>
+                <div class="contacto__social-info">
+                  <span class="contacto__social-name">LinkedIn</span>
+                  <span class="contacto__social-desc">Difusión de proyectos, publicaciones y networking académico</span>
+                </div>
+                <svg class="contacto__social-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+
+              <!-- GitHub -->
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contacto__social-card contacto__social-card--github">
+                <div class="contacto__social-icon-box">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </div>
+                <div class="contacto__social-info">
+                  <span class="contacto__social-name">GitHub</span>
+                  <span class="contacto__social-desc">Repositorio oficial de código fuente y desarrollos de software</span>
+                </div>
+                <svg class="contacto__social-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+
+              <!-- YouTube -->
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="contacto__social-card contacto__social-card--youtube">
+                <div class="contacto__social-icon-box">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg>
+                </div>
+                <div class="contacto__social-info">
+                  <span class="contacto__social-name">YouTube</span>
+                  <span class="contacto__social-desc">Conferencias, talleres, tutoriales y eventos del semillero</span>
+                </div>
+                <svg class="contacto__social-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+
+              <!-- Facebook -->
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="contacto__social-card contacto__social-card--facebook">
+                <div class="contacto__social-icon-box">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </div>
+                <div class="contacto__social-info">
+                  <span class="contacto__social-name">Facebook</span>
+                  <span class="contacto__social-desc">Difusión de actividades institucionales y comunidad</span>
+                </div>
+                <svg class="contacto__social-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+
+              <!-- Correo Institucional -->
+              <a href="mailto:semillerolocxue@ucundinamarca.edu.co" class="contacto__social-card contacto__social-card--email">
+                <div class="contacto__social-icon-box">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="contacto__social-info">
+                  <span class="contacto__social-name">Correo Institucional</span>
+                  <span class="contacto__social-desc">Canal oficial para atención de consultas y propuestas</span>
+                </div>
+                <svg class="contacto__social-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PIE DE PÁGINA INSTITUCIONAL (FOOTER)
+         ============================================================ -->
+    <footer class="footer-locxue" role="contentinfo">
+      <div class="footer-locxue__container">
+
+        <div class="footer-locxue__top">
+          
+          <!-- Marca e Información de la Universidad -->
+          <div class="footer-locxue__brand">
+            <div class="footer-locxue__logo-group">
+              <div class="footer-locxue__logo-mark">LOCXUE</div>
+              <span class="footer-locxue__tagline">Semillero de Investigación en IA</span>
+            </div>
+            <p class="footer-locxue__about">
+              Adscrito al programa de Ingeniería de Sistemas y Computación de la Universidad de Cundinamarca (Sede Fusagasugá). Grupo de investigación INGENIUM SUTA.
+            </p>
+            <div class="footer-locxue__badge-udec">
+              <span>Universidad de Cundinamarca</span>
+            </div>
+          </div>
+
+          <!-- Enlaces Rápidos -->
+          <div class="footer-locxue__col">
+            <h4 class="footer-locxue__col-titulo">Navegación Sitio</h4>
+            <ul class="footer-locxue__links">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#identidad">Identidad Institucional</a></li>
+              <li><a href="#equipo">Equipo e Investigadores</a></li>
+              <li><a href="#proyectos">Proyectos de IA</a></li>
+              <li><a href="#publicaciones">Publicaciones Científicas</a></li>
+              <li><a href="#logros-eventos">Logros y Convocatorias</a></li>
+              <li><a href="#contacto">Contacto & Redes</a></li>
+            </ul>
+          </div>
+
+          <!-- Información Académica -->
+          <div class="footer-locxue__col">
+            <h4 class="footer-locxue__col-titulo">Ficha Institucional</h4>
+            <ul class="footer-locxue__info-list">
+              <li><strong>Institución:</strong> Universidad de Cundinamarca</li>
+              <li><strong>Facultad:</strong> Facultad de Ingeniería</li>
+              <li><strong>Programa:</strong> Ingeniería de Sistemas y Computación</li>
+              <li><strong>Sede:</strong> Fusagasugá, Cundinamarca</li>
+              <li><strong>Grupo Base:</strong> INGENIUM SUTA</li>
+              <li><strong>Trayectoria:</strong> Desde 2013</li>
+            </ul>
+          </div>
+
+          <!-- Módulo de Redes en Footer -->
+          <div class="footer-locxue__col">
+            <h4 class="footer-locxue__col-titulo">Canales Oficiales</h4>
+            <p class="footer-locxue__col-text">Síguenos en nuestras plataformas activas:</p>
+            <div class="footer-locxue__social-icons">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram de LOCXUE" title="Instagram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de LOCXUE" title="LinkedIn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub de LOCXUE" title="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube de LOCXUE" title="YouTube">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook de LOCXUE" title="Facebook">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Copyright y Créditos del Desarrollador -->
+        <div class="footer-locxue__bottom">
+          <div class="footer-locxue__copyright">
+            © 2026 <strong>Semillero de Investigación LOCXUE</strong> · Universidad de Cundinamarca. Todos los derechos reservados.
+          </div>
+          <div class="footer-locxue__author">
+            Módulo desarrollado por: <strong>Brayan Sarmiento</strong>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="contacto-footer.js"></script>
+</body>
+</html>
