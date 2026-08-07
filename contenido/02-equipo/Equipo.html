@@ -1,0 +1,386 @@
+<!--
+  ============================================================
+  SECCIÓN: Equipo de Investigación
+  Semillero de Investigación LOCXUE — Universidad de Cundinamarca
+  ============================================================
+  Integración:
+  - Fragmento independiente y modular para la carpeta contenido/02-equipo/
+  - Se inserta en la sección #equipo de web/index.html
+  - Incluye espacios estructurados para:
+    1. Profesor Líder del Semillero (Liderazgo Docente)
+    2. Fundadores del Semillero
+    3. 17 Integrantes Activos del Semillero (con su respectiva foto/placeholder)
+  ============================================================
+-->
+
+<section id="equipo" class="equipo" aria-labelledby="equipo__titulo">
+
+  <!-- Marca de agua lateral -->
+  <span class="equipo__watermark" aria-hidden="true">LOCXUE</span>
+
+  <div class="equipo__container">
+
+    <!-- Encabezado de la sección -->
+    <header class="equipo__header">
+      <span class="equipo__eyebrow">Talento Humano e Investigación Formativa</span>
+      <h2 id="equipo__titulo" class="equipo__titulo">Nuestro Equipo</h2>
+      <p class="equipo__lead">
+        Conoce a los docentes, fundadores y estudiantes investigadores que hacen parte del Semillero LOCXUE,
+        impulsando la investigación en Inteligencia Artificial y la cultura ágil en la Universidad de Cundinamarca.
+      </p>
+    </header>
+
+    <!-- ============================================================
+         1. SUBSECCIÓN: PROFESOR LÍDER DEL SEMILLERO
+         ============================================================ -->
+    <div class="equipo__subseccion">
+      <h3 class="equipo__subseccion-titulo">Profesor Líder del Semillero</h3>
+      
+      <article class="equipo__lider-card" data-component="card-lider">
+        <img src="assets/img/avatar-placeholder.svg" alt="Foto de Giovanny Andrés Cifuentes Blanco" class="equipo__avatar-lider">
+        <div class="equipo__lider-info">
+          <span class="equipo__badge equipo__badge--lider">Profesor Líder / Tutor</span>
+          <h4 class="equipo__nombre-lider">Giovanny Andrés Cifuentes Blanco</h4>
+          <p class="equipo__meta">Profesor Investigador · Director del Semillero LOCXUE</p>
+          <p class="equipo__bio">
+            [ Espacio reservado para el perfil del docente líder: Títulos académicos, líneas de investigación que supervisa, trayectoria docente en la Universidad de Cundinamarca y áreas de experticia científica. ]
+          </p>
+          <div class="equipo__sociales" style="justify-content: flex-start;">
+            <a href="#" class="equipo__social-link" aria-label="CvLAC Profesor Líder">CvLAC</a> ·
+            <a href="#" class="equipo__social-link" aria-label="LinkedIn Profesor Líder">LinkedIn</a> ·
+            <a href="mailto:gacifuentes@ucundinamarca.edu.com" class="equipo__social-link" aria-label="Correo Institucional">gacifuentes@ucundinamarca.edu.com</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- ============================================================
+         2. SUBSECCIÓN: FUNDADORES
+         ============================================================ -->
+    <div class="equipo__subseccion">
+      <h3 class="equipo__subseccion-titulo">Fundadores del Semillero</h3>
+      <p class="equipo__lead" style="margin-bottom: 1.5rem;">
+        Pioneros que concibieron y consolidaron las primeras generaciones del Semillero LOCXUE.
+      </p>
+
+      <div class="equipo__fundadores-grid">
+
+        <!-- Fundador 1 -->
+        <article class="equipo__card" data-component="card-fundador">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto del Fundador 1" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--fundador">Cofundador(a)</span>
+          <h4 class="equipo__nombre">[ Nombre del Fundador 1 ]</h4>
+          <p class="equipo__rol">Cofundador(a) / Investigador(a)</p>
+          <p class="equipo__descripcion">[ Información sobre los aportes y liderazgo inicial del fundador/a ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Fundador 2 -->
+        <article class="equipo__card" data-component="card-fundador">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto del Fundador 2" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--fundador">Cofundador(a)</span>
+          <h4 class="equipo__nombre">[ Nombre del Fundador 2 ]</h4>
+          <p class="equipo__rol">Cofundador(a) / Investigador(a)</p>
+          <p class="equipo__descripcion">[ Información sobre los aportes y liderazgo inicial del fundador/a ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Fundador 3 (Opcional) -->
+        <article class="equipo__card" data-component="card-fundador">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto del Fundador 3" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--fundador">Cofundador(a)</span>
+          <h4 class="equipo__nombre">[ Nombre del Fundador 3 ]</h4>
+          <p class="equipo__rol">Cofundador(a) / Investigador(a)</p>
+          <p class="equipo__descripcion">[ Información sobre los aportes y liderazgo inicial del fundador/a ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ============================================================
+         3. SUBSECCIÓN: INTEGRANTES DEL SEMILLERO
+         ============================================================ -->
+    <div class="equipo__subseccion">
+      <h3 class="equipo__subseccion-titulo">Integrantes del Semillero</h3>
+      <p class="equipo__lead" style="margin-bottom: 1.5rem;">
+        Estudiantes e investigadores activos de Ingeniería de Sistemas y áreas afines.
+      </p>
+
+      <div class="equipo__integrantes-grid">
+
+        <!-- Integrante 1: Brayan Estiven Sarmiento Vargas -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto de Brayan Estiven Sarmiento Vargas" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">Brayan Estiven Sarmiento Vargas</h4>
+          <p class="equipo__rol">5.º Semestre · Ing. de Sistemas y Computación</p>
+          <p class="equipo__descripcion">Estudiante Investigador del Semillero LOCXUE.</p>
+          <div class="equipo__sociales">
+            <a href="mailto:besarmiento@ucundinamarca.edu.co" class="equipo__social-link" title="Correo Institucional">Correo</a> ·
+            <a href="https://github.com/BrayanSarmiento28" target="_blank" rel="noopener noreferrer" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante 2: Julián Andrés Villamizar Bonilla -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto de Julián Andrés Villamizar Bonilla" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">Julián Andrés Villamizar Bonilla</h4>
+          <p class="equipo__rol">5.º Semestre · Ing. de Sistemas y Computación</p>
+          <p class="equipo__descripcion">Estudiante Investigador del Semillero LOCXUE.</p>
+          <div class="equipo__sociales">
+            <a href="mailto:javillamizar@ucundinamarca.edu.co" class="equipo__social-link" title="Correo Institucional">Correo</a> ·
+            <a href="https://github.com/JulianZAR" target="_blank" rel="noopener noreferrer" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante 3: Michelle Natalia Montenegro Mendez -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto de Michelle Natalia Montenegro Mendez" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">Michelle Natalia Montenegro Mendez</h4>
+          <p class="equipo__rol">5.º Semestre · Ing. de Sistemas y Computación</p>
+          <p class="equipo__descripcion">Estudiante Investigadora del Semillero LOCXUE.</p>
+          <div class="equipo__sociales">
+            <a href="mailto:mnmontenegro@ucundinamarca.edu.co" class="equipo__social-link" title="Correo Institucional">Correo</a> ·
+            <a href="https://github.com/nat.montenegro01" target="_blank" rel="noopener noreferrer" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante 4: Santiago Bermudez Gomez -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto de Santiago Bermudez Gomez" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">Santiago Bermudez Gomez</h4>
+          <p class="equipo__rol">5.º Semestre · Ing. de Sistemas y Computación</p>
+          <p class="equipo__descripcion">Estudiante Investigador del Semillero LOCXUE.</p>
+          <div class="equipo__sociales">
+            <a href="mailto:santiagobermudez@ucundinamarca.edu.co" class="equipo__social-link" title="Correo Institucional">Correo</a> ·
+            <a href="https://github.com/sabego2006" target="_blank" rel="noopener noreferrer" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante 5" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante 5 ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante 6" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante 6 ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante 7" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante 7 ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante 8" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante 8 ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante 9" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante 9 ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Integrante -->
+        <article class="equipo__card" data-component="card-integrante">
+          <div class="equipo__avatar-wrapper">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
+          </div>
+          <span class="equipo__badge equipo__badge--integrante">Integrante</span>
+          <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
+          <p class="equipo__rol">Rol / Proyecto asignado</p>
+          <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
+          <div class="equipo__sociales">
+            <a href="#" class="equipo__social-link">LinkedIn</a> ·
+            <a href="#" class="equipo__social-link">GitHub</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
