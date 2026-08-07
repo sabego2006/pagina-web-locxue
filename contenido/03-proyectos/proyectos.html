@@ -1,0 +1,247 @@
+<!--
+  ============================================================
+  SECCIÓN: Proyectos Desarrollados — Semillero LOCXUE
+  ------------------------------------------------------------
+  Fragmento modular e independiente. NO incluye <html>, <head>
+  ni <body>: este bloque se integra directamente dentro del
+  index.html principal por el integrante encargado de unificar
+  el sitio.
+
+  Dependencias de esta sección:
+    - web/assets/css/proyectos.css
+    - web/assets/js/proyectos.js
+    - Google Fonts "Playfair Display" e "Inter" (cargarlas una
+      sola vez desde el <head> global del sitio; ver nota al
+      final de proyectos.css si esta sección se prueba aislada)
+
+  Contenido basado en:
+    "Informe_Proyectos_Desarrollados_Semillero_LOCXUE.docx"
+    (fuentes primarias citadas en cada tarjeta y en el bloque
+    de fuentes consultadas al final de la sección)
+  ============================================================
+-->
+
+<section class="locxue-proyectos" id="proyectos" aria-labelledby="proyectos-heading">
+
+  <!-- Marca de agua lateral (decorativa) -->
+  <span class="locxue-proyectos__watermark" aria-hidden="true">LOCXUE</span>
+
+  <div class="locxue-proyectos__container">
+
+    <!-- Encabezado de la sección -->
+    <header class="locxue-proyectos__header">
+      <p class="locxue-proyectos__eyebrow">Trayectoria 2013 – 2014</p>
+      <h2 class="locxue-proyectos__title" id="proyectos-heading">Proyectos Desarrollados</h2>
+      <p class="locxue-proyectos__intro">
+        Esta línea de tiempo reúne la actividad del Semillero LOCXUE que pudo
+        verificarse en fuentes públicas: comunidad Ágiles Colombia,
+        Google Groups, GrupLAC/CvLAC de Minciencias, RedCOLSI, Google Scholar
+        y el sitio institucional de la Universidad de Cundinamarca. Solo se
+        presentan hechos con fuente identificable; nada se documenta como
+        cierto sin evidencia respaldada por un enlace verificable.
+      </p>
+    </header>
+
+    <!-- Grid de tarjetas de proyectos / actividades -->
+    <ul class="locxue-proyectos__grid" role="list">
+
+      <!-- Tarjeta 1 · 2013 -->
+      <li>
+        <article class="proyecto-card" data-project="2013-taller-scrum">
+          <div class="proyecto-card__media" aria-hidden="true">
+            <span class="proyecto-card__media-pattern"></span>
+            <span class="proyecto-card__year">2013</span>
+          </div>
+
+          <span class="proyecto-card__badge proyecto-card__badge--intercambio">
+            Intercambio documentado
+          </span>
+
+          <div class="proyecto-card__body">
+            <p class="proyecto-card__tag">Formación en metodologías ágiles · Scrum</p>
+            <h3 class="proyecto-card__title">Planeación de un taller práctico de Scrum</h3>
+            <p class="proyecto-card__desc">
+              Integrantes del semillero manifiestan en la lista de correo
+              pública de Ágiles Colombia su interés en llevar a LOCXUE una
+              dinámica de enseñanza de Scrum con tijeras y pegante.
+            </p>
+
+            <dl class="proyecto-card__meta">
+              <div>
+                <dt>Año</dt>
+                <dd>2013</dd>
+              </div>
+              <div>
+                <dt>Estado</dt>
+                <dd>Documentado, sin evidencia de ejecución posterior</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="proyecto-card__footer">
+            <button
+              type="button"
+              class="proyecto-card__link"
+              data-modal-open="2013-taller-scrum"
+              aria-haspopup="dialog"
+            >
+              Ver más
+              <svg class="proyecto-card__link-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </article>
+      </li>
+
+      <!-- Tarjeta 2 · 2014 -->
+      <li>
+        <article class="proyecto-card proyecto-card--featured" data-project="2014-agile-open">
+          <div class="proyecto-card__media" aria-hidden="true">
+            <span class="proyecto-card__media-pattern"></span>
+            <span class="proyecto-card__year">2014</span>
+          </div>
+
+          <span class="proyecto-card__badge proyecto-card__badge--finalizado">
+            Finalizado
+          </span>
+
+          <div class="proyecto-card__body">
+            <p class="proyecto-card__tag">Metodologías ágiles de desarrollo de software</p>
+            <h3 class="proyecto-card__title">Primer Agile Open Fusagasugá</h3>
+            <p class="proyecto-card__desc">
+              Evento abierto y gratuito en formato Open Space, organizado
+              junto con la Universidad de Cundinamarca y la comunidad Ágiles
+              Colombia. Incluyó charlas, conversatorios y Coding Dojos sobre
+              Scrum, Extreme Programming, Lean, Kanban y Software Craftsmanship.
+            </p>
+
+            <dl class="proyecto-card__meta">
+              <div>
+                <dt>Año</dt>
+                <dd>2014</dd>
+              </div>
+              <div>
+                <dt>Estado</dt>
+                <dd>Finalizado — 26 de abril de 2014</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="proyecto-card__footer">
+            <button
+              type="button"
+              class="proyecto-card__link"
+              data-modal-open="2014-agile-open"
+              aria-haspopup="dialog"
+            >
+              Ver más
+              <svg class="proyecto-card__link-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </article>
+      </li>
+
+      <!-- Tarjeta "fantasma": próximos registros por confirmar -->
+      <li>
+        <article class="proyecto-card proyecto-card--placeholder">
+          <div class="proyecto-card__body proyecto-card__body--placeholder">
+            <svg class="proyecto-card__placeholder-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <h3 class="proyecto-card__title proyecto-card__title--muted">Próximos registros</h3>
+            <p class="proyecto-card__desc">
+              La actividad de LOCXUE entre 2015 y hoy vive principalmente en
+              su página de Facebook, no rastreable por buscadores. Este
+              espacio se completará al validar esa fuente y otras
+              publicaciones futuras del semillero.
+            </p>
+          </div>
+        </article>
+      </li>
+
+    </ul>
+
+    <!-- Espacio reservado para futura visualización de datos (Chart.js) -->
+    <!--
+      Cuando existan cifras verificadas (p. ej. asistentes por evento,
+      número de talleres por año), reemplazar este bloque por un <canvas>
+      y renderizarlo con Chart.js. No se genera un gráfico de ejemplo
+      para no mostrar datos ficticios.
+      <div class="locxue-proyectos__chart-slot">
+        <canvas id="proyectos-chart" role="img" aria-label="Gráfico de actividad del semillero por año"></canvas>
+      </div>
+    -->
+
+    <!-- Fuentes consultadas -->
+    <details class="locxue-proyectos__sources">
+      <summary>Fuentes consultadas</summary>
+      <ul>
+        <li>
+          <a href="https://groups.google.com/g/agiles-colombia/c/eXXRkigNL5k" target="_blank" rel="noopener noreferrer">
+            Google Groups — hilo "Una dinámica/juego para enseñar Scrum", lista agiles-colombia (2013)
+          </a>
+        </li>
+        <li>
+          <a href="https://agilescolombia.org/2014/04/04/agile-open-fusagasuga/" target="_blank" rel="noopener noreferrer">
+            Ágiles Colombia — "Agile Open Fusagasuga – sábado 26 de abril" (2014)
+          </a>
+        </li>
+        <li>
+          <a href="https://agilescolombia.org/tag/semillero-locxue/" target="_blank" rel="noopener noreferrer">
+            Ágiles Colombia — archivo de la etiqueta "Semillero locxue"
+          </a>
+        </li>
+        <li>
+          <a href="https://www.ucundinamarca.edu.co/investigacion/index.php/semilleros" target="_blank" rel="noopener noreferrer">
+            Universidad de Cundinamarca — Sección Semilleros de Investigación
+          </a>
+        </li>
+      </ul>
+    </details>
+
+  </div>
+
+  <!-- Modal de detalle reutilizable (una sola instancia para todas las tarjetas) -->
+  <div class="locxue-proyectos__modal" data-modal-root hidden>
+    <div class="locxue-proyectos__modal-backdrop" data-modal-backdrop></div>
+    <div
+      class="locxue-proyectos__modal-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="proyectos-modal-title"
+      tabindex="-1"
+    >
+      <button type="button" class="locxue-proyectos__modal-close" data-modal-close aria-label="Cerrar detalle">
+        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <p class="locxue-proyectos__modal-tag" data-modal-tag></p>
+      <h3 class="locxue-proyectos__modal-title" id="proyectos-modal-title" data-modal-title></h3>
+      <p class="locxue-proyectos__modal-desc" data-modal-desc></p>
+
+      <dl class="locxue-proyectos__modal-meta">
+        <div>
+          <dt>Año</dt>
+          <dd data-modal-year></dd>
+        </div>
+        <div>
+          <dt>Estado</dt>
+          <dd data-modal-status></dd>
+        </div>
+      </dl>
+
+      <a class="locxue-proyectos__modal-source" data-modal-source href="#" target="_blank" rel="noopener noreferrer">
+        Ver fuente de verificación
+        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <path d="M7 13L13 7M8 7h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+</section>

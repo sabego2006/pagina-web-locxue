@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicaciones y Productos — Semillero LOCXUE</title>
+  <meta name="description"
+    content="Biblioteca académica y portafolio de productos de investigación del Semillero de Investigación LOCXUE, Universidad de Cundinamarca.">
+
+  <!-- Tipografías del design system -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
+
+  <style>
+    /* ================================================================
+       TOKENS DEL DESIGN SYSTEM LOCXUE
+       Paleta: primario #1A2B4C, secundario #3A236E, fondos #FFF / #F4F6F9
+       Tipografía: Playfair Display (títulos), Inter (cuerpo)
+    ================================================================ */
+    :root {
+      --color-primary: #1A2B4C;
+      --color-secondary: #3A236E;
+      --color-bg-white: #FFFFFF;
+      --color-bg-soft: #F4F6F9;
+      --color-text: #1A2B4C;
+      --color-text-inverse: #FFFFFF;
+      --color-muted: #5A6478;
+      --color-border: #E2E6EE;
+      --color-accent: #6B3FA0;
+      /* variante clara del secundario */
+      --color-tag-bg: rgba(58, 35, 110, 0.08);
+      --color-tag-text: #3A236E;
+      --color-empty-bg: rgba(26, 43, 76, 0.04);
+
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', Roboto, Helvetica, Arial, sans-serif;
+
+      --fs-h1: clamp(2rem, 4vw, 3.25rem);
+      --fs-h2: clamp(1.5rem, 3vw, 2.25rem);
+      --fs-h3: 1.25rem;
+      --fs-body: 1rem;
+      --fs-small: 0.875rem;
+      --fs-xs: 0.75rem;
+      --lh-body: 1.7;
+      --lh-heading: 1.2;
+
+      --space-1: 0.5rem;
+      --space-2: 1rem;
+      --space-3: 1.5rem;
+      --space-4: 2rem;
+      --space-6: 3rem;
+      --space-8: 4rem;
+      --space-12: 6rem;
+
+      --container-max: 1200px;
+      --radius-sm: 6px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-pill: 999px;
+      --shadow-sm: 0 1px 3px rgba(26, 43, 76, 0.08);
+      --shadow-md: 0 4px 16px rgba(26, 43, 76, 0.12);
+      --shadow-lg: 0 8px 32px rgba(26, 43, 76, 0.16);
+      --transition: 220ms ease;
+      --header-height: 72px;
+    }
+
+    /* ================================================================
+       RESET Y BASE
+    ================================================================ */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      color: var(--color-text);
+      background-color: var(--color-bg-white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--color-secondary);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    a:hover {
+      color: var(--color-primary);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-heading);
+      line-height: var(--lh-heading);
+      color: var(--color-primary);
+    }
+
+    h1 {
+      font-size: var(--fs-h1);
+    }
+
+    h2 {
+      font-size: var(--fs-h2);
+    }
+
+    h3 {
+      font-size: var(--fs-h3);
+    }
+
+    p {
+      margin-bottom: var(--space-2);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--color-secondary);
+      outline-offset: 2px;
+    }
+
+    /* ================================================================
+       SKIP LINK
+    ================================================================ */
+    .skip-link {
+      position: absolute;
+      inset-inline-start: var(--space-2);
+      inset-block-start: var(--space-2);
+      padding: var(--space-1) var(--space-2);
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      border-radius: var(--radius-sm);
+      transform: translateY(-200%);
+      transition: transform var(--transition);
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ================================================================
+       HEADER / NAV (igual al index.html)
+    ================================================================ */
+    .header {
+      position: sticky;
+      inset-block-start: 0;
+      background-color: var(--color-primary);
+      color: var(--color-text-inverse);
+      z-index: 50;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding: var(--space-2) var(--space-3);
+      min-height: var(--header-height);
+    }
+
+    .nav__logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav__toggle {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 22px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .nav__toggle-bar {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: var(--color-text-inverse);
+      border-radius: 2px;
+    }
+
+    .nav__menu {
+      display: none;
+      flex-direction: column;
+      gap: var(--space-2);
+      width: 100%;
+      padding-block: var(--space-2);
+    }
+
+    .nav__menu--open {
+      display: flex;
+    }
+
+    .nav__menu a {
+      display: block;
+      padding: var(--space-1) 0;
+      color: var(--color-text-inverse);
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .nav__menu a:hover,
+    .nav__menu a:focus-visible {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .nav__menu a[aria-current="page"] {
+      color: var(--color-text-inverse);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+      padding-bottom: 2px;
+    }
+
+    @media (min-width: 768px) {
+      .nav {
+        flex-wrap: nowrap;
+      }
+
+      .nav__toggle {
+        display: none;
+      }
+
+      .nav__menu {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        padding-block: 0;
+        gap: var(--space-3);
+      }
+    }
+
+    /* ================================================================
+       HERO DE SECCIÓN
+    ================================================================ */
+    .pub-hero {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-primary);
+      padding-block: var(--space-12) var(--space-8);
+    }
+
+    .pub-hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(58, 35, 110, 0.55) 0%, transparent 55%),
+        radial-gradient(circle at 85% 20%, rgba(58, 35, 110, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 60% 90%, rgba(107, 63, 160, 0.2) 0%, transparent 40%);
+    }
+
+    .pub-hero__watermark {
+      position: absolute;
+      inset-block: 0;
+      inset-inline-end: var(--space-2);
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-family: var(--font-heading);
+      font-size: clamp(3.6rem, 5vw, 5rem);
+      color: rgba(255, 255, 255, 0.07);
+      letter-spacing: 0.2em;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .pub-hero__container {
+      position: relative;
+      z-index: 1;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--space-3);
+    }
+
+    .pub-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: var(--fs-small);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: var(--space-2);
+    }
+
+    .pub-hero__eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 2px;
+    }
+
+    .pub-hero h1 {
+      color: var(--color-text-inverse);
+      margin-bottom: var(--space-3);
+    }
+
+    .pub-hero__lead {
+      max-width: 60ch;
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.7;
+      margin-bottom: var(--space-4);
+    }
+
+    .pub-hero__tabs {
+      display: flex;
+      gap: var(--space-1);
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 0.625rem 1.375rem;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-size: var(--fs-small);
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+      background-color: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .tab-btn:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .tab-btn[aria-selected="true"] {
+      background-color: var(--color-text-inverse);
+      color: var(--color-primary);
+      border-color: var(--color-text-inverse);
+    }
+
+    /* ================================================================
+       LAYOUT PRINCIPAL
+    ================================================================ */
+    .pub-main {
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding: var(--space-8) var(--space-3) var(--space-12);
+    }
+
+    /* ================================================================
+       PANEL (tab content)
+    ================================================================ */
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel[aria-hidden="false"] {
+      display: block;
+    }
+
+    /* ================================================================
+       BARRA DE FILTROS / BÚSQUEDA
+    ================================================================ */
+    .filter-bar {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: var(--space-6);
+      padding: var(--space-3);
+      background: var(--color-bg-soft);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
+
+    .filter-bar__label {
+      font-size: var(--fs-small);
+      font-weight: 600;
+      color: var(--color-muted);
+      white-space: nowrap;
+    }
+
+    .filter-chips {
+      display: flex;
+      gap: var(--space-1);
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      padding: 0.375rem 0.875rem;
+      border-radius: var(--radius-pill);
+      font-size: var(--fs-xs);
+      font-weight: 600;
+      cursor: pointer;
+      border: 1.5px solid var(--color-border);
+      background: var(--color-bg-white);
+      color: var(--color-muted);
+      transition: all var(--transition);
+    }
+
+    .chip:hover {
+      border-color: var(--color-secondary);
+      color: var(--color-secondary);
+    }
+
+    .chip[aria-pressed="true"] {
+      background: var(--color-secondary);
+      color: var(--color-text-inverse);
+      border-color: var(--color-secondary);
+    }
+
+    /* ================================================================
+       ESTADO VACÍO
+    ================================================================ */
+    .empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-12) var(--space-4);
+      background: var(--color-empty-bg);
+      border: 2px dashed var(--color-border);
+      border-radius: var(--radius-lg);
+      min-height: 380px;
+    }
+
+    .empty-state__icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: var(--space-4);
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    .empty-state__icon svg {
+      width: 36px;
+      height: 36px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 1.75;
+    }
+
+    .empty-state__title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-h3);
+      color: var(--color-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .empty-state__msg {
+      max-width: 52ch;
+      font-size: 1.05rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .empty-state__msg strong {
+      color: var(--color-secondary);
+      font-weight: 600;
+    }
+
+    .empty-state__pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: var(--space-4);
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-pill);
+      font-size: var(--fs-small);
+      font-weight: 600;
+      color: var(--color-secondary);
+      border: 1.5px solid var(--color-secondary);
+      background: transparent;
+      cursor: default;
+    }
+
+    .empty-state__pill::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-secondary);
+      animation: pulse 1.8s ease infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.75);
+      }
+    }
+
+    /* ================================================================
+       SECCIÓN DE FUENTES RECOMENDADAS
+    ================================================================ */
+    .sources-section {
+      margin-top: var(--space-8);
+      padding: var(--space-6);
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      border-radius: var(--radius-lg);
+      color: var(--color-text-inverse);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sources-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.06), transparent 55%);
+    }
+
+    .sources-section__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .sources-section__eyebrow {
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: var(--space-2);
+    }
+
+    .sources-section h2 {
+      color: var(--color-text-inverse);
+      margin-bottom: var(--space-1);
+    }
+
+    .sources-section p {
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: var(--space-4);
+    }
+
+    .sources-grid {
+      display: grid;
+      gap: var(--space-2);
+      grid-template-columns: 1fr;
+    }
+
+    .source-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-3);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: background var(--transition);
+    }
+
+    .source-item:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .source-item__num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .source-item__text {
+      font-size: var(--fs-small);
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+    }
+
+    .source-item__link {
+      display: inline-block;
+      margin-top: 0.2rem;
+      font-size: var(--fs-xs);
+      color: rgba(255, 255, 255, 0.55);
+      word-break: break-all;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color var(--transition);
+    }
+
+    .source-item__link:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ================================================================
+       CRITERIO DE INCLUSIÓN
+    ================================================================ */
+    .criteria-box {
+      margin-top: var(--space-6);
+      padding: var(--space-4) var(--space-4) var(--space-3);
+      background: var(--color-bg-soft);
+      border-left: 4px solid var(--color-secondary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .criteria-box__title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-h3);
+      color: var(--color-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .criteria-box p {
+      font-size: var(--fs-small);
+      color: var(--color-muted);
+      margin: 0;
+    }
+
+    /* ================================================================
+       FOOTER
+    ================================================================ */
+    .footer {
+      background-color: var(--color-secondary);
+      color: var(--color-text-inverse);
+      padding-block: var(--space-6);
+    }
+
+    .footer__container {
+      display: grid;
+      gap: var(--space-4);
+      grid-template-columns: 1fr;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--space-3);
+    }
+
+    .footer__brand {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .footer__brand img {
+      height: 32px;
+      width: auto;
+    }
+
+    .footer__brand p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: var(--fs-small);
+    }
+
+    .footer__nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .footer__nav a {
+      color: var(--color-text-inverse);
+      font-size: var(--fs-small);
+    }
+
+    .footer__nav a:hover {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer__credits {
+      font-size: var(--fs-xs);
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0;
+    }
+
+    @media (min-width: 1024px) {
+      .footer__container {
+        grid-template-columns: 2fr 1fr 1fr;
+        align-items: start;
+      }
+
+      .footer__credits {
+        grid-column: 1 / -1;
+      }
+
+      .sources-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ================================================================
+       RESPONSIVE GENERAL
+    ================================================================ */
+    @media (min-width: 768px) {
+      .filter-bar {
+        flex-wrap: nowrap;
+      }
+
+      .pub-hero__tabs {
+        gap: var(--space-2);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ── HEADER ────────────────────────────────────────────────────── -->
+  <header class="header" role="banner">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="nav__logo" href="../../web/index.html" aria-label="LOCXUE — ir al inicio">
+        <img src="../../web/assets/img/logo-locxue.png" alt="Logo LOCXUE" width="120" height="40">
+      </a>
+      <button class="nav__toggle" type="button" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu"
+        aria-label="Abrir menú">
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+      </button>
+      <ul class="nav__menu" id="nav-menu" role="list">
+        <li><a href="../../web/index.html#hero">Inicio</a></li>
+        <li><a href="../../web/index.html#nosotros">Nosotros</a></li>
+        <li><a href="../../web/index.html#lineas">Líneas</a></li>
+        <li><a href="../../web/index.html#equipo">Equipo</a></li>
+        <li><a href="../../web/index.html#proyectos">Proyectos</a></li>
+        <li><a href="publicaciones.html" aria-current="page">Publicaciones</a></li>
+        <li><a href="../../web/index.html#logros">Logros</a></li>
+        <li><a href="../../web/index.html#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ── HERO ──────────────────────────────────────────────────────── -->
+  <section class="pub-hero" aria-labelledby="pub-hero-title">
+    <div class="pub-hero__bg" aria-hidden="true"></div>
+    <aside class="pub-hero__watermark" aria-hidden="true">LOCXUE</aside>
+    <div class="pub-hero__container">
+      <p class="pub-hero__eyebrow" aria-hidden="true">Semillero LOCXUE · Universidad de Cundinamarca</p>
+      <h1 id="pub-hero-title">Publicaciones y Productos<br>de Investigación</h1>
+      <p class="pub-hero__lead">
+        Biblioteca académica y portafolio de resultados tangibles generados por el Semillero
+        de Investigación LOCXUE. Aquí encontrarás artículos, ponencias, software y prototipos
+        que acreditan explícitamente nuestra labor investigativa.
+      </p>
+
+      <!-- Tabs de navegación entre secciones -->
+      <div class="pub-hero__tabs" role="tablist" aria-label="Módulos del área de publicaciones">
+        <button class="tab-btn" role="tab" id="tab-pub" aria-controls="panel-pub" aria-selected="true">
+          📄 Publicaciones Científicas
+        </button>
+        <button class="tab-btn" role="tab" id="tab-prod" aria-controls="panel-prod" aria-selected="false">
+          🛠 Productos de Investigación
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTENIDO PRINCIPAL ───────────────────────────────────────── -->
+  <main id="main">
+    <div class="pub-main">
+
+      <!-- ════════════════════════════════════════════════════════════
+           PANEL 1 · PUBLICACIONES CIENTÍFICAS
+      ════════════════════════════════════════════════════════════ -->
+      <section id="panel-pub" role="tabpanel" aria-labelledby="tab-pub" aria-hidden="false" class="tab-panel">
+
+        <!-- Barra de filtros (preparada para cuando llegue contenido) -->
+        <div class="filter-bar" aria-label="Filtrar publicaciones">
+          <span class="filter-bar__label" id="filter-label-pub">Filtrar por tipo:</span>
+          <div class="filter-chips" role="group" aria-labelledby="filter-label-pub">
+            <button class="chip" aria-pressed="true">Todas</button>
+            <button class="chip" aria-pressed="false">Artículos</button>
+            <button class="chip" aria-pressed="false">Ponencias</button>
+            <button class="chip" aria-pressed="false">Capítulos</button>
+            <button class="chip" aria-pressed="false">Memorias</button>
+          </div>
+        </div>
+
+        <!-- Estado vacío -->
+        <div class="empty-state" role="status" aria-live="polite">
+          <div class="empty-state__icon" aria-hidden="true">
+            <!-- Icono: documento con lupa -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586
+                       a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2
+                       2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h2 class="empty-state__title">Biblioteca en construcción</h2>
+          <p class="empty-state__msg">
+            Aquí verás <strong>todas las publicaciones científicas del Semillero LOCXUE</strong>
+            cuando estén disponibles — artículos, ponencias, capítulos de libro y memorias
+            de eventos que acrediten explícitamente nuestra labor investigativa.
+          </p>
+          <span class="empty-state__pill" aria-label="Contenido próximamente disponible">
+            Próximamente disponible
+          </span>
+        </div>
+
+        <!-- Criterio de inclusión -->
+        <div class="criteria-box" role="note" aria-label="Criterio de inclusión de publicaciones">
+          <h3 class="criteria-box__title">¿Qué publicaciones aparecerán aquí?</h3>
+          <p>
+            Solo se incluyen trabajos que acrediten explícitamente al Semillero LOCXUE
+            mediante afiliación institucional, mención en agradecimientos, memorias de
+            eventos SIUDEC / RedCOLSI u otros documentos institucionales. La sola
+            pertenencia de un autor al semillero no es suficiente.
+          </p>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════
+           PANEL 2 · PRODUCTOS DE INVESTIGACIÓN
+      ════════════════════════════════════════════════════════════ -->
+      <section id="panel-prod" role="tabpanel" aria-labelledby="tab-prod" aria-hidden="true" class="tab-panel">
+
+        <div class="filter-bar" aria-label="Filtrar productos">
+          <span class="filter-bar__label" id="filter-label-prod">Filtrar por tipo:</span>
+          <div class="filter-chips" role="group" aria-labelledby="filter-label-prod">
+            <button class="chip" aria-pressed="true">Todos</button>
+            <button class="chip" aria-pressed="false">Software</button>
+            <button class="chip" aria-pressed="false">Prototipos</button>
+            <button class="chip" aria-pressed="false">Documentación</button>
+            <button class="chip" aria-pressed="false">Material educativo</button>
+          </div>
+        </div>
+
+        <div class="empty-state" role="status" aria-live="polite">
+          <div class="empty-state__icon" aria-hidden="true">
+            <!-- Icono: código / software -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h2 class="empty-state__title">Portafolio en construcción</h2>
+          <p class="empty-state__msg">
+            Aquí verás <strong>todos los productos de investigación del Semillero LOCXUE</strong>
+            cuando estén disponibles — software, prototipos, aplicaciones, documentación técnica
+            y material educativo desarrollados por nuestros integrantes.
+          </p>
+          <span class="empty-state__pill" aria-label="Contenido próximamente disponible">
+            Próximamente disponible
+          </span>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════
+           PANEL 3 · TRABAJOS DE GRADO
+      ════════════════════════════════════════════════════════════ -->
+      <section id="panel-tg" role="tabpanel" aria-labelledby="tab-tg" aria-hidden="true" class="tab-panel">
+
+        <div class="filter-bar" aria-label="Filtrar trabajos de grado">
+          <span class="filter-bar__label" id="filter-label-tg">Filtrar por año:</span>
+          <div class="filter-chips" role="group" aria-labelledby="filter-label-tg">
+            <button class="chip" aria-pressed="true">Todos</button>
+            <button class="chip" aria-pressed="false">2024 – 2026</button>
+            <button class="chip" aria-pressed="false">2020 – 2023</button>
+            <button class="chip" aria-pressed="false">Anteriores</button>
+          </div>
+        </div>
+
+        <div class="empty-state" role="status" aria-live="polite">
+          <div class="empty-state__icon" aria-hidden="true">
+            <!-- Icono: birrete de graduación -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083
+                       12.083 0 01.665 6.479A11.952 11.952 0 0012
+                       20.055a11.952 11.952 0 00-6.824-2.998 12.078
+                       12.078 0 01.665-6.479L12 14z" />
+            </svg>
+          </div>
+          <h2 class="empty-state__title">Registro de trabajos de grado</h2>
+          <p class="empty-state__msg">
+            Aquí verás <strong>todos los trabajos de grado vinculados al Semillero LOCXUE</strong>
+            cuando estén disponibles. Solo se incluyen tesis y proyectos que acrediten
+            explícitamente al semillero como parte del proceso investigativo.
+          </p>
+          <span class="empty-state__pill" aria-label="Contenido próximamente disponible">
+            Próximamente disponible
+          </span>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════
+           FUENTES RECOMENDADAS (siempre visible)
+      ════════════════════════════════════════════════════════════ -->
+      <aside class="sources-section" aria-labelledby="sources-title">
+        <div class="sources-section__inner">
+          <p class="sources-section__eyebrow">Repositorios & bases de datos</p>
+          <h2 id="sources-title">¿Dónde encontrar nuestras publicaciones?</h2>
+          <p>
+            Mientras consolidamos el catálogo interno, puedes consultar la producción académica
+            de LOCXUE directamente en las siguientes fuentes oficiales:
+          </p>
+          <div class="sources-grid" role="list">
+            <div class="source-item" role="listitem">
+              <div class="source-item__num" aria-hidden="true">1</div>
+              <div>
+                <p class="source-item__text">
+                  <strong>Repositorio Institucional</strong> — Universidad de Cundinamarca
+                </p>
+              </div>
+            </div>
+            <div class="source-item" role="listitem">
+              <div class="source-item__num" aria-hidden="true">2</div>
+              <div>
+                <p class="source-item__text">
+                  <strong>CvLAC</strong> — Perfiles de autores vinculados al semillero
+                </p>
+              </div>
+            </div>
+            <div class="source-item" role="listitem">
+              <div class="source-item__num" aria-hidden="true">3</div>
+              <div>
+                <p class="source-item__text">
+                  <strong>GrupLAC — Ingenium Suta</strong> — Grupo de investigación vinculado
+                </p>
+                <a class="source-item__link"
+                  href="https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000003420"
+                  target="_blank" rel="noopener noreferrer"
+                  aria-label="Ver GrupLAC Ingenium Suta en MinCiencias (abre en nueva pestaña)">
+                  scienti.minciencias.gov.co → Ingenium Suta
+                </a>
+              </div>
+            </div>
+            <div class="source-item" role="listitem">
+              <div class="source-item__num" aria-hidden="true">4</div>
+              <div>
+                <p class="source-item__text">
+                  <strong>Memorias SIUDEC</strong> — Simposio de Investigación UdeC
+                </p>
+              </div>
+            </div>
+            <div class="source-item" role="listitem">
+              <div class="source-item__num" aria-hidden="true">5</div>
+              <div>
+                <p class="source-item__text">
+                  <strong>RedCOLSI</strong> — Encuentros regionales y nacionales
+                </p>
+              </div>
+            </div>
+            <div class="source-item" role="listitem">
+              <div class="source-item__num" aria-hidden="true">6</div>
+              <div>
+                <p class="source-item__text">
+                  <strong>Google Scholar</strong> — Búsqueda académica abierta
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div><!-- /.pub-main -->
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__container">
+      <div class="footer__brand">
+        <img src="../../web/assets/img/logo-locxue.png" alt="Logo LOCXUE" width="100" height="32">
+        <p>Semillero de Investigación LOCXUE — Universidad de Cundinamarca.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Secciones del sitio">
+        <ul>
+          <li><a href="../../web/index.html#nosotros">Nosotros</a></li>
+          <li><a href="../../web/index.html#proyectos">Proyectos</a></li>
+          <li><a href="publicaciones.html">Publicaciones</a></li>
+          <li><a href="../../web/index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <p class="footer__credits">© 2026 Semillero LOCXUE — Universidad de Cundinamarca. Licencia MIT.</p>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPT (tab switching + mobile nav) ───────────────────────── -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── MOBILE NAV ── */
+      var toggle = document.getElementById('nav-toggle');
+      var menu = document.getElementById('nav-menu');
+      if (toggle && menu) {
+        function setOpen(open) {
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+          menu.classList.toggle('nav__menu--open', open);
+        }
+        toggle.addEventListener('click', function () {
+          setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+        });
+        menu.querySelectorAll('a').forEach(function (l) {
+          l.addEventListener('click', function () { setOpen(false); });
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+            setOpen(false); toggle.focus();
+          }
+        });
+      }
+
+      /* ── TABS ── */
+      var tabBtns = document.querySelectorAll('[role="tab"]');
+      var tabPanels = document.querySelectorAll('[role="tabpanel"]');
+
+      tabBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var targetId = btn.getAttribute('aria-controls');
+          tabBtns.forEach(function (b) {
+            b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+          });
+          tabPanels.forEach(function (panel) {
+            panel.setAttribute('aria-hidden', panel.id === targetId ? 'false' : 'true');
+          });
+        });
+      });
+
+      /* ── CHIPS (UI only, listo para conectar filtros futuros) ── */
+      document.querySelectorAll('.filter-chips').forEach(function (group) {
+        group.querySelectorAll('.chip').forEach(function (chip) {
+          chip.addEventListener('click', function () {
+            group.querySelectorAll('.chip').forEach(function (c) {
+              c.setAttribute('aria-pressed', 'false');
+            });
+            chip.setAttribute('aria-pressed', 'true');
+          });
+        });
+      });
+
+    })();
+  </script>
+</body>
+
+</html>

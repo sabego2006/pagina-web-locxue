@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Identidad Institucional — LOCXUE (vista previa, todo incluido)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Inter", sans-serif; }
+/* ============================================================
+   SECCIÓN: Identidad Institucional
+   Semillero de Investigación LOCXUE — Universidad de Cundinamarca
+   ============================================================
+   Notas de integración:
+   - Estilos completamente encapsulados bajo el bloque BEM ".identidad"
+     para no colisionar con otras secciones del sitio.
+   - Las variables --locxue-* están namespaced; si el proyecto ya
+     define un archivo global de tokens (p. ej. tokens.css), estas
+     declaraciones locales pueden eliminarse y heredar las globales
+     sin tocar ninguna otra regla de este archivo.
+   - Fuentes tipográficas: cargar globalmente en el <head> del sitio,
+     por ejemplo:
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+     Se incluye un fallback de sistema por si aún no están cargadas.
+   ============================================================ */
+
+.identidad {
+  /* --- Tokens de marca (obligatorios, manual de identidad) --- */
+  --locxue-azul: #1A2B4C;
+  --locxue-azul-suave: #26375c;
+  --locxue-morado: #3A236E;
+  --locxue-morado-hover: #4d2f8f;
+  --locxue-bg: #FFFFFF;
+  --locxue-bg-alt: #F4F6F9;
+  --locxue-texto-claro: #f4f6f9;
+  --locxue-borde: #e2e6ee;
+
+  --locxue-font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --locxue-font-body: "Inter", "Roboto", Helvetica, Arial, sans-serif;
+
+  --locxue-radio: 4px;
+  --locxue-sombra: 0 24px 48px -24px rgba(26, 43, 76, 0.35);
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--locxue-bg);
+  color: var(--locxue-azul);
+  font-family: var(--locxue-font-body);
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+/* ---------------------------------------------------------
+   Marca de agua lateral (firma visual del semillero)
+--------------------------------------------------------- */
+.identidad__watermark {
+  position: absolute;
+  top: 50%;
+  right: clamp(0.5rem, 2vw, 1.75rem);
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: 0.12em;
+  color: var(--locxue-bg-alt);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.identidad__container {
+  position: relative;
+  z-index: 1;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* ---------------------------------------------------------
+   Encabezado + tarjeta de datos generales (superposición)
+--------------------------------------------------------- */
+.identidad__intro {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: start;
+  column-gap: 2.5rem;
+  padding-bottom: clamp(3rem, 8vw, 5.5rem);
+}
+
+.identidad__intro-text {
+  max-width: 36rem;
+}
+
+.identidad__eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--locxue-morado);
+}
+
+.identidad__titulo {
+  margin: 0 0 1.25rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  line-height: 1.1;
+  color: var(--locxue-azul);
+}
+
+.identidad__lead {
+  margin: 0 0 1.75rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--locxue-azul-suave);
+}
+
+.identidad__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--locxue-radio);
+  background: var(--locxue-morado);
+  color: var(--locxue-texto-claro);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.identidad__cta-icon {
+  transition: transform 0.2s ease;
+}
+
+.identidad__cta:hover,
+.identidad__cta:focus-visible {
+  background: var(--locxue-morado-hover);
+  transform: translateX(2px);
+}
+
+.identidad__cta:hover .identidad__cta-icon,
+.identidad__cta:focus-visible .identidad__cta-icon {
+  transform: translateX(3px);
+}
+
+.identidad__cta:focus-visible {
+  outline: 3px solid var(--locxue-morado);
+  outline-offset: 3px;
+}
+
+/* Chips de tono de voz institucional */
+.identidad__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.identidad__tag {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--locxue-borde);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--locxue-azul-suave);
+  background: var(--locxue-bg-alt);
+}
+
+/* Tarjeta de datos generales: superpuesta con profundidad (z-index) */
+.identidad__facts {
+  position: relative;
+  z-index: 2;
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: var(--locxue-azul);
+  color: var(--locxue-texto-claro);
+  border-radius: var(--locxue-radio);
+  box-shadow: var(--locxue-sombra);
+}
+
+.identidad__facts-logo {
+  margin-bottom: 1.25rem;
+}
+
+.identidad__facts-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 2px solid var(--locxue-texto-claro);
+  border-radius: 50%;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.identidad__facts-list {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.identidad__fact {
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(244, 246, 249, 0.18);
+}
+
+.identidad__fact:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.identidad__fact dt {
+  margin: 0 0 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(244, 246, 249, 0.65);
+}
+
+.identidad__fact dd {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------
+   Encabezados reutilizables de bloque (Misión/Visión, Objetivos, Valores)
+--------------------------------------------------------- */
+.identidad__card-eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--locxue-morado);
+}
+
+.identidad__card-titulo {
+  margin: 0;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--locxue-azul);
+}
+
+/* ---------------------------------------------------------
+   Estructura del semillero (roles)
+--------------------------------------------------------- */
+.identidad__estructura {
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--locxue-borde);
+}
+
+.identidad__estructura-header {
+  margin-bottom: 1.5rem;
+}
+
+.identidad__roles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.identidad__rol {
+  position: relative;
+  padding-top: 0.25rem;
+}
+
+.identidad__rol-numero {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--locxue-borde);
+}
+
+.identidad__rol-titulo {
+  margin: 0 0 0.5rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--locxue-azul);
+}
+
+.identidad__rol-texto {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--locxue-azul-suave);
+}
+
+.identidad__rol:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -0.9rem;
+  bottom: 0;
+  width: 1px;
+  background: var(--locxue-borde);
+}
+
+/* ---------------------------------------------------------
+   Líneas de investigación institucionales
+--------------------------------------------------------- */
+.identidad__lineas {
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--locxue-borde);
+}
+
+.identidad__lineas-header {
+  margin-bottom: 1.5rem;
+}
+
+.identidad__lineas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.identidad__linea {
+  padding: 1.75rem;
+  border-radius: var(--locxue-radio);
+  background: var(--locxue-bg);
+  border: 1px solid var(--locxue-borde);
+  border-top: 3px solid var(--locxue-azul);
+}
+
+.identidad__linea-titulo {
+  margin: 0 0 0.75rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--locxue-azul);
+}
+
+.identidad__linea-texto {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--locxue-azul-suave);
+}
+
+/* ---------------------------------------------------------
+   Misión y Visión
+--------------------------------------------------------- */
+.identidad__mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--locxue-borde);
+}
+
+.identidad__card {
+  padding: 2rem;
+  background: var(--locxue-bg-alt);
+  border-radius: var(--locxue-radio);
+  border-left: 3px solid var(--locxue-morado);
+}
+
+.identidad__card .identidad__card-titulo {
+  margin: 0.35rem 0 1rem;
+}
+
+.identidad__card-texto {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--locxue-azul-suave);
+}
+
+/* ---------------------------------------------------------
+   Objetivos
+--------------------------------------------------------- */
+.identidad__objetivos {
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--locxue-borde);
+}
+
+.identidad__objetivos-header {
+  margin-bottom: 1.25rem;
+}
+
+.identidad__objetivo-general {
+  max-width: 52rem;
+  margin: 0 0 1.75rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--locxue-azul-suave);
+}
+
+.identidad__objetivo-lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem 1.75rem;
+}
+
+.identidad__objetivo-item {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--locxue-azul-suave);
+}
+
+.identidad__objetivo-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 1px;
+  background: var(--locxue-morado);
+  transform: rotate(45deg);
+}
+
+/* ---------------------------------------------------------
+   Valores
+--------------------------------------------------------- */
+.identidad__valores {
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--locxue-borde);
+}
+
+.identidad__valores-header {
+  margin-bottom: 1.5rem;
+}
+
+.identidad__valores-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.identidad__valor {
+  padding: 1.75rem 1.5rem;
+  background: var(--locxue-bg);
+  border: 1px solid var(--locxue-borde);
+  border-radius: var(--locxue-radio);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.identidad__valor:hover,
+.identidad__valor:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--locxue-morado);
+  box-shadow: 0 16px 32px -20px rgba(58, 35, 110, 0.45);
+}
+
+.identidad__valor-icon {
+  display: inline-flex;
+  color: var(--locxue-morado);
+  margin-bottom: 0.85rem;
+}
+
+.identidad__valor-titulo {
+  margin: 0 0 0.5rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--locxue-azul);
+}
+
+.identidad__valor-texto {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--locxue-azul-suave);
+}
+
+/* ---------------------------------------------------------
+   Propuesta de valor (cita destacada)
+--------------------------------------------------------- */
+.identidad__propuesta {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  background: var(--locxue-azul);
+  border-radius: var(--locxue-radio);
+  position: relative;
+}
+
+.identidad__propuesta::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.5rem;
+  left: 1.5rem;
+  font-family: var(--locxue-font-display);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--locxue-morado);
+  opacity: 0.85;
+}
+
+.identidad__propuesta-texto {
+  margin: 0;
+  max-width: 48rem;
+  font-family: var(--locxue-font-display);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  line-height: 1.55;
+  color: var(--locxue-texto-claro);
+}
+
+/* ---------------------------------------------------------
+   Animaciones de aparición (mejora progresiva vía JS)
+   Estado por defecto: totalmente visible sin JS.
+--------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .identidad[data-js-ready] .identidad__reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .identidad[data-js-ready] .identidad__reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   Responsive: tablet
+--------------------------------------------------------- */
+@media (max-width: 960px) {
+  .identidad__intro {
+    grid-template-columns: 1fr;
+  }
+
+  .identidad__facts {
+    margin-top: 0;
+  }
+
+  .identidad__valores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .identidad__objetivo-lista {
+    grid-template-columns: 1fr;
+  }
+
+  .identidad__roles {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .identidad__rol:not(:last-child)::after {
+    display: none;
+  }
+
+  .identidad__lineas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .identidad__watermark {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+}
+
+/* ---------------------------------------------------------
+   Responsive: móvil
+--------------------------------------------------------- */
+@media (max-width: 560px) {
+  .identidad {
+    padding-block: 3rem;
+  }
+
+  .identidad__watermark {
+    display: none; /* evita interferir con la lectura en pantallas pequeñas */
+  }
+
+  .identidad__mv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .identidad__valores-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .identidad__card,
+  .identidad__facts {
+    padding: 1.5rem;
+  }
+}
+
+</style>
+</head>
+<body>
+<!--
+  ============================================================
+  SECCIÓN: Identidad Institucional
+  Semillero de Investigación LOCXUE — Universidad de Cundinamarca
+  ============================================================
+  Integración:
+  - Este fragmento es independiente y modular. NO incluye <head>,
+    <html> ni <body>: se inserta directamente donde corresponda
+    dentro de web/index.html.
+  - Requiere: assets/css/identidad-institucional.css
+              assets/js/identidad-institucional.js (opcional, mejora progresiva)
+  - Requiere que en el <head> global del sitio se carguen las
+    fuentes tipográficas institucionales (ver comentario en el CSS).
+  - No modifica ni depende de otras secciones del sitio.
+  ============================================================
+-->
+<section id="identidad" class="identidad" aria-labelledby="identidad__titulo">
+
+  <!-- Marca de agua lateral (elemento de marca, decorativo) -->
+  <span class="identidad__watermark" aria-hidden="true">LOCXUE</span>
+
+  <div class="identidad__container">
+
+    <!-- ============ Encabezado + tarjeta de datos rápidos ============ -->
+    <header class="identidad__intro">
+      <div class="identidad__intro-text">
+        <p class="identidad__eyebrow">Semillero de Investigación · Universidad de Cundinamarca</p>
+        <h2 id="identidad__titulo" class="identidad__titulo">Identidad Institucional</h2>
+        <p class="identidad__lead">
+          Locxue es el semillero de investigación del programa de Ingeniería de Sistemas
+          y Computación de la Universidad de Cundinamarca, sede Fusagasugá. Con una
+          trayectoria que se remonta a 2013, hoy se proyecta como el núcleo investigativo
+          que impulsa la adopción de la Inteligencia Artificial dentro de la comunidad
+          universitaria.
+        </p>
+        <a class="identidad__cta" href="#proyectos">
+          Conoce nuestros proyectos
+          <svg class="identidad__cta-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+            <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <ul class="identidad__tags" aria-label="Nuestra forma de comunicarnos">
+          <li class="identidad__tag">Cercanos y rigurosos</li>
+          <li class="identidad__tag">Aspiracionales</li>
+          <li class="identidad__tag">Colaborativos</li>
+          <li class="identidad__tag">Territoriales</li>
+        </ul>
+      </div>
+
+      <!-- Tarjeta "Datos generales": superpuesta sobre el bloque de intro (profundidad visual) -->
+      <aside class="identidad__facts" aria-label="Datos generales del semillero">
+        <div class="identidad__facts-logo" aria-hidden="true">
+          <!--
+            Logotipo institucional: cargar siempre en formato .svg.
+            Placeholder temporal (monograma) hasta disponer del archivo
+            oficial en web/assets/img/logo-locxue.svg
+          -->
+          <span class="identidad__facts-logo-mark">L</span>
+        </div>
+        <dl class="identidad__facts-list">
+          <div class="identidad__fact">
+            <dt>Institución</dt>
+            <dd>Universidad de Cundinamarca</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Facultad</dt>
+            <dd>Facultad de Ingeniería</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Programa</dt>
+            <dd>Ingeniería de Sistemas y Computación</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Sede</dt>
+            <dd>Fusagasugá, Cundinamarca</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Grupo de investigación</dt>
+            <dd>INGENIUM SUTA</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Adscripción</dt>
+            <dd>Banco de Semilleros de Investigación UDEC</dd>
+          </div>
+          <div class="identidad__fact">
+            <dt>Trayectoria</dt>
+            <dd>Desde 2013</dd>
+          </div>
+        </dl>
+      </aside>
+    </header>
+
+    <!-- ============ Estructura del semillero ============ -->
+    <div class="identidad__estructura">
+      <div class="identidad__estructura-header">
+        <p class="identidad__card-eyebrow">Cómo estamos organizados</p>
+        <h3 class="identidad__card-titulo">Estructura del semillero</h3>
+      </div>
+
+      <ol class="identidad__roles">
+        <li class="identidad__rol">
+          <span class="identidad__rol-numero" aria-hidden="true">01</span>
+          <h4 class="identidad__rol-titulo">Docente Líder</h4>
+          <p class="identidad__rol-texto">
+            Coordina y supervisa formalmente la calidad científica de las
+            actividades investigativas del grupo.
+          </p>
+        </li>
+        <li class="identidad__rol">
+          <span class="identidad__rol-numero" aria-hidden="true">02</span>
+          <h4 class="identidad__rol-titulo">Estudiante Coordinador</h4>
+          <p class="identidad__rol-texto">
+            Gestiona la planeación operativa interna del semillero y hace de
+            enlace con la institución.
+          </p>
+        </li>
+        <li class="identidad__rol">
+          <span class="identidad__rol-numero" aria-hidden="true">03</span>
+          <h4 class="identidad__rol-titulo">Miembros</h4>
+          <p class="identidad__rol-texto">
+            Estudiantes que desarrollan sus competencias investigativas y
+            participan activamente en cada proyecto del semillero.
+          </p>
+        </li>
+      </ol>
+    </div>
+
+    <!-- ============ Misión y Visión ============ -->
+    <div class="identidad__mv-grid">
+      <article class="identidad__card identidad__card--mision">
+        <p class="identidad__card-eyebrow">Misión</p>
+        <h3 class="identidad__card-titulo">Nuestro propósito</h3>
+        <p class="identidad__card-texto">
+          Ser el núcleo investigativo que impulsa la adopción de la Inteligencia
+          Artificial en la Universidad de Cundinamarca, a través del aprendizaje
+          experimental, la participación en proyectos de investigación y la
+          divulgación del conocimiento, generando un ambiente de confianza y una
+          mentalidad de crecimiento entre sus integrantes.
+        </p>
+      </article>
+
+      <article class="identidad__card identidad__card--vision">
+        <p class="identidad__card-eyebrow">Visión</p>
+        <h3 class="identidad__card-titulo">Hacia dónde vamos</h3>
+        <p class="identidad__card-texto">
+          Consolidarnos como referentes en el campo de la Inteligencia Artificial
+          dentro de la Universidad de Cundinamarca, mediante el aprendizaje
+          experimental, la participación activa en proyectos de investigación y la
+          divulgación del conocimiento, en un ambiente de confianza y mentalidad
+          de crecimiento constante.
+        </p>
+      </article>
+    </div>
+
+    <!-- ============ Líneas de investigación institucionales ============ -->
+    <div class="identidad__lineas">
+      <div class="identidad__lineas-header">
+        <p class="identidad__card-eyebrow">Marco institucional</p>
+        <h3 class="identidad__card-titulo">Líneas de investigación</h3>
+      </div>
+
+      <div class="identidad__lineas-grid">
+        <article class="identidad__linea">
+          <h4 class="identidad__linea-titulo">
+            Aprendizaje, conocimiento, tecnologías, comunicación y digitalización
+          </h4>
+          <p class="identidad__linea-texto">
+            Línea translocal en la que se enmarca la apuesta del semillero por
+            la Inteligencia Artificial, los agentes cognitivos y las nuevas
+            formas de generar y transferir conocimiento.
+          </p>
+        </article>
+        <article class="identidad__linea">
+          <h4 class="identidad__linea-titulo">
+            Gestión, emprendimiento, organizaciones sociales del conocimiento y aprendizaje
+          </h4>
+          <p class="identidad__linea-texto">
+            Línea translocal orientada a la gestión y apropiación social del
+            conocimiento generado por el semillero dentro y fuera de la
+            universidad.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <!-- ============ Objetivos ============ -->
+    <div class="identidad__objetivos">
+      <div class="identidad__objetivos-header">
+        <p class="identidad__card-eyebrow">Objetivos</p>
+        <h3 class="identidad__card-titulo">Qué buscamos lograr</h3>
+      </div>
+
+      <p class="identidad__objetivo-general">
+        Impulsar la adopción de la Inteligencia Artificial en la comunidad académica
+        de la Universidad de Cundinamarca mediante la formación investigativa de sus
+        integrantes, el desarrollo de proyectos aplicados y la divulgación científica,
+        contribuyendo a la formación integral de los estudiantes y al fortalecimiento
+        de la cultura investigativa institucional.
+      </p>
+
+      <ul class="identidad__objetivo-lista">
+        <li class="identidad__objetivo-item">
+          Participar en proyectos de investigación formales que generen soluciones de
+          base tecnológica en Inteligencia Artificial con impacto social y territorial.
+        </li>
+        <li class="identidad__objetivo-item">
+          Canalizar los resultados de la investigación aplicada hacia opciones de
+          grado exitosas y publicaciones científicas indexadas.
+        </li>
+        <li class="identidad__objetivo-item">
+          Co-crear proyectos colaborativos con otros semilleros del país y de
+          distintas facultades de la Universidad de Cundinamarca.
+        </li>
+        <li class="identidad__objetivo-item">
+          Liderar, organizar y participar en congresos científicos y convocatorias
+          de financiamiento de proyectos de investigación.
+        </li>
+        <li class="identidad__objetivo-item">
+          Formar a los estudiantes semilleristas en metodología científica, bases
+          indexadas y gestores de referencia bibliográfica.
+        </li>
+        <li class="identidad__objetivo-item">
+          Fortalecer la identidad institucional del semillero mediante su imagen
+          corporativa, presencia web y estrategia de redes sociales.
+        </li>
+      </ul>
+    </div>
+
+    <!-- ============ Valores ============ -->
+    <div class="identidad__valores">
+      <div class="identidad__valores-header">
+        <p class="identidad__card-eyebrow">Valores</p>
+        <h3 class="identidad__card-titulo">Lo que nos define</h3>
+      </div>
+
+      <ul class="identidad__valores-grid">
+        <li class="identidad__valor">
+          <span class="identidad__valor-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2l2.6 6.6L22 9l-5.4 4.6L18 22l-6-4-6 4 1.4-8.4L2 9l7.4-.4L12 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <h4 class="identidad__valor-titulo">Confianza y crecimiento</h4>
+          <p class="identidad__valor-texto">Un ambiente donde cada semillerista puede experimentar, equivocarse y aprender.</p>
+        </li>
+        <li class="identidad__valor">
+          <span class="identidad__valor-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h4 class="identidad__valor-titulo">Pensamiento crítico</h4>
+          <p class="identidad__valor-texto">Cultura investigativa que cuestiona, analiza y busca evidencia antes de concluir.</p>
+        </li>
+        <li class="identidad__valor">
+          <span class="identidad__valor-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 12a4 4 0 100-8 4 4 0 000 8zM3 21c0-3.3 2.7-6 5-6s5 2.7 5 6M16 12a3 3 0 100-6 3 3 0 000 6zM14 21c.2-2.6 1.9-4.6 4-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h4 class="identidad__valor-titulo">Trabajo colaborativo</h4>
+          <p class="identidad__valor-texto">Compromiso y responsabilidad compartidos entre docentes y estudiantes.</p>
+        </li>
+        <li class="identidad__valor">
+          <span class="identidad__valor-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 19h16M6 19V9l4-3 4 3v10M14 19v-6h4v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <h4 class="identidad__valor-titulo">Apropiación social</h4>
+          <p class="identidad__valor-texto">Transferencia del conocimiento generado hacia la comunidad universitaria y su territorio.</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ============ Propuesta de valor ============ -->
+    <div class="identidad__propuesta">
+      <p class="identidad__propuesta-texto">
+        Ofrecemos a los estudiantes un espacio de formación investigativa práctica en
+        Inteligencia Artificial y agentes cognitivos, con acompañamiento docente,
+        participación en redes académicas nacionales como RedCOLSI, y la posibilidad
+        de transformar proyectos formativos en opciones de grado y publicaciones
+        científicas.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/**
+ * Sección: Identidad Institucional — Semillero LOCXUE
+ * Mejora progresiva: animación discreta de aparición al hacer scroll.
+ *
+ * - Si este script no se carga, la sección se ve y funciona igual,
+ *   solo sin la animación (ver CSS: estado visible por defecto).
+ * - Respeta prefers-reduced-motion (delegado también al CSS).
+ * - No depende de ninguna otra sección ni modifica el DOM fuera
+ *   de "#identidad".
+ */
+(function () {
+  "use strict";
+
+  var section = document.getElementById("identidad");
+  if (!section) return;
+
+  var prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    return;
+  }
+
+  // Marca la sección como lista para animar (activa las reglas CSS
+  // que ocultan los elementos .identidad__reveal antes de aparecer).
+  section.setAttribute("data-js-ready", "");
+
+  var revealTargets = section.querySelectorAll(
+    ".identidad__card, .identidad__valor, .identidad__facts, .identidad__propuesta, .identidad__rol, .identidad__linea"
+  );
+
+  revealTargets.forEach(function (el) {
+    el.classList.add("identidad__reveal");
+  });
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  revealTargets.forEach(function (el) {
+    observer.observe(el);
+  });
+})();
+
+</script>
+</body>
+</html>
