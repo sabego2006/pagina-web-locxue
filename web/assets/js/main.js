@@ -173,10 +173,40 @@
     observer.observe(statsContainer);
   }
 
+  function initScrollSpy() {
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const navLinks = document.querySelectorAll('.nav__menu a[href^="#"]');
+    if (!sections.length || !navLinks.length) return;
+
+    function onScroll() {
+      const scrollPos = window.scrollY + getHeaderHeight() + 80;
+
+      sections.forEach((section) => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+
+        if (scrollPos >= top && scrollPos < top + height) {
+          navLinks.forEach((link) => {
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('is-active', 'nav__link--active');
+            } else {
+              link.classList.remove('is-active', 'nav__link--active');
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initLog();
     initMobileNav();
     initSmoothScroll();
+    initScrollSpy();
     initFadeIn();
     initEventFilters();
     initStatsCounter();
