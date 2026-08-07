@@ -366,15 +366,18 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
-   5. Header / Navegación
+   5. Header / Navegación (Barra Superior Institucional)
    -------------------------------------------------------------------------- */
 .header {
   position: sticky;
   inset-block-start: 0;
-  background-color: var(--color-primary);
+  background-color: rgba(26, 43, 76, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: var(--color-text-inverse);
-  z-index: 50;
-  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(26, 43, 76, 0.25);
 }
 
 .nav {
@@ -385,13 +388,37 @@ ul {
   gap: var(--space-2);
   max-width: var(--container-max);
   margin-inline: auto;
-  padding: var(--space-2) var(--space-3);
+  padding: 0.75rem var(--space-3);
   min-height: var(--header-height);
 }
 
-.nav__logo img {
-  height: 40px;
-  width: auto;
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.nav__logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav__logo-icon {
+  width: 28px;
+  height: 28px;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.nav__logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
 }
 
 .nav__toggle {
@@ -412,6 +439,7 @@ ul {
   height: 3px;
   background-color: var(--color-text-inverse);
   border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .nav__menu {
@@ -420,23 +448,55 @@ ul {
   gap: var(--space-2);
   width: 100%;
   padding-block: var(--space-2);
+  list-style: none;
+  margin: 0;
 }
 
 .nav__menu--open {
   display: flex;
 }
 
-.nav__menu a {
-  display: block;
-  padding: var(--space-1) 0;
-  color: var(--color-text-inverse);
+.nav__menu a,
+.nav__link {
+  display: inline-block;
+  position: relative;
+  padding: 0.5rem 0.25rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   font-weight: 500;
-  transition: color var(--transition-base);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .nav__menu a:hover,
-.nav__menu a:focus-visible {
-  color: var(--color-secondary);
+.nav__link:hover,
+.nav__menu a:focus-visible,
+.nav__link:focus-visible {
+  color: #FFFFFF;
+}
+
+/* Indicador Activo (Subrayado inferior exacto como en la foto) */
+.nav__link.is-active,
+.nav__link--active,
+.nav__menu a.is-active,
+.nav__menu a.nav__link--active {
+  color: #FFFFFF !important;
+  font-weight: 600;
+}
+
+.nav__link.is-active::after,
+.nav__link--active::after,
+.nav__menu a.is-active::after,
+.nav__menu a.nav__link--active::after {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
 }
 
 /* --------------------------------------------------------------------------
