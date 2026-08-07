@@ -1,40 +1,38 @@
 /* ==========================================================================
    MÓDULO: Equipo de Investigación (contenido/02-equipo/equipo.css)
    Semillero de Investigación LOCXUE — Universidad de Cundinamarca
-   Tokens autoritativos:
-   - Color primario: #1A2B4C (azul marino corporativo)
-   - Color secundario: #3A236E (violeta institucional)
-   - Fondos: #FFFFFF / #F4F6F9
-   - Tipografía: 'Playfair Display' (titulares), 'Inter' (cuerpo)
+   Estilo Hero Oscuro (acorde con Publicaciones / Portafolio)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   Sección Principal de Equipo
+   Sección Principal de Equipo (Fondo Oscuro Elegante)
    -------------------------------------------------------------------------- */
 .equipo {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(3rem, 5vw, 5rem);
-  background-color: #FFFFFF;
-  color: #1A2B4C;
+  padding-block: clamp(4rem, 6vw, 6rem);
+  background: linear-gradient(135deg, #11192E 0%, #17233D 50%, #251745 100%);
+  color: #FFFFFF;
 }
 
 .equipo__container {
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .equipo__watermark {
   position: absolute;
   inset-block: 0;
-  inset-inline-end: 1rem;
+  inset-inline-end: 2rem;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(3rem, 8vw, 7rem);
-  color: rgba(58, 35, 110, 0.05);
-  letter-spacing: 0.3em;
+  font-size: clamp(4rem, 10vw, 8.5rem);
+  color: rgba(255, 255, 255, 0.04);
+  letter-spacing: 0.35em;
   pointer-events: none;
   user-select: none;
   z-index: 0;
@@ -44,47 +42,56 @@
    Encabezados y Subsecciones
    -------------------------------------------------------------------------- */
 .equipo__header {
-  margin-bottom: 3rem;
-  max-width: 750px;
+  margin-bottom: 3.5rem;
+  max-width: 780px;
 }
 
 .equipo__eyebrow {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #3A236E;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.12em;
+  color: #A5B4FC;
+  margin-bottom: 0.75rem;
+}
+
+.equipo__eyebrow::before {
+  content: '—';
+  color: #818CF8;
+  font-weight: 700;
 }
 
 .equipo__titulo {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #1A2B4C;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
 }
 
 .equipo__lead {
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
-  line-height: 1.6;
-  color: #5A6478;
+  line-height: 1.7;
+  color: #CBD5E1;
 }
 
 .equipo__subseccion {
-  margin-top: 3.5rem;
+  margin-top: 4rem;
 }
 
 .equipo__subseccion-titulo {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(1.5rem, 2.5vw, 2rem);
-  color: #1A2B4C;
+  color: #FFFFFF;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #3A236E;
+  border-bottom: 2px solid #818CF8;
   display: inline-block;
 }
 
@@ -127,16 +134,17 @@
   align-items: center;
   gap: 2rem;
   padding: 2.5rem;
-  background-color: #F4F6F9;
-  border: 2px solid #3A236E;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(26, 43, 76, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   transition: transform 300ms ease, box-shadow 300ms ease;
+  color: #1A2B4C;
 }
 
 .equipo__lider-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(58, 35, 110, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 }
 
 @media (min-width: 768px) {
@@ -207,7 +215,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Grid de 17 Integrantes
+   Grid de Integrantes
    -------------------------------------------------------------------------- */
 .equipo__integrantes-grid {
   display: grid;
@@ -245,13 +253,14 @@
   background-color: #FFFFFF;
   border: 1px solid #E2E6EE;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(26, 43, 76, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+  color: #1A2B4C;
 }
 
 .equipo__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(58, 35, 110, 0.12);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   border-color: #3A236E;
 }
 
