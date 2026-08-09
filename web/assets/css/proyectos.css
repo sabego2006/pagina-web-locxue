@@ -1,0 +1,539 @@
+/* ============================================================
+   SECCIÓN: Proyectos Desarrollados — Semillero LOCXUE
+   ============================================================ */
+
+.locxue-proyectos {
+  /* --- Paleta institucional --- */
+  --lx-color-primary: #1A2B4C;   /* azul marino institucional */
+  --lx-color-secondary: #3A236E; /* morado institucional */
+  --lx-color-bg: #FFFFFF;
+  --lx-color-bg-alt: #F4F6F9;
+
+  --lx-color-primary-10: rgba(26, 43, 76, 0.08);
+  --lx-color-secondary-10: rgba(58, 35, 110, 0.08);
+  --lx-color-secondary-30: rgba(58, 35, 110, 0.3);
+
+  /* --- Tipografía --- */
+  --lx-font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --lx-font-body: "Inter", "Roboto", Helvetica, Arial, sans-serif;
+
+  /* --- Layout --- */
+  --lx-radius: 14px;
+  --lx-gap: 1.75rem;
+  --lx-container-max: 1180px;
+  --lx-transition: 220ms ease;
+
+  position: relative;
+  overflow: hidden;
+  background: var(--lx-color-bg-alt);
+  color: var(--lx-color-primary);
+  font-family: var(--lx-font-body);
+  padding-block: clamp(3.5rem, 6vw, 6rem);
+}
+
+/* ---------- Marca de agua lateral ---------- */
+.locxue-proyectos__watermark {
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.35em;
+  font-family: var(--lx-font-display);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  color: var(--lx-color-primary);
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ---------- Contenedor ---------- */
+.locxue-proyectos__container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--lx-container-max);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* ---------- Encabezado ---------- */
+.locxue-proyectos__header {
+  max-width: 46rem;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.locxue-proyectos__eyebrow {
+  margin: 0 0 0.6rem;
+  font-family: var(--lx-font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lx-color-secondary);
+}
+
+.locxue-proyectos__title {
+  margin: 0 0 1rem;
+  font-family: var(--lx-font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  color: var(--lx-color-primary);
+}
+
+.locxue-proyectos__intro {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--lx-color-primary) 82%, black 0%);
+}
+
+/* ---------- Grid de tarjetas ---------- */
+.locxue-proyectos__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--lx-gap);
+  list-style: none;
+  margin: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+  padding: 0;
+}
+
+/* ---------- Tarjeta de proyecto ---------- */
+.proyecto-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--lx-color-bg);
+  border-radius: var(--lx-radius);
+  box-shadow: 0 1px 2px rgba(26, 43, 76, 0.06), 0 10px 24px rgba(26, 43, 76, 0.05);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: lx-card-in 560ms ease forwards;
+  animation-delay: var(--lx-card-delay, 0ms);
+  transition: box-shadow var(--lx-transition), transform var(--lx-transition);
+}
+
+.proyecto-card:hover,
+.proyecto-card:focus-within {
+  box-shadow: 0 4px 10px rgba(26, 43, 76, 0.08), 0 18px 34px rgba(26, 43, 76, 0.1);
+  transform: translateY(-4px);
+}
+
+@keyframes lx-card-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bloque "imagen" con año superpuesto */
+.proyecto-card__media {
+  position: relative;
+  height: 132px;
+  background: linear-gradient(135deg, var(--lx-color-primary), var(--lx-color-secondary));
+  overflow: hidden;
+}
+
+.proyecto-card__media-pattern {
+  position: absolute;
+  inset: -20% -10%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  z-index: 1;
+}
+
+.proyecto-card__year {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 0.9rem;
+  z-index: 2;
+  font-family: var(--lx-font-display);
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: #fff;
+  line-height: 1;
+}
+
+.proyecto-card__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--lx-color-primary);
+  backdrop-filter: blur(2px);
+}
+
+.proyecto-card__badge--finalizado {
+  color: #1b6b46;
+}
+
+.proyecto-card__badge--intercambio {
+  color: var(--lx-color-secondary);
+}
+
+.proyecto-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.4rem 0.5rem;
+}
+
+.proyecto-card__tag {
+  margin: 0 0 0.5rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lx-color-secondary);
+}
+
+.proyecto-card__title {
+  margin: 0 0 0.6rem;
+  font-family: var(--lx-font-display);
+  font-weight: 700;
+  font-size: 1.28rem;
+  line-height: 1.3;
+  color: var(--lx-color-primary);
+}
+
+.proyecto-card__desc {
+  margin: 0 0 1.1rem;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--lx-color-primary) 78%, black 0%);
+}
+
+.proyecto-card__meta {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0 0 0.25rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--lx-color-bg-alt);
+}
+
+.proyecto-card__meta dt {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--lx-color-primary) 55%, transparent);
+  margin: 0 0 0.2rem;
+}
+
+.proyecto-card__meta dd {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--lx-color-primary);
+}
+
+.proyecto-card__footer {
+  padding: 1rem 1.4rem 1.4rem;
+}
+
+.proyecto-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--lx-font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--lx-color-secondary);
+  background: none;
+  border: none;
+  padding: 0.35rem 0;
+  cursor: pointer;
+  transition: gap var(--lx-transition), color var(--lx-transition);
+}
+
+.proyecto-card__link-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--lx-transition);
+}
+
+.proyecto-card__link:hover,
+.proyecto-card__link:focus-visible {
+  color: var(--lx-color-primary);
+  gap: 0.6rem;
+}
+
+.proyecto-card__link:focus-visible {
+  outline: 2px solid var(--lx-color-secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Tarjeta placeholder */
+.proyecto-card--placeholder {
+  background: transparent;
+  box-shadow: none;
+  border: 1.5px dashed var(--lx-color-secondary-30);
+  align-items: center;
+  justify-content: center;
+}
+
+.proyecto-card__body--placeholder {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 2.25rem 1.5rem;
+}
+
+.proyecto-card__placeholder-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--lx-color-secondary);
+  opacity: 0.6;
+  margin-bottom: 0.75rem;
+}
+
+.proyecto-card__title--muted {
+  color: color-mix(in srgb, var(--lx-color-primary) 70%, transparent);
+}
+
+/* ---------- Fuentes consultadas ---------- */
+.locxue-proyectos__sources {
+  border-top: 1px solid var(--lx-color-secondary-10);
+  padding-top: 1.25rem;
+}
+
+.locxue-proyectos__sources summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--lx-color-primary);
+  list-style: none;
+}
+
+.locxue-proyectos__sources summary::-webkit-details-marker {
+  display: none;
+}
+
+.locxue-proyectos__sources summary::before {
+  content: "+ ";
+  color: var(--lx-color-secondary);
+}
+
+.locxue-proyectos__sources[open] summary::before {
+  content: "– ";
+}
+
+.locxue-proyectos__sources ul {
+  margin: 0.9rem 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.locxue-proyectos__sources a {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--lx-color-secondary);
+  text-decoration-color: var(--lx-color-secondary-30);
+}
+
+.locxue-proyectos__sources a:hover,
+.locxue-proyectos__sources a:focus-visible {
+  color: var(--lx-color-primary);
+}
+
+/* ---------- Modal de detalle ---------- */
+.locxue-proyectos__modal[hidden] {
+  display: none;
+}
+
+.locxue-proyectos__modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.locxue-proyectos__modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 43, 76, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.locxue-proyectos__modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(560px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--lx-color-bg);
+  border-radius: var(--lx-radius);
+  padding: 2.25rem 2rem;
+  box-shadow: 0 24px 60px rgba(26, 43, 76, 0.35);
+  animation: lx-modal-in 220ms ease;
+}
+
+@keyframes lx-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.locxue-proyectos__modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--lx-color-bg-alt);
+  color: var(--lx-color-primary);
+  cursor: pointer;
+  transition: background var(--lx-transition);
+}
+
+.locxue-proyectos__modal-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.locxue-proyectos__modal-close:hover,
+.locxue-proyectos__modal-close:focus-visible {
+  background: var(--lx-color-secondary-10);
+  outline: none;
+}
+
+.locxue-proyectos__modal-tag {
+  margin: 0 0 0.5rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lx-color-secondary);
+}
+
+.locxue-proyectos__modal-title {
+  margin: 0 0 0.9rem;
+  font-family: var(--lx-font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--lx-color-primary);
+  padding-right: 2rem;
+}
+
+.locxue-proyectos__modal-desc {
+  margin: 0 0 1.25rem;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--lx-color-primary) 82%, black 0%);
+}
+
+.locxue-proyectos__modal-meta {
+  display: flex;
+  gap: 2rem;
+  margin: 0 0 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--lx-color-bg-alt);
+  border-bottom: 1px solid var(--lx-color-bg-alt);
+}
+
+.locxue-proyectos__modal-meta dt {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--lx-color-primary) 55%, transparent);
+  margin: 0 0 0.2rem;
+}
+
+.locxue-proyectos__modal-meta dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--lx-color-primary);
+}
+
+.locxue-proyectos__modal-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.94rem;
+  color: #fff;
+  background: var(--lx-color-secondary);
+  padding: 0.7rem 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background var(--lx-transition), transform var(--lx-transition);
+}
+
+.locxue-proyectos__modal-source svg {
+  width: 16px;
+  height: 16px;
+}
+
+.locxue-proyectos__modal-source:hover,
+.locxue-proyectos__modal-source:focus-visible {
+  background: var(--lx-color-primary);
+  transform: translateY(-1px);
+}
+
+.locxue-proyectos__modal-source:focus-visible {
+  outline: 2px solid var(--lx-color-primary);
+  outline-offset: 3px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .locxue-proyectos__watermark {
+    display: none;
+  }
+
+  .locxue-proyectos__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .locxue-proyectos__modal-dialog {
+    padding: 1.75rem 1.4rem;
+  }
+
+  .locxue-proyectos__modal-meta {
+    gap: 1.25rem;
+  }
+}
+
+/* ---------- Accesibilidad: reduce motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .proyecto-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .proyecto-card,
+  .proyecto-card__link,
+  .proyecto-card__link-icon,
+  .locxue-proyectos__modal-dialog,
+  .locxue-proyectos__modal-source {
+    transition: none;
+    animation: none;
+  }
+}

@@ -4,20 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Semillero de Investigación LOCXUE — Universidad de Cundinamarca</title>
-  <meta name="description" content="Semillero de investigación en innovación e inteligencia artificial de la Universidad de Cundinamarca.">
+  <meta name="description" content="Semillero de investigación en innovación, ingeniería de software e inteligencia artificial de la Universidad de Cundinamarca.">
+  
+  <!-- Tipografías del Design System Institucional -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap">
+  
+  <!-- Hojas de Estilo por Módulo (Diseños del Frontend Preservados) -->
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/identidad-institucional.css">
   <link rel="stylesheet" href="assets/css/equipo.css">
+  <link rel="stylesheet" href="assets/css/proyectos.css">
+  <link rel="stylesheet" href="assets/css/publicaciones.css">
+  <link rel="stylesheet" href="assets/css/logros.css">
+  <link rel="stylesheet" href="assets/css/contacto-footer.css">
 
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido principal</a>
 
+  <!-- Header Institucional -->
   <header class="header" role="banner">
     <nav class="nav" aria-label="Navegación principal">
-      <a class="nav__logo" href="#hero" aria-label="LOCXUE — ir al inicio">
+      <a class="nav__logo" href="#identidad" aria-label="LOCXUE — ir al inicio">
         <div class="nav__logo-brand">
           <svg class="nav__logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -31,9 +41,8 @@
         <span class="nav__toggle-bar" aria-hidden="true"></span>
       </button>
       <ul class="nav__menu" id="nav-menu">
-        <li><a href="#hero" class="nav__link nav__link--active">Inicio</a></li>
+        <li><a href="#identidad" class="nav__link nav__link--active">Inicio</a></li>
         <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
-        <li><a href="#lineas" class="nav__link">Líneas</a></li>
         <li><a href="#equipo" class="nav__link">Equipo</a></li>
         <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
         <li><a href="#publicaciones" class="nav__link">Publicaciones</a></li>
@@ -45,67 +54,263 @@
 
   <main id="main">
 
-    <!-- Hero — Contenido final desde contenido/01-institucional/ -->
-    <section id="hero" class="section hero section--dark" data-section="hero" aria-labelledby="hero-title">
-      <div class="hero__bg" aria-hidden="true"></div>
-      <aside class="brand-watermark" aria-hidden="true">LOCXUE</aside>
-      <div class="section__container hero__container">
-        <h1 id="hero-title">Semillero de Investigación LOCXUE</h1>
-        <p class="hero__lede">Contenido pendiente por integrar — texto provisto por el área de Información Institucional.</p>
-        <a class="btn btn--primary" href="#nosotros">Conoce más</a>
-      </div>
-    </section>
+    <!-- ============================================================
+         MÓDULO 01: Identidad Institucional
+         ============================================================ -->
+    <section id="identidad" class="identidad" aria-labelledby="identidad__titulo">
+      <span class="identidad__watermark" aria-hidden="true">LOCXUE</span>
 
-    <!-- Nosotros — Contenido final desde contenido/01-institucional/ -->
-    <section id="nosotros" class="section about" data-section="nosotros" aria-labelledby="about-title">
-      <div class="section__container">
-        <h2 id="about-title">Nosotros</h2>
-        <p class="section__lede">Contenido pendiente por integrar — texto provisto por el área de Información Institucional.</p>
-        <div class="cards-grid">
-          <article class="card" data-component="card">
-            <h3 class="card__title">Misión</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Información Institucional.</p>
+      <div class="identidad__container">
+        <header class="identidad__intro">
+          <div class="identidad__intro-text">
+            <p class="identidad__eyebrow">Semillero de Investigación · Universidad de Cundinamarca</p>
+            <h1 id="identidad__titulo" class="identidad__titulo">Identidad Institucional</h1>
+            <p class="identidad__lead">
+              Locxue es el semillero de investigación del programa de Ingeniería de Sistemas
+              y Computación de la Universidad de Cundinamarca, sede Fusagasugá. Con una
+              trayectoria que se remonta a 2013, hoy se proyecta como el núcleo investigativo
+              que impulsa la adopción de la Inteligencia Artificial dentro de la comunidad
+              universitaria.
+            </p>
+            <a class="identidad__cta" href="#proyectos">
+              Conoce nuestros proyectos
+              <svg class="identidad__cta-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+                <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+
+            <ul class="identidad__tags" aria-label="Nuestra forma de comunicarnos">
+              <li class="identidad__tag">Cercanos y rigurosos</li>
+              <li class="identidad__tag">Aspiracionales</li>
+              <li class="identidad__tag">Colaborativos</li>
+              <li class="identidad__tag">Territoriales</li>
+            </ul>
+          </div>
+
+          <aside class="identidad__facts" aria-label="Datos generales del semillero">
+            <div class="identidad__facts-logo" aria-hidden="true">
+              <span class="identidad__facts-logo-mark">L</span>
+            </div>
+            <dl class="identidad__facts-list">
+              <div class="identidad__fact">
+                <dt>Institución</dt>
+                <dd>Universidad de Cundinamarca</dd>
+              </div>
+              <div class="identidad__fact">
+                <dt>Facultad</dt>
+                <dd>Facultad de Ingeniería</dd>
+              </div>
+              <div class="identidad__fact">
+                <dt>Programa</dt>
+                <dd>Ingeniería de Sistemas y Computación</dd>
+              </div>
+              <div class="identidad__fact">
+                <dt>Sede</dt>
+                <dd>Fusagasugá, Cundinamarca</dd>
+              </div>
+              <div class="identidad__fact">
+                <dt>Grupo de investigación</dt>
+                <dd>INGENIUM SUTA</dd>
+              </div>
+              <div class="identidad__fact">
+                <dt>Adscripción</dt>
+                <dd>Banco de Semilleros de Investigación UDEC</dd>
+              </div>
+              <div class="identidad__fact">
+                <dt>Trayectoria</dt>
+                <dd>Desde 2013</dd>
+              </div>
+            </dl>
+          </aside>
+        </header>
+
+        <div id="nosotros" class="identidad__estructura">
+          <div class="identidad__estructura-header">
+            <p class="identidad__card-eyebrow">Cómo estamos organizados</p>
+            <h3 class="identidad__card-titulo">Estructura del semillero</h3>
+          </div>
+
+          <ol class="identidad__roles">
+            <li class="identidad__rol">
+              <span class="identidad__rol-numero" aria-hidden="true">01</span>
+              <h4 class="identidad__rol-titulo">Docente Líder</h4>
+              <p class="identidad__rol-texto">
+                Coordina y supervisa formalmente la calidad científica de las
+                actividades investigativas del grupo.
+              </p>
+            </li>
+            <li class="identidad__rol">
+              <span class="identidad__rol-numero" aria-hidden="true">02</span>
+              <h4 class="identidad__rol-titulo">Estudiante Coordinador</h4>
+              <p class="identidad__rol-texto">
+                Gestiona la planeación operativa interna del semillero y hace de
+                enlace con la institución.
+              </p>
+            </li>
+            <li class="identidad__rol">
+              <span class="identidad__rol-numero" aria-hidden="true">03</span>
+              <h4 class="identidad__rol-titulo">Miembros</h4>
+              <p class="identidad__rol-texto">
+                Estudiantes que desarrollan sus competencias investigativas y
+                participan activamente en cada proyecto del semillero.
+              </p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="identidad__mv-grid">
+          <article class="identidad__card identidad__card--mision">
+            <p class="identidad__card-eyebrow">Misión</p>
+            <h3 class="identidad__card-titulo">Nuestro propósito</h3>
+            <p class="identidad__card-texto">
+              Ser el núcleo investigativo que impulsa la adopción de la Inteligencia
+              Artificial en la Universidad de Cundinamarca, a través del aprendizaje
+              experimental, la participación en proyectos de investigación y la
+              divulgación del conocimiento, generando un ambiente de confianza y una
+              mentalidad de crecimiento entre sus integrantes.
+            </p>
           </article>
-          <article class="card" data-component="card">
-            <h3 class="card__title">Visión</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Información Institucional.</p>
+
+          <article class="identidad__card identidad__card--vision">
+            <p class="identidad__card-eyebrow">Visión</p>
+            <h3 class="identidad__card-titulo">Hacia dónde vamos</h3>
+            <p class="identidad__card-texto">
+              Consolidarnos como referentes en el campo de la Inteligencia Artificial
+              dentro de la Universidad de Cundinamarca, mediante el aprendizaje
+              experimental, la participación activa en proyectos de investigación y la
+              divulgación del conocimiento, en un ambiente de confianza y mentalidad
+              de crecimiento constante.
+            </p>
           </article>
-          <article class="card" data-component="card">
-            <h3 class="card__title">Valores</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Información Institucional.</p>
-          </article>
+        </div>
+
+        <div class="identidad__lineas">
+          <div class="identidad__lineas-header">
+            <p class="identidad__card-eyebrow">Marco institucional</p>
+            <h3 class="identidad__card-titulo">Líneas de investigación</h3>
+          </div>
+
+          <div class="identidad__lineas-grid">
+            <article class="identidad__linea">
+              <h4 class="identidad__linea-titulo">
+                Aprendizaje, conocimiento, tecnologías, comunicación y digitalización
+              </h4>
+              <p class="identidad__linea-texto">
+                Línea translocal en la que se enmarca la apuesta del semillero por
+                la Inteligencia Artificial, los agentes cognitivos y las nuevas
+                formas de generar y transferir conocimiento.
+              </p>
+            </article>
+            <article class="identidad__linea">
+              <h4 class="identidad__linea-titulo">
+                Gestión, emprendimiento, organizaciones sociales del conocimiento y aprendizaje
+              </h4>
+              <p class="identidad__linea-texto">
+                Línea translocal orientada a la gestión y apropiación social del
+                conocimiento generado por el semillero dentro y fuera de la
+                universidad.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="identidad__objetivos">
+          <div class="identidad__objetivos-header">
+            <p class="identidad__card-eyebrow">Objetivos</p>
+            <h3 class="identidad__card-titulo">Qué buscamos lograr</h3>
+          </div>
+
+          <p class="identidad__objetivo-general">
+            Impulsar la adopción de la Inteligencia Artificial en la comunidad académica
+            de la Universidad de Cundinamarca mediante la formación investigativa de sus
+            integrantes, el desarrollo de proyectos aplicados y la divulgación científica,
+            contribuyendo a la formación integral de los estudiantes y al fortalecimiento
+            de la cultura investigativa institucional.
+          </p>
+
+          <ul class="identidad__objetivo-lista">
+            <li class="identidad__objetivo-item">
+              Participar en proyectos de investigación formales que generen soluciones de
+              base tecnológica en Inteligencia Artificial con impacto social y territorial.
+            </li>
+            <li class="identidad__objetivo-item">
+              Canalizar los resultados de la investigación aplicada hacia opciones de
+              grado exitosas y publicaciones científicas indexadas.
+            </li>
+            <li class="identidad__objetivo-item">
+              Co-crear proyectos colaborativos con otros semilleros del país y de
+              distintas facultades de la Universidad de Cundinamarca.
+            </li>
+            <li class="identidad__objetivo-item">
+              Liderar, organizar y participar en congresos científicos y convocatorias
+              de financiamiento de proyectos de investigación.
+            </li>
+            <li class="identidad__objetivo-item">
+              Formar a los estudiantes semilleristas en metodología científica, bases
+              indexadas y gestores de referencia bibliográfica.
+            </li>
+            <li class="identidad__objetivo-item">
+              Fortalecer la identidad institucional del semillero mediante su imagen
+              corporativa, presencia web y estrategia de redes sociales.
+            </li>
+          </ul>
+        </div>
+
+        <div class="identidad__valores">
+          <div class="identidad__valores-header">
+            <p class="identidad__card-eyebrow">Valores</p>
+            <h3 class="identidad__card-titulo">Lo que nos define</h3>
+          </div>
+
+          <ul class="identidad__valores-grid">
+            <li class="identidad__valor">
+              <span class="identidad__valor-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2l2.6 6.6L22 9l-5.4 4.6L18 22l-6-4-6 4 1.4-8.4L2 9l7.4-.4L12 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <h4 class="identidad__valor-titulo">Confianza y crecimiento</h4>
+              <p class="identidad__valor-texto">Un ambiente donde cada semillerista puede experimentar, equivocarse y aprender.</p>
+            </li>
+            <li class="identidad__valor">
+              <span class="identidad__valor-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+              <h4 class="identidad__valor-titulo">Pensamiento crítico</h4>
+              <p class="identidad__valor-texto">Cultura investigativa que cuestiona, analiza y busca evidencia antes de concluir.</p>
+            </li>
+            <li class="identidad__valor">
+              <span class="identidad__valor-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 12a4 4 0 100-8 4 4 0 000 8zM3 21c0-3.3 2.7-6 5-6s5 2.7 5 6M16 12a3 3 0 100-6 3 3 0 000 6zM14 21c.2-2.6 1.9-4.6 4-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <h4 class="identidad__valor-titulo">Trabajo colaborativo</h4>
+              <p class="identidad__valor-texto">Compromiso y responsabilidad compartidos entre docentes y estudiantes.</p>
+            </li>
+            <li class="identidad__valor">
+              <span class="identidad__valor-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 19h16M6 19V9l4-3 4 3v10M14 19v-6h4v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <h4 class="identidad__valor-titulo">Apropiación social</h4>
+              <p class="identidad__valor-texto">Transferencia del conocimiento generado hacia la comunidad universitaria y su territorio.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="identidad__propuesta">
+          <p class="identidad__propuesta-texto">
+            Ofrecemos a los estudiantes un espacio de formación investigativa práctica en
+            Inteligencia Artificial y agentes cognitivos, con acompañamiento docente,
+            participación en redes académicas nacionales como RedCOLSI, y la posibilidad
+            de transformar proyectos formativos en opciones de grado y publicaciones
+            científicas.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Líneas de Investigación — Contenido final desde contenido/03-proyectos/ -->
-    <section id="lineas" class="section research-lines section--alt" data-section="lineas" aria-labelledby="lines-title">
-      <div class="section__container">
-        <h2 id="lines-title">Líneas de Investigación</h2>
-        <p class="section__lede">Contenido pendiente por integrar — texto provisto por el área de Proyectos.</p>
-        <div class="cards-grid">
-          <article class="card" data-component="card">
-            <h3 class="card__title">Línea 1</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Proyectos.</p>
-          </article>
-          <article class="card" data-component="card">
-            <h3 class="card__title">Línea 2</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Proyectos.</p>
-          </article>
-          <article class="card" data-component="card">
-            <h3 class="card__title">Línea 3</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Proyectos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Equipo — Módulo desde contenido/02-equipo/Equipo.html -->
+    <!-- ============================================================
+         MÓDULO 02: Equipo de Investigación
+         ============================================================ -->
     <section id="equipo" class="equipo" aria-labelledby="equipo__titulo">
-
       <div class="equipo__container">
-
-        <!-- Encabezado en Recuadro Hero Oscuro -->
         <header class="equipo__header">
           <span class="equipo__watermark" aria-hidden="true">LOCXUE</span>
           <div class="equipo__header-content">
@@ -129,12 +334,12 @@
               <h4 class="equipo__nombre-lider">Giovanny Andrés Cifuentes Blanco</h4>
               <p class="equipo__meta">Profesor Investigador · Director del Semillero LOCXUE</p>
               <p class="equipo__bio">
-                [ Espacio reservado para el perfil del docente líder: Títulos académicos, líneas de investigación que supervisa, trayectoria docente en la Universidad de Cundinamarca y áreas de experticia científica. ]
+                Docente Investigador y Director del Semillero LOCXUE en la Universidad de Cundinamarca. Encargado de coordinar y supervisar formalmente la calidad científica de las actividades investigativas del grupo.
               </p>
               <div class="equipo__sociales" style="justify-content: flex-start;">
                 <a href="#" class="equipo__social-link" aria-label="CvLAC Profesor Líder">CvLAC</a> ·
                 <a href="#" class="equipo__social-link" aria-label="LinkedIn Profesor Líder">LinkedIn</a> ·
-                <a href="mailto:gacifuentes@ucundinamarca.edu.com" class="equipo__social-link" aria-label="Correo Institucional">gacifuentes@ucundinamarca.edu.com</a>
+                <a href="mailto:gacifuentes@ucundinamarca.edu.co" class="equipo__social-link" aria-label="Correo Institucional">gacifuentes@ucundinamarca.edu.co</a>
               </div>
             </div>
           </article>
@@ -148,56 +353,37 @@
           </p>
 
           <div class="equipo__fundadores-grid">
-
-            <!-- Fundador 1 -->
             <article class="equipo__card" data-component="card-fundador">
               <div class="equipo__avatar-wrapper">
                 <img src="assets/img/avatar-placeholder.svg" alt="Foto del Fundador 1" class="equipo__avatar">
               </div>
               <span class="equipo__badge equipo__badge--fundador">Cofundador(a)</span>
-              <h4 class="equipo__nombre">[ Nombre del Fundador 1 ]</h4>
-              <p class="equipo__rol">Cofundador(a) / Investigador(a)</p>
-              <p class="equipo__descripcion">[ Información sobre los aportes y liderazgo inicial del fundador/a ]</p>
+              <h4 class="equipo__nombre">Diana Alejandra Calderón</h4>
+              <p class="equipo__rol">Cofundadora / Investigadora</p>
+              <p class="equipo__descripcion">Pionera en las iniciativas iniciales del semillero y promoción de metodologías ágiles en 2013.</p>
               <div class="equipo__sociales">
                 <a href="#" class="equipo__social-link">LinkedIn</a> ·
                 <a href="#" class="equipo__social-link">GitHub</a>
               </div>
             </article>
 
-            <!-- Fundador 2 -->
             <article class="equipo__card" data-component="card-fundador">
               <div class="equipo__avatar-wrapper">
                 <img src="assets/img/avatar-placeholder.svg" alt="Foto del Fundador 2" class="equipo__avatar">
               </div>
               <span class="equipo__badge equipo__badge--fundador">Cofundador(a)</span>
-              <h4 class="equipo__nombre">[ Nombre del Fundador 2 ]</h4>
-              <p class="equipo__rol">Cofundador(a) / Investigador(a)</p>
-              <p class="equipo__descripcion">[ Información sobre los aportes y liderazgo inicial del fundador/a ]</p>
+              <h4 class="equipo__nombre">Equipo Fundador LOCXUE</h4>
+              <p class="equipo__rol">Cofundadores / Investigadores</p>
+              <p class="equipo__descripcion">Estudiantes e investigadores pioneros del programa de Ingeniería de Sistemas.</p>
               <div class="equipo__sociales">
                 <a href="#" class="equipo__social-link">LinkedIn</a> ·
                 <a href="#" class="equipo__social-link">GitHub</a>
               </div>
             </article>
-
-            <!-- Fundador 3 -->
-            <article class="equipo__card" data-component="card-fundador">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto del Fundador 3" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--fundador">Cofundador(a)</span>
-              <h4 class="equipo__nombre">[ Nombre del Fundador 3 ]</h4>
-              <p class="equipo__rol">Cofundador(a) / Investigador(a)</p>
-              <p class="equipo__descripcion">[ Información sobre los aportes y liderazgo inicial del fundador/a ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
           </div>
         </div>
 
-        <!-- 3. 17 INTEGRANTES -->
+        <!-- 3. INTEGRANTES -->
         <div class="equipo__subseccion">
           <h3 class="equipo__subseccion-titulo">Integrantes del Semillero</h3>
           <p class="equipo__lead" style="margin-bottom: 1.5rem;">
@@ -205,8 +391,6 @@
           </p>
 
           <div class="equipo__integrantes-grid">
-
-            <!-- Integrante 1: Brayan Estiven Sarmiento Vargas -->
             <article class="equipo__card" data-component="card-integrante">
               <div class="equipo__avatar-wrapper">
                 <img src="assets/img/avatar-placeholder.svg" alt="Foto de Brayan Estiven Sarmiento Vargas" class="equipo__avatar">
@@ -221,7 +405,6 @@
               </div>
             </article>
 
-            <!-- Integrante 2: Julián Andrés Villamizar Bonilla -->
             <article class="equipo__card" data-component="card-integrante">
               <div class="equipo__avatar-wrapper">
                 <img src="assets/img/avatar-placeholder.svg" alt="Foto de Julián Andrés Villamizar Bonilla" class="equipo__avatar">
@@ -236,7 +419,6 @@
               </div>
             </article>
 
-            <!-- Integrante 3: Michelle Natalia Montenegro Mendez -->
             <article class="equipo__card" data-component="card-integrante">
               <div class="equipo__avatar-wrapper">
                 <img src="assets/img/avatar-placeholder.svg" alt="Foto de Michelle Natalia Montenegro Mendez" class="equipo__avatar">
@@ -251,7 +433,6 @@
               </div>
             </article>
 
-            <!-- Integrante 4: Santiago Bermudez Gomez -->
             <article class="equipo__card" data-component="card-integrante">
               <div class="equipo__avatar-wrapper">
                 <img src="assets/img/avatar-placeholder.svg" alt="Foto de Santiago Bermudez Gomez" class="equipo__avatar">
@@ -265,514 +446,660 @@
                 <a href="https://github.com/sabego2006" target="_blank" rel="noopener noreferrer" class="equipo__social-link">GitHub</a>
               </div>
             </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante 5" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante 5 ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante 6" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante 6 ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante 7" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante 7 ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante 8" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante 8 ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante 9" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante 9 ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
-            <!-- Integrante -->
-            <article class="equipo__card" data-component="card-integrante">
-              <div class="equipo__avatar-wrapper">
-                <img src="assets/img/avatar-placeholder.svg" alt="Foto Integrante" class="equipo__avatar">
-              </div>
-              <span class="equipo__badge equipo__badge--integrante">Integrante</span>
-              <h4 class="equipo__nombre">[ Nombre Integrante ]</h4>
-              <p class="equipo__rol">Rol / Proyecto asignado</p>
-              <p class="equipo__descripcion">[ Perfil o línea de interés investigativo ]</p>
-              <div class="equipo__sociales">
-                <a href="#" class="equipo__social-link">LinkedIn</a> ·
-                <a href="#" class="equipo__social-link">GitHub</a>
-              </div>
-            </article>
-
           </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- Proyectos — Contenido final desde contenido/03-proyectos/ -->
-    <section id="proyectos" class="section projects section--alt" data-section="proyectos" aria-labelledby="projects-title">
-      <div class="section__container">
-        <h2 id="projects-title">Proyectos</h2>
-        <p class="section__lede">Contenido pendiente por integrar — texto provisto por el área de Proyectos.</p>
-        <div class="cards-grid">
-          <article class="card" data-component="card">
-            <h3 class="card__title">Proyecto 1</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Proyectos.</p>
-            <p class="card__meta">Estado: en curso</p>
-          </article>
-          <article class="card" data-component="card">
-            <h3 class="card__title">Proyecto 2</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Proyectos.</p>
-            <p class="card__meta">Estado: finalizado</p>
-          </article>
-          <article class="card" data-component="card">
-            <h3 class="card__title">Proyecto 3</h3>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Proyectos.</p>
-            <p class="card__meta">Estado: en curso</p>
-          </article>
         </div>
       </div>
     </section>
 
-    <!-- Publicaciones — Contenido final desde contenido/04-publicaciones/ -->
-    <section id="publicaciones" class="section publications" data-section="publicaciones" aria-labelledby="pubs-title">
-      <div class="section__container">
-        <h2 id="pubs-title">Publicaciones</h2>
-        <p class="section__lede">Contenido pendiente por integrar — texto provisto por el área de Publicaciones y Productos.</p>
-        <div class="cards-grid">
-          <article class="card" data-component="card">
-            <h3 class="card__title">Título de la publicación</h3>
-            <p class="card__meta">Autores · Año · Revista o evento</p>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Publicaciones y Productos.</p>
-            <a class="btn btn--secondary" href="#" aria-label="Leer publicación (enlace pendiente)">Leer más</a>
-          </article>
-          <article class="card" data-component="card">
-            <h3 class="card__title">Título de la publicación</h3>
-            <p class="card__meta">Autores · Año · Revista o evento</p>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Publicaciones y Productos.</p>
-            <a class="btn btn--secondary" href="#" aria-label="Leer publicación (enlace pendiente)">Leer más</a>
-          </article>
-          <article class="card" data-component="card">
-            <h3 class="card__title">Título de la publicación</h3>
-            <p class="card__meta">Autores · Año · Revista o evento</p>
-            <p>Contenido pendiente por integrar — texto provisto por el área de Publicaciones y Productos.</p>
-            <a class="btn btn--secondary" href="#" aria-label="Leer publicación (enlace pendiente)">Leer más</a>
-          </article>
+    <!-- ============================================================
+         MÓDULO 03: Proyectos Desarrollados
+         ============================================================ -->
+    <section class="locxue-proyectos" id="proyectos" aria-labelledby="proyectos-heading">
+      <span class="locxue-proyectos__watermark" aria-hidden="true">LOCXUE</span>
+
+      <div class="locxue-proyectos__container">
+        <header class="locxue-proyectos__header">
+          <p class="locxue-proyectos__eyebrow">Trayectoria 2013 – Presente</p>
+          <h2 class="locxue-proyectos__title" id="proyectos-heading">Proyectos Desarrollados</h2>
+          <p class="locxue-proyectos__intro">
+            Esta sección reúne la actividad del Semillero LOCXUE respaldada en fuentes públicas verificables: comunidad Ágiles Colombia, Google Groups, GrupLAC/CvLAC de Minciencias, RedCOLSI y el portal de la Universidad de Cundinamarca.
+          </p>
+        </header>
+
+        <ul class="locxue-proyectos__grid" role="list">
+          <li>
+            <article class="proyecto-card" data-project="2013-taller-scrum">
+              <div class="proyecto-card__media" aria-hidden="true">
+                <span class="proyecto-card__media-pattern"></span>
+                <span class="proyecto-card__year">2013</span>
+              </div>
+              <span class="proyecto-card__badge proyecto-card__badge--intercambio">Intercambio documentado</span>
+              <div class="proyecto-card__body">
+                <p class="proyecto-card__tag">Formación en metodologías ágiles · Scrum</p>
+                <h3 class="proyecto-card__title">Planeación de un taller práctico de Scrum</h3>
+                <p class="proyecto-card__desc">
+                  Integrantes del semillero manifiestan en la lista de correo pública de Ágiles Colombia su interés en llevar a LOCXUE una dinámica de enseñanza de Scrum.
+                </p>
+                <dl class="proyecto-card__meta">
+                  <div><dt>Año</dt><dd>2013</dd></div>
+                  <div><dt>Estado</dt><dd>Documentado</dd></div>
+                </dl>
+              </div>
+              <div class="proyecto-card__footer">
+                <button type="button" class="proyecto-card__link" data-modal-open="2013-taller-scrum" aria-haspopup="dialog">
+                  Ver más
+                  <svg class="proyecto-card__link-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="proyecto-card proyecto-card--featured" data-project="2014-agile-open">
+              <div class="proyecto-card__media" aria-hidden="true">
+                <span class="proyecto-card__media-pattern"></span>
+                <span class="proyecto-card__year">2014</span>
+              </div>
+              <span class="proyecto-card__badge proyecto-card__badge--finalizado">Finalizado</span>
+              <div class="proyecto-card__body">
+                <p class="proyecto-card__tag">Metodologías ágiles de desarrollo de software</p>
+                <h3 class="proyecto-card__title">Primer Agile Open Fusagasugá</h3>
+                <p class="proyecto-card__desc">
+                  Evento abierto y gratuito en formato Open Space, organizado junto con la Universidad de Cundinamarca y la comunidad Ágiles Colombia.
+                </p>
+                <dl class="proyecto-card__meta">
+                  <div><dt>Año</dt><dd>2014</dd></div>
+                  <div><dt>Estado</dt><dd>Finalizado (26 de abril de 2014)</dd></div>
+                </dl>
+              </div>
+              <div class="proyecto-card__footer">
+                <button type="button" class="proyecto-card__link" data-modal-open="2014-agile-open" aria-haspopup="dialog">
+                  Ver más
+                  <svg class="proyecto-card__link-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="proyecto-card proyecto-card--placeholder">
+              <div class="proyecto-card__body proyecto-card__body--placeholder">
+                <svg class="proyecto-card__placeholder-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <h3 class="proyecto-card__title proyecto-card__title--muted">Próximos registros</h3>
+                <p class="proyecto-card__desc">
+                  Se completará progresivamente con las investigaciones activas en Inteligencia Artificial y agentes cognitivos.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+        <details class="locxue-proyectos__sources">
+          <summary>Fuentes consultadas</summary>
+          <ul>
+            <li><a href="https://groups.google.com/g/agiles-colombia/c/eXXRkigNL5k" target="_blank" rel="noopener noreferrer">Google Groups — Lista agiles-colombia (2013)</a></li>
+            <li><a href="https://agilescolombia.org/2014/04/04/agile-open-fusagasuga/" target="_blank" rel="noopener noreferrer">Ágiles Colombia — Agile Open Fusagasuga (2014)</a></li>
+            <li><a href="https://agilescolombia.org/tag/semillero-locxue/" target="_blank" rel="noopener noreferrer">Ágiles Colombia — Archivo Semillero locxue</a></li>
+            <li><a href="https://www.ucundinamarca.edu.co/investigacion/index.php/semilleros" target="_blank" rel="noopener noreferrer">Universidad de Cundinamarca — Semilleros de Investigación</a></li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="locxue-proyectos__modal" data-modal-root hidden>
+        <div class="locxue-proyectos__modal-backdrop" data-modal-backdrop></div>
+        <div class="locxue-proyectos__modal-dialog" role="dialog" aria-modal="true" aria-labelledby="proyectos-modal-title" tabindex="-1">
+          <button type="button" class="locxue-proyectos__modal-close" data-modal-close aria-label="Cerrar detalle">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+          <p class="locxue-proyectos__modal-tag" data-modal-tag></p>
+          <h3 class="locxue-proyectos__modal-title" id="proyectos-modal-title" data-modal-title></h3>
+          <p class="locxue-proyectos__modal-desc" data-modal-desc></p>
+          <dl class="locxue-proyectos__modal-meta">
+            <div><dt>Año</dt><dd data-modal-year></dd></div>
+            <div><dt>Estado</dt><dd data-modal-status></dd></div>
+          </dl>
+          <a class="locxue-proyectos__modal-source" data-modal-source href="#" target="_blank" rel="noopener noreferrer">
+            Ver fuente de verificación
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 13L13 7M8 7h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Logros y Eventos — Módulo integrado desde contenido/05-logros-eventos/ -->
-    <section id="logros" class="section achievements section--alt" data-section="logros" aria-labelledby="ach-title">
-      <div class="section__container">
-        <h2 id="ach-title">Logros y Eventos</h2>
-        <p class="section__lede">Trayectoria, reconocimientos y participaciones académicas del Semillero de Investigación LOCXUE en la comunidad ágil e investigación formativa.</p>
-
-        <!-- Estadísticas destacadas del semillero -->
-        <div class="stats-grid" data-component="stats" aria-label="Cifras destacadas del semillero">
-          <div class="stat" data-stat="eventos" data-value="11">
-            <span class="stat__value" data-target="11">11</span>
-            <span class="stat__label">Eventos Académicos</span>
-          </div>
-          <div class="stat" data-stat="reconocimientos" data-value="1">
-            <span class="stat__value" data-target="1">1</span>
-            <span class="stat__label">Premio Nacional</span>
-          </div>
-          <div class="stat" data-stat="redcolsi" data-value="2">
-            <span class="stat__value" data-target="2">2</span>
-            <span class="stat__label">Clasificaciones RedCOLSI</span>
-          </div>
-          <div class="stat" data-stat="comunidad" data-value="10">
-            <span class="stat__value" data-target="10">10+</span>
-            <span class="stat__label">Años de Trayectoria</span>
+    <!-- ============================================================
+         MÓDULO 04: Publicaciones y Productos de Investigación
+         ============================================================ -->
+    <section id="publicaciones" class="pub-section">
+      <div class="pub-hero" aria-labelledby="pub-hero-title">
+        <div class="pub-hero__bg" aria-hidden="true"></div>
+        <aside class="pub-hero__watermark" aria-hidden="true">LOCXUE</aside>
+        <div class="pub-hero__container">
+          <p class="pub-hero__eyebrow" aria-hidden="true">Semillero LOCXUE · Universidad de Cundinamarca</p>
+          <h2 id="pub-hero-title">Publicaciones y Productos de Investigación</h2>
+          <p class="pub-hero__lead">
+            Biblioteca académica y portafolio de resultados tangibles generados por el Semillero de Investigación LOCXUE.
+          </p>
+          <div class="pub-hero__tabs" role="tablist" aria-label="Módulos de publicaciones">
+            <button class="tab-btn" role="tab" id="tab-pub" aria-controls="panel-pub" aria-selected="true">
+              📄 Publicaciones Científicas
+            </button>
+            <button class="tab-btn" role="tab" id="tab-prod" aria-controls="panel-prod" aria-selected="false">
+              🛠 Productos de Investigación
+            </button>
           </div>
         </div>
+      </div>
 
-        <!-- Subsección: Reconocimientos y Logros Destacados -->
-        <div class="achievements-section" style="margin-top: var(--space-6);">
-          <h3 style="margin-bottom: var(--space-3); font-size: 1.5rem;">Reconocimientos y Logros</h3>
-          <div class="cards-grid">
-            <article class="card card--achievement" data-component="card">
-              <span class="card__badge">1er Puesto</span>
-              <h4 class="card__title">Premio Rymel Serrano Uribe</h4>
-              <p class="card__meta">Universidad Cooperativa de Colombia · Octubre 2014</p>
-              <p>Reconocimiento en categoría Estudiantes por el proyecto <strong>ASJUREM – Asistencia Jurídica Empresarial</strong>, desarrollado en Startup Weekend Ibagué como solución de emprendimiento solidario e innovación social.</p>
-            </article>
-
-            <article class="card card--achievement" data-component="card">
-              <span class="card__badge">Comunidad</span>
-              <h4 class="card__title">Consolidación de la Comunidad LOCXUE</h4>
-              <p class="card__meta">Universidad de Cundinamarca · Diciembre 2019</p>
-              <p>Consolidación del semillero como comunidad académica activa y colaborativa para el desarrollo de proyectos de software, investigación formativa y metodología ágil.</p>
-            </article>
-
-            <article class="card card--achievement" data-component="card">
-              <span class="card__badge">RedCOLSI</span>
-              <h4 class="card__title">Participación Destacada RedCOLSI</h4>
-              <p class="card__meta">Encuentros Institucionales y Nacionales · 2013 – 2014</p>
-              <p>Selección de proyectos de investigación formativa para representar a la Universidad de Cundinamarca en encuentros nacionales de la Red Colombiana de Semilleros de Investigación.</p>
-            </article>
-          </div>
-        </div>
-
-        <!-- Subsección: Cronología de Eventos Académicos -->
-        <div class="events-section" style="margin-top: var(--space-6);">
-          <h3 style="margin-bottom: var(--space-2); font-size: 1.5rem;">Cronología de Eventos</h3>
-          <p class="section__lede" style="margin-bottom: var(--space-3);">Explora las participaciones, talleres y congresos en los que el semillero ha estado presente.</p>
-
-          <!-- Filtros de eventos -->
-          <div class="events-filter" role="tablist" aria-label="Filtrar eventos por categoría">
-            <button type="button" class="filter-btn filter-btn--active" data-filter="all" role="tab" aria-selected="true">Todos</button>
-            <button type="button" class="filter-btn" data-filter="agile" role="tab" aria-selected="false">Congresos Ágiles</button>
-            <button type="button" class="filter-btn" data-filter="workshop" role="tab" aria-selected="false">Talleres y Foros</button>
-            <button type="button" class="filter-btn" data-filter="research" role="tab" aria-selected="false">RedCOLSI e Investigación</button>
+      <div class="pub-main">
+        <section id="panel-pub" role="tabpanel" aria-labelledby="tab-pub" aria-hidden="false" class="tab-panel">
+          <div class="filter-bar" aria-label="Filtrar publicaciones">
+            <span class="filter-bar__label" id="filter-label-pub">Filtrar por tipo:</span>
+            <div class="filter-chips" role="group" aria-labelledby="filter-label-pub">
+              <button class="chip" aria-pressed="true">Todas</button>
+              <button class="chip" aria-pressed="false">Artículos</button>
+              <button class="chip" aria-pressed="false">Ponencias</button>
+              <button class="chip" aria-pressed="false">Capítulos</button>
+            </div>
           </div>
 
-          <ol class="timeline" data-component="timeline">
-            <!-- Evento 11 -->
-            <li class="timeline__item" data-category="agile">
-              <time class="timeline__date" datetime="2018-08-19">Agosto 2018</time>
-              <div class="timeline__header">
-                <h4 class="timeline__title">Ágiles Colombia 2018 (AgilesCo2018)</h4>
-                <span class="badge badge--participant">Participante</span>
-              </div>
-              <p class="card__meta">Universidad del Magdalena · Santa Marta</p>
-              <p>Participación de la delegación de LOCXUE en el encuentro nacional de metodologías ágiles, fortaleciendo lazos con la comunidad agilista colombiana.</p>
-            </li>
-
-            <!-- Evento 10 -->
-            <li class="timeline__item" data-category="workshop">
-              <time class="timeline__date" datetime="2018-05-08">Mayo 2018</time>
-              <div class="timeline__header">
-                <h4 class="timeline__title">Actividad "Super Agentes de Cambio"</h4>
-                <span class="badge badge--participant">Formación</span>
-              </div>
-              <p class="card__meta">Universidad de Cundinamarca</p>
-              <p>Jornada de formación en liderazgo y transformación institucional, impulsando dinámicas colaborativas y desarrollo de competencias blandas en el equipo.</p>
-            </li>
-
-            <!-- Evento 9 -->
-            <li class="timeline__item" data-category="workshop">
-              <time class="timeline__date" datetime="2018-04-29">Abril 2018</time>
-              <div class="timeline__header">
-                <h4 class="timeline__title">Taller Canvas – Semana de Ingeniería Soacha</h4>
-                <span class="badge badge--facilitator">Facilitador</span>
-              </div>
-              <p class="card__meta">UDEC Sede Soacha</p>
-              <p>Realización del Taller Canvas para el diseño de modelos de negocio con estudiantes, promoviendo el pensamiento estructurado y trabajo en equipo.</p>
-            </li>
-
-            <!-- Evento 8 -->
-            <li class="timeline__item" data-category="agile">
-              <time class="timeline__date" datetime="2016-10-06">Octubre 2016</time>
-              <div class="timeline__header">
-                <h4 class="timeline__title">Ágiles 2016 (Ecuador)</h4>
-                <span class="badge badge--speaker">Expositor Internacional</span>
-              </div>
-              <p class="card__meta">Centro de Convenciones Eugenio Espejo · Quito, Ecuador</p>
-              <p>Ponencia internacional <em>"LocXue: Cinco generaciones de agilidad en la Educación"</em> y desarrollo ágil de videojuegos, compartiendo experiencias pedagógicas en América Latina.</p>
-            </li>
-
-            <!-- Evento 7 -->
-            <li class="timeline__item" data-category="agile">
-              <time class="timeline__date" datetime="2014-10-23">Octubre 2014</time>
-              <div class="timeline__header">
-                <h4 class="timeline__title">Ágiles 2014</h4>
-                <span class="badge badge--participant">Participante</span>
-              </div>
-              <p class="card__meta">Congreso de Metodologías Ágiles</p>
-              <p>Asistencia e intercambio de conocimientos con la comunidad regional agilista en tendencias de ingeniería de software y agilidad.</p>
-            </li>
-
-            <!-- Evento 6 -->
-            <li class="timeline__item" data-category="research">
-              <time class="timeline__date" datetime="2014-10-10">Octubre 2014</time>
-              <div class="timeline__header">
-                <h4 class="timeline__title">XVII RedCOLSI Nacional y XI Internacional</h4>
-                <span class="badge badge--speaker">Ponente RedCOLSI</span>
-              </div>
-              <p class="card__meta">Universidad Santo Tomás · Tunja, Colombia</p>
-              <p>Representación institucional de la Universidad de Cundinamarca en el encuentro de semilleros de investigación, socializando avances de proyectos formativos.</p>
-            </li>
-
-            <!-- Evento 5 -->
-            <li class="timeline__item" data-category="agile">
-              <time class="timeline__date" datetime="2014-10-04">Octubre 2014</time>
-              <div class="timeline__header">
-                <h4 class="timeline__title">1er Agile Open Education Colombia</h4>
-                <span class="badge badge--participant">Participante</span>
-              </div>
-              <p class="card__meta">Encuentro de Agilidad en Educación</p>
-              <p>Jornada enfocada en la transformación ágil de los espacios educativos, conectando directamente con las prácticas aplicadas en el curso de Ingeniería de Software I.</p>
-            </li>
-
-            <!-- Evento 4 -->
-            <li class="timeline__item" data-category="workshop">
-              <time class="timeline__date" datetime="2014-09-27">Septiembre 2014</time>
-              <div class="timeline__header">
-                <h4 class="timeline__title">Taller de Gamificación – Agile Open Bucaramanga</h4>
-                <span class="badge badge--facilitator">Facilitador</span>
-              </div>
-              <p class="card__meta">Agile Open Bucaramanga, Santander</p>
-              <p>Taller participativo sobre el uso de técnicas de gamificación y aprendizaje basado en juegos para mejorar la motivación en la enseñanza de software.</p>
-            </li>
-
-            <!-- Evento 3 -->
-            <li class="timeline__item" data-category="workshop">
-              <time class="timeline__date" datetime="2014-05-30">Mayo 2014</time>
-              <div class="timeline__header">
-                <h4 class="timeline__title">IV Foro Internacional de Ingeniería de Software</h4>
-                <span class="badge badge--participant">Participante</span>
-              </div>
-              <p class="card__meta">Foro Internacional Académico</p>
-              <p>Participación en paneles sobre avances y estándares de calidad en el desarrollo de software a nivel internacional.</p>
-            </li>
-
-            <!-- Evento 2 -->
-            <li class="timeline__item" data-category="agile">
-              <time class="timeline__date" datetime="2014-04-27">Abril 2014</time>
-              <div class="timeline__header">
-                <h4 class="timeline__title">1er Agile Open Fusagasugá</h4>
-                <span class="badge badge--organizer">Organizador y Anfitrión</span>
-              </div>
-              <p class="card__meta">Universidad de Cundinamarca · Fusagasugá</p>
-              <p>LOCXUE fue organizador y sede del primer Agile Open Fusagasugá junto a la comunidad de Ágiles Colombia, ofreciendo conferencias y dinámicas ágiles comunitarias.</p>
-            </li>
-
-            <!-- Evento 1 -->
-            <li class="timeline__item" data-category="agile">
-              <time class="timeline__date" datetime="2014-03-08">Marzo 2014</time>
-              <div class="timeline__header">
-                <h4 class="timeline__title">Agile Open Bogotá</h4>
-                <span class="badge badge--participant">Participante</span>
-              </div>
-              <p class="card__meta">Bogotá, Colombia</p>
-              <p>Participación en mesas de discusión sobre metodologías ágiles, sentando las bases del networking e investigación del semillero.</p>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Subsección: Próximos Eventos / Convocatorias -->
-        <div class="upcoming-card" style="margin-top: var(--space-6);">
-          <div class="upcoming-card__content">
-            <h4 class="upcoming-card__title">Próximos Eventos y Convocatorias</h4>
-            <p>La agenda de eventos futuros y convocatorias abiertas de incorporación al Semillero LOCXUE se actualizará periódicamente. ¡Mantente atento a nuestras redes institucionales!</p>
+          <div class="empty-state" role="status" aria-live="polite">
+            <div class="empty-state__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <h3 class="empty-state__title">Biblioteca en construcción</h3>
+            <p class="empty-state__msg">
+              Aquí verás <strong>todas las publicaciones científicas del Semillero LOCXUE</strong> cuando estén disponibles (artículos, ponencias, capítulos de libro).
+            </p>
+            <span class="empty-state__pill">Próximamente disponible</span>
           </div>
-          <a class="btn btn--secondary" href="#contacto">Contacto y Consultas</a>
-        </div>
 
+          <div class="criteria-box" role="note">
+            <h4 class="criteria-box__title">¿Qué publicaciones aparecerán aquí?</h4>
+            <p>
+              Solo se incluyen trabajos que acrediten explícitamente al Semillero LOCXUE mediante afiliación institucional o reconocimientos en eventos científicos.
+            </p>
+          </div>
+        </section>
+
+        <section id="panel-prod" role="tabpanel" aria-labelledby="tab-prod" aria-hidden="true" class="tab-panel">
+          <div class="filter-bar" aria-label="Filtrar productos">
+            <span class="filter-bar__label" id="filter-label-prod">Filtrar por tipo:</span>
+            <div class="filter-chips" role="group" aria-labelledby="filter-label-prod">
+              <button class="chip" aria-pressed="true">Todos</button>
+              <button class="chip" aria-pressed="false">Software</button>
+              <button class="chip" aria-pressed="false">Prototipos</button>
+            </div>
+          </div>
+
+          <div class="empty-state" role="status" aria-live="polite">
+            <div class="empty-state__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <h3 class="empty-state__title">Portafolio en construcción</h3>
+            <p class="empty-state__msg">
+              Aquí verás <strong>todos los productos de investigación del Semillero LOCXUE</strong> (software, prototipos, aplicaciones y agentes de IA).
+            </p>
+            <span class="empty-state__pill">Próximamente disponible</span>
+          </div>
+        </section>
+
+        <aside class="sources-section" aria-labelledby="sources-title">
+          <div class="sources-section__inner">
+            <p class="sources-section__eyebrow">Repositorios & bases de datos</p>
+            <h3 id="sources-title">¿Dónde encontrar nuestras publicaciones?</h3>
+            <p>Puedes consultar la producción académica de LOCXUE directamente en las siguientes fuentes oficiales:</p>
+            <div class="sources-grid" role="list">
+              <div class="source-item" role="listitem">
+                <div class="source-item__num" aria-hidden="true">1</div>
+                <div><p class="source-item__text"><strong>Repositorio Institucional</strong> — Universidad de Cundinamarca</p></div>
+              </div>
+              <div class="source-item" role="listitem">
+                <div class="source-item__num" aria-hidden="true">2</div>
+                <div><p class="source-item__text"><strong>CvLAC</strong> — Perfiles de autores vinculados al semillero</p></div>
+              </div>
+              <div class="source-item" role="listitem">
+                <div class="source-item__num" aria-hidden="true">3</div>
+                <div>
+                  <p class="source-item__text"><strong>GrupLAC — Ingenium Suta</strong> — Grupo de investigación vinculado</p>
+                  <a class="source-item__link" href="https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000003420" target="_blank" rel="noopener noreferrer">scienti.minciencias.gov.co → Ingenium Suta</a>
+                </div>
+              </div>
+              <div class="source-item" role="listitem">
+                <div class="source-item__num" aria-hidden="true">4</div>
+                <div><p class="source-item__text"><strong>RedCOLSI</strong> — Encuentros regionales y nacionales</p></div>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- Contacto — Contenido final desde contenido/06-contacto/ -->
-    <section id="contacto" class="section contact section--dark" data-section="contacto" aria-labelledby="contact-title">
-      <aside class="brand-watermark" aria-hidden="true">LOCXUE</aside>
-      <div class="section__container">
-        <h2 id="contact-title">Contacto</h2>
-        <p class="section__lede">Contenido pendiente por integrar — texto provisto por el área de Redes Sociales y Contacto.</p>
-        <div class="cards-grid">
-          <article class="card" data-component="card">
-            <h3 class="card__title">Correo</h3>
-            <p>locxue@ucundinamarca.edu.co <span class="card__meta">(pendiente de confirmación)</span></p>
+    <!-- ============================================================
+         MÓDULO 05: Logros, Reconocimientos y Eventos
+         ============================================================ -->
+    <section id="logros" class="logros-eventos-module" aria-labelledby="lem-main-heading">
+      <div class="lem-header">
+        <span class="lem-header__badge">Trayectoria & Impacto</span>
+        <h2 id="lem-main-heading" class="lem-header__title">Logros, Reconocimientos y Eventos Académicos</h2>
+        <p class="lem-header__description">
+          El semillero de investigación <strong>LOCXUE Software Engineering</strong> ha sido actor clave en el ecosistema ágil nacional e internacional, impulsando la innovación educativa y la investigación formativa.
+        </p>
+      </div>
+
+      <div class="lem-stats-grid">
+        <div class="lem-stat-card">
+          <span class="lem-stat-card__number" data-target="11">0</span>
+          <span class="lem-stat-card__label">Eventos Académicos</span>
+          <span class="lem-stat-card__subtext">Encuentros, talleres y congresos</span>
+        </div>
+        <div class="lem-stat-card">
+          <span class="lem-stat-card__number" data-target="1">0</span>
+          <span class="lem-stat-card__label">Premio Nacional</span>
+          <span class="lem-stat-card__subtext">Premio Rymel Serrano Uribe</span>
+        </div>
+        <div class="lem-stat-card">
+          <span class="lem-stat-card__number" data-target="2">0</span>
+          <span class="lem-stat-card__label">Clasificaciones RedCOLSI</span>
+          <span class="lem-stat-card__subtext">Encuentros Nacionales de Semilleros</span>
+        </div>
+        <div class="lem-stat-card">
+          <span class="lem-stat-card__number" data-target="10" data-suffix="+">0</span>
+          <span class="lem-stat-card__label">Años de Trayectoria</span>
+          <span class="lem-stat-card__subtext">Comunidad activa desde 2013</span>
+        </div>
+      </div>
+
+      <div class="lem-highlights-section">
+        <h3 class="lem-section-subtitle">Reconocimientos y Distinciones Formales</h3>
+        <div class="lem-highlights-grid">
+          <article class="lem-highlight-card">
+            <span class="lem-highlight-card__badge">🏆 1er Puesto Nacional</span>
+            <h4 class="lem-highlight-card__title">Premio Rymel Serrano Uribe (Categoría Estudiantes)</h4>
+            <div class="lem-highlight-card__meta">Octubre de 2014 | Universidad Cooperativa de Colombia</div>
+            <p class="lem-highlight-card__desc">
+              Obtención del primer lugar con el proyecto <strong>ASJUREM – Asistencia Jurídica Empresarial</strong>, concebido en el <em>Startup Weekend Ibagué</em>.
+            </p>
+            <button class="lem-btn-link lem-btn-evidence" data-event-title="Premio Rymel Serrano Uribe" data-files="premio-rymel-2024-1.jpg">
+              📷 Ver Evidencias
+            </button>
           </article>
-          <article class="card" data-component="card">
-            <h3 class="card__title">Ubicación</h3>
-            <p>Universidad de Cundinamarca — sede / facultad (pendiente de confirmación).</p>
+
+          <article class="lem-highlight-card">
+            <span class="lem-highlight-card__badge">⭐ Hito Institucional</span>
+            <h4 class="lem-highlight-card__title">Consolidación de Locxue como Comunidad Activa</h4>
+            <div class="lem-highlight-card__meta">28 de Diciembre de 2019 | Universidad de Cundinamarca</div>
+            <p class="lem-highlight-card__desc">
+              Consolidación del semillero como una comunidad colaborativa respaldada por la gestión docente y el compromiso estudiantil.
+            </p>
+            <button class="lem-btn-link lem-btn-evidence" data-event-title="Consolidación de Comunidad Locxue" data-files="logro-comunidad-2019.jpg">
+              📷 Ver Evidencias
+            </button>
           </article>
-          <article class="card" data-component="card">
-            <h3 class="card__title">Redes</h3>
-            <p>Enlaces a redes sociales (pendientes).</p>
+
+          <article class="lem-highlight-card">
+            <span class="lem-highlight-card__badge">🔬 Investigación Formativa</span>
+            <h4 class="lem-highlight-card__title">Clasificaciones a Encuentros Nacionales RedCOLSI</h4>
+            <div class="lem-highlight-card__meta">Periodo 2013 – 2014 | RedCOLSI Colombia</div>
+            <p class="lem-highlight-card__desc">
+              Postulación de proyectos de investigación formativa que avanzaron a fases nacionales representando a la UDEC.
+            </p>
           </article>
         </div>
-        <p class="contact__form-note">Formulario de contacto: pendiente de integración. No se envía información en esta versión.</p>
+      </div>
+
+      <div class="lem-header">
+        <h3 class="lem-section-subtitle">Cronología de Eventos Académicos</h3>
+      </div>
+      
+      <div class="lem-filters-container">
+        <button class="lem-filter-btn active" data-filter="todos">Todos los Eventos (11)</button>
+        <button class="lem-filter-btn" data-filter="agiles">Eventos Ágiles</button>
+        <button class="lem-filter-btn" data-filter="redcolsi">RedCOLSI</button>
+        <button class="lem-filter-btn" data-filter="talleres">Talleres y Foros</button>
+      </div>
+
+      <div class="lem-events-grid">
+        <article class="lem-event-card" data-category="agiles">
+          <div class="lem-event-card__header">
+            <div class="lem-event-card__date-badge">08 Mar<br>2014</div>
+            <span class="lem-event-card__category">Evento Ágil</span>
+            <h4 class="lem-event-card__title">Agile Open Bogotá</h4>
+          </div>
+          <div class="lem-event-card__body">
+            <ul class="lem-event-card__meta-list">
+              <li class="lem-event-card__meta-item">📍 Bogotá, Colombia</li>
+              <li class="lem-event-card__meta-item">👥 Rol: Participante</li>
+            </ul>
+            <p class="lem-event-card__desc">Intercambio sobre prácticas y experiencias en metodologías ágiles.</p>
+          </div>
+        </article>
+
+        <article class="lem-event-card" data-category="agiles">
+          <div class="lem-event-card__header">
+            <div class="lem-event-card__date-badge">27 Abr<br>2014</div>
+            <span class="lem-event-card__category">Evento Ágil</span>
+            <h4 class="lem-event-card__title">1er Agile Open Fusagasugá</h4>
+          </div>
+          <div class="lem-event-card__body">
+            <ul class="lem-event-card__meta-list">
+              <li class="lem-event-card__meta-item">📍 UDEC Sede Fusagasugá</li>
+              <li class="lem-event-card__meta-item">👑 Rol: Organizador y Anfitrión</li>
+            </ul>
+            <p class="lem-event-card__desc">Organizado con el apoyo de la comunidad de Ágiles Colombia.</p>
+          </div>
+        </article>
+
+        <article class="lem-event-card" data-category="talleres">
+          <div class="lem-event-card__header">
+            <div class="lem-event-card__date-badge">30 May<br>2014</div>
+            <span class="lem-event-card__category">Talleres y Foros</span>
+            <h4 class="lem-event-card__title">IV Foro Internacional de Ingeniería de Software</h4>
+          </div>
+          <div class="lem-event-card__body">
+            <ul class="lem-event-card__meta-list">
+              <li class="lem-event-card__meta-item">📍 Sede Oficial del Foro</li>
+              <li class="lem-event-card__meta-item">👥 Rol: Participante</li>
+            </ul>
+            <p class="lem-event-card__desc">Socialización de tendencias y buenas prácticas de ingeniería de software.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="lem-gallery-section">
+        <h3 class="lem-section-subtitle">📷 Galería Visual de Evidencias Fotográficas</h3>
+        <div class="lem-gallery-grid">
+          <div class="lem-gallery-card">
+            <div class="lem-gallery-card__img-box">
+              <img src="assets/img/premio-rymel-2024-1.jpg" alt="Premio Rymel Serrano Uribe" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="lem-gallery-card__fallback" style="display: none;">
+                <span class="lem-gallery-card__fallback-icon">🖼️</span>
+                <span class="lem-gallery-card__fallback-text">Fotografía institucional</span>
+                <span class="lem-gallery-card__fallback-file">premio-rymel-2024-1.jpg</span>
+              </div>
+            </div>
+            <div class="lem-gallery-card__content">
+              <h4 class="lem-gallery-card__event-title">Premio Rymel Serrano Uribe</h4>
+              <span class="lem-gallery-card__date">Octubre 2014</span>
+            </div>
+          </div>
+
+          <div class="lem-gallery-card">
+            <div class="lem-gallery-card__img-box">
+              <img src="assets/img/logro-comunidad-2019.jpg" alt="Consolidación Comunidad Locxue" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="lem-gallery-card__fallback" style="display: none;">
+                <span class="lem-gallery-card__fallback-icon">🖼️</span>
+                <span class="lem-gallery-card__fallback-text">Fotografía institucional</span>
+                <span class="lem-gallery-card__fallback-file">logro-comunidad-2019.jpg</span>
+              </div>
+            </div>
+            <div class="lem-gallery-card__content">
+              <h4 class="lem-gallery-card__event-title">Consolidación Comunidad Locxue</h4>
+              <span class="lem-gallery-card__date">Diciembre 2019</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lem-future-events-card">
+        <span class="lem-future-events-card__icon">📅</span>
+        <h3 class="lem-future-events-card__title">Próximos Eventos y Agenda Oficial</h3>
+        <p class="lem-future-events-card__desc">
+          La agenda de convocatorias, talleres y presentaciones se actualizará formalmente a través de nuestros canales oficiales.
+        </p>
+        <span class="lem-future-events-card__note">ℹ️ Agenda en constante actualización</span>
       </div>
     </section>
+
+    <!-- Modal de Evidencias Fotográficas -->
+    <div id="lem-evidence-modal" class="lem-modal" role="dialog" aria-modal="true" aria-labelledby="lem-modal-title">
+      <div class="lem-modal__content">
+        <button id="lem-modal-close" class="lem-modal__close" aria-label="Cerrar modal">&times;</button>
+        <h3 id="lem-modal-title" class="lem-modal__title">Evidencias Fotográficas del Evento</h3>
+        <div class="lem-modal__img-placeholder">
+          <p>📷 <strong>Visor de Evidencias Históricas</strong></p>
+        </div>
+        <ul id="lem-modal-files" class="lem-modal__file-list"></ul>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         MÓDULO 06: Redes Sociales, Contacto y Pie de Página (Footer)
+         ============================================================ -->
+    <div class="contacto-footer-wrapper">
+      <section id="contacto" class="contacto" aria-labelledby="contacto__titulo">
+        <span class="contacto__watermark" aria-hidden="true">LOCXUE</span>
+
+        <div class="contacto__container">
+          <header class="contacto__header">
+            <p class="contacto__eyebrow">Canales Oficiales · Universidad de Cundinamarca</p>
+            <h2 id="contacto__titulo" class="contacto__titulo">Contacto y Redes Sociales</h2>
+            <p class="contacto__lead">
+              Conéctate con el Semillero de Investigación <strong>LOCXUE</strong>. Estamos abiertos a consultas académicas, propuestas de investigación en Inteligencia Artificial y participación estudiantil.
+            </p>
+          </header>
+
+          <div class="contacto__grid">
+            <!-- Formulario de Contacto -->
+            <div class="contacto__card contacto__card--form">
+              <div class="contacto__card-header">
+                <div class="contacto__badge">Formulario Web</div>
+                <h3 class="contacto__card-titulo">Envíanos un mensaje</h3>
+                <p class="contacto__card-desc">
+                  Diligencia este formulario y nuestro equipo o investigadores principales se pondrán en contacto contigo.
+                </p>
+              </div>
+
+              <form id="contacto__form" class="contacto__form" novalidate>
+                <div class="contacto__form-group">
+                  <label for="contacto-nombre" class="contacto__label">Nombre Completo <span class="contacto__req">*</span></label>
+                  <div class="contacto__input-wrapper">
+                    <input type="text" id="contacto-nombre" name="nombre" class="contacto__input" placeholder="Ej. Maria Fernanda Gómez" required aria-required="true">
+                    <svg class="contacto__input-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                  </div>
+                  <span class="contacto__error-msg" id="err-nombre">Por favor ingresa tu nombre completo.</span>
+                </div>
+
+                <div class="contacto__form-group">
+                  <label for="contacto-email" class="contacto__label">Correo Electrónico / Institucional <span class="contacto__req">*</span></label>
+                  <div class="contacto__input-wrapper">
+                    <input type="email" id="contacto-email" name="email" class="contacto__input" placeholder="ejemplo@ucundinamarca.edu.co" required aria-required="true">
+                    <svg class="contacto__input-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                  </div>
+                  <span class="contacto__error-msg" id="err-email">Por favor ingresa un correo electrónico válido.</span>
+                </div>
+
+                <div class="contacto__form-group">
+                  <label for="contacto-rol" class="contacto__label">Perfil / Rol Académico <span class="contacto__req">*</span></label>
+                  <div class="contacto__input-wrapper">
+                    <select id="contacto-rol" name="rol" class="contacto__select" required aria-required="true">
+                      <option value="" disabled selected>Selecciona tu perfil...</option>
+                      <option value="estudiante">Estudiante UDEC / Externo</option>
+                      <option value="docente">Docente / Investigador</option>
+                      <option value="semillerista">Aspirante a Semillerista</option>
+                      <option value="empresa">Empresa / Aliado Institucional</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                    <svg class="contacto__input-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  </div>
+                  <span class="contacto__error-msg" id="err-rol">Por favor selecciona una opción.</span>
+                </div>
+
+                <div class="contacto__form-group">
+                  <label for="contacto-mensaje" class="contacto__label">Mensaje o Consulta <span class="contacto__req">*</span></label>
+                  <textarea id="contacto-mensaje" name="mensaje" class="contacto__textarea" rows="4" placeholder="Escribe aquí tu duda o propuesta..." required aria-required="true"></textarea>
+                  <span class="contacto__error-msg" id="err-mensaje">Por favor escribe un mensaje (mínimo 10 caracteres).</span>
+                </div>
+
+                <button type="submit" class="contacto__btn-submit">
+                  <span>Enviar Mensaje</span>
+                  <svg class="contacto__btn-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                </button>
+              </form>
+
+              <div id="contacto__status" class="contacto__status" aria-live="polite" hidden>
+                <div class="contacto__status-icon">✓</div>
+                <div class="contacto__status-body">
+                  <strong>¡Mensaje recibido con éxito!</strong>
+                  <p>Gracias por comunicarte con el Semillero LOCXUE. Te responderemos a la brevedad posible.</p>
+                </div>
+              </div>
+
+              <div class="contacto__google-form-banner">
+                <div class="contacto__gform-info">
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  <span>¿Prefieres diligenciar el borrador oficial en Google Forms?</span>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScqPQmMn4Ein_AdMww7K2ErjHBQUYcgxhZ6rcK56AzbHb35BA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="contacto__btn-gform">
+                  Abrir Formulario Google
+                </a>
+              </div>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="contacto__social-column">
+              <div class="contacto__social-intro">
+                <h3 class="contacto__social-titulo">Redes Sociales Oficiales</h3>
+                <p class="contacto__social-sub">Sigue nuestros canales de divulgación científica y eventos académicos.</p>
+              </div>
+
+              <div class="contacto__social-grid">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contacto__social-card contacto__social-card--instagram">
+                  <div class="contacto__social-icon-box">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </div>
+                  <div class="contacto__social-info">
+                    <span class="contacto__social-name">Instagram</span>
+                    <span class="contacto__social-desc">Noticias, imágenes y actividades del semillero</span>
+                  </div>
+                </a>
+
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contacto__social-card contacto__social-card--linkedin">
+                  <div class="contacto__social-icon-box">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  </div>
+                  <div class="contacto__social-info">
+                    <span class="contacto__social-name">LinkedIn</span>
+                    <span class="contacto__social-desc">Proyectos y publicaciones académicas</span>
+                  </div>
+                </a>
+
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contacto__social-card contacto__social-card--github">
+                  <div class="contacto__social-icon-box">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  </div>
+                  <div class="contacto__social-info">
+                    <span class="contacto__social-name">GitHub</span>
+                    <span class="contacto__social-desc">Repositorio oficial de código fuente</span>
+                  </div>
+                </a>
+
+                <a href="mailto:semillerolocxue@ucundinamarca.edu.co" class="contacto__social-card contacto__social-card--email">
+                  <div class="contacto__social-icon-box">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </div>
+                  <div class="contacto__social-info">
+                    <span class="contacto__social-name">Correo Institucional</span>
+                    <span class="contacto__social-desc">semillerolocxue@ucundinamarca.edu.co</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pie de página (Footer) -->
+      <footer class="footer-locxue" role="contentinfo">
+        <div class="footer-locxue__container">
+          <div class="footer-locxue__top">
+            <div class="footer-locxue__brand">
+              <div class="footer-locxue__logo-group">
+                <div class="footer-locxue__logo-mark">LOCXUE</div>
+                <span class="footer-locxue__tagline">Semillero de Investigación en IA</span>
+              </div>
+              <p class="footer-locxue__about">
+                Adscrito al programa de Ingeniería de Sistemas y Computación de la Universidad de Cundinamarca (Sede Fusagasugá). Grupo INGENIUM SUTA.
+              </p>
+              <div class="footer-locxue__badge-udec">
+                <span>Universidad de Cundinamarca</span>
+              </div>
+            </div>
+
+            <div class="footer-locxue__col">
+              <h4 class="footer-locxue__col-titulo">Navegación</h4>
+              <ul class="footer-locxue__links">
+                <li><a href="#identidad">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#publicaciones">Publicaciones</a></li>
+                <li><a href="#logros">Logros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-locxue__col">
+              <h4 class="footer-locxue__col-titulo">Ficha Institucional</h4>
+              <ul class="footer-locxue__info-list">
+                <li><strong>Institución:</strong> UDEC</li>
+                <li><strong>Programa:</strong> Ing. de Sistemas</li>
+                <li><strong>Sede:</strong> Fusagasugá</li>
+                <li><strong>Grupo:</strong> INGENIUM SUTA</li>
+                <li><strong>Trayectoria:</strong> Desde 2013</li>
+              </ul>
+            </div>
+
+            <div class="footer-locxue__col">
+              <h4 class="footer-locxue__col-titulo">Canales Oficiales</h4>
+              <div class="footer-locxue__social-icons">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-locxue__bottom">
+            <div class="footer-locxue__copyright">
+              © 2026 <strong>Semillero de Investigación LOCXUE</strong> · Universidad de Cundinamarca.
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
 
   </main>
 
-  <!-- Footer — información global del semillero -->
-  <footer class="footer" role="contentinfo">
-    <div class="section__container footer__container">
-      <div class="footer__brand">
-        <img src="assets/img/logo-locxue.png" alt="Logo LOCXUE" width="100" height="32">
-        <p>Semillero de Investigación LOCXUE — Universidad de Cundinamarca.</p>
-      </div>
-      <nav class="footer__nav" aria-label="Enlaces secundarios">
-        <ul>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#publicaciones">Publicaciones</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-      <p class="footer__social" aria-label="Redes sociales (pendientes)">
-        <a href="#" aria-label="Instagram (pendiente)">Instagram</a> ·
-        <a href="#" aria-label="LinkedIn (pendiente)">LinkedIn</a> ·
-        <a href="#" aria-label="GitHub (pendiente)">GitHub</a>
-      </p>
-      <p class="footer__credits">&copy; 2026 Semillero de Investigación LOCXUE — Universidad de Cundinamarca. Licencia MIT.</p>
-    </div>
-  </footer>
-
+  <!-- Scripts JavaScript del Sitio -->
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/identidad-institucional.js" defer></script>
+  <script src="assets/js/proyectos.js" defer></script>
+  <script src="assets/js/logros.js" defer></script>
+  <script src="assets/js/contacto-footer.js" defer></script>
+  <script>
+    // Tab controller para la sección de publicaciones
+    document.addEventListener('DOMContentLoaded', function () {
+      var tabBtns = document.querySelectorAll('.pub-section [role="tab"]');
+      var tabPanels = document.querySelectorAll('.pub-section [role="tabpanel"]');
+
+      tabBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var targetId = btn.getAttribute('aria-controls');
+          tabBtns.forEach(function (b) {
+            b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+          });
+          tabPanels.forEach(function (panel) {
+            panel.setAttribute('aria-hidden', panel.id === targetId ? 'false' : 'true');
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
