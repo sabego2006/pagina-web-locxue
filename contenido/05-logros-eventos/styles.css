@@ -1,0 +1,756 @@
+/* ==========================================================================
+   MÓDULO: 05 - LOGROS, RECONOCIMIENTOS Y EVENTOS
+   Diseño aislado para Semillero LOCXUE Software Engineering
+   Namespace de aislamiento: .logros-eventos-module
+   ========================================================================== */
+
+/* Variables de ámbito de módulo (respetan la identidad del sitio web) */
+.logros-eventos-module {
+  --lem-primary: #1A2B4C;
+  --lem-secondary: #3A236E;
+  --lem-accent: #D97706;
+  --lem-accent-glow: rgba(217, 119, 6, 0.15);
+  --lem-success: #059669;
+  --lem-success-bg: rgba(5, 150, 105, 0.1);
+  --lem-pending: #D97706;
+  --lem-pending-bg: rgba(217, 119, 6, 0.1);
+  --lem-bg-white: #FFFFFF;
+  --lem-bg-soft: #F8FAFC;
+  --lem-bg-card: #FFFFFF;
+  --lem-text-main: #1E293B;
+  --lem-text-muted: #64748B;
+  --lem-text-inverse: #FFFFFF;
+  --lem-border: #E2E8F0;
+  --lem-shadow-sm: 0 2px 4px rgba(26, 43, 76, 0.04);
+  --lem-shadow-md: 0 10px 25px -5px rgba(26, 43, 76, 0.08), 0 8px 10px -6px rgba(26, 43, 76, 0.04);
+  --lem-shadow-lg: 0 20px 30px -10px rgba(26, 43, 76, 0.12);
+  --lem-radius-sm: 8px;
+  --lem-radius-md: 16px;
+  --lem-radius-lg: 24px;
+  --lem-font-heading: 'Playfair Display', Georgia, serif;
+  --lem-font-body: 'Inter', Roboto, -apple-system, sans-serif;
+  --lem-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-family: var(--lem-font-body);
+  color: var(--lem-text-main);
+  background-color: var(--lem-bg-white);
+  padding: 4rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Encabezado de Sección
+   -------------------------------------------------------------------------- */
+.logros-eventos-module .lem-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.logros-eventos-module .lem-header__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: rgba(58, 35, 110, 0.08);
+  color: var(--lem-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.logros-eventos-module .lem-header__title {
+  font-family: var(--lem-font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: var(--lem-primary);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.logros-eventos-module .lem-header__description {
+  font-size: 1.125rem;
+  color: var(--lem-text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   1. Contadores y Métricas (4 Indicadores Reales)
+   -------------------------------------------------------------------------- */
+.logros-eventos-module .lem-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1140px;
+  margin: 0 auto 4rem auto;
+}
+
+.logros-eventos-module .lem-stat-card {
+  background: var(--lem-bg-card);
+  border: 1px solid var(--lem-border);
+  border-radius: var(--lem-radius-md);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--lem-shadow-sm);
+  transition: var(--lem-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.logros-eventos-module .lem-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--lem-primary), var(--lem-secondary));
+  opacity: 0.8;
+}
+
+.logros-eventos-module .lem-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--lem-shadow-md);
+  border-color: rgba(58, 35, 110, 0.2);
+}
+
+.logros-eventos-module .lem-stat-card__number {
+  font-family: var(--lem-font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--lem-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.logros-eventos-module .lem-stat-card__label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--lem-text-main);
+  margin-bottom: 0.25rem;
+}
+
+.logros-eventos-module .lem-stat-card__subtext {
+  font-size: 0.8125rem;
+  color: var(--lem-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reconocimientos y Logros Destacados
+   -------------------------------------------------------------------------- */
+.logros-eventos-module .lem-highlights-section {
+  background: var(--lem-bg-soft);
+  border-radius: var(--lem-radius-lg);
+  padding: 3rem 2rem;
+  max-width: 1140px;
+  margin: 0 auto 4rem auto;
+  border: 1px solid var(--lem-border);
+}
+
+.logros-eventos-module .lem-section-subtitle {
+  font-family: var(--lem-font-heading);
+  font-size: 1.75rem;
+  color: var(--lem-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.logros-eventos-module .lem-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+}
+
+.logros-eventos-module .lem-highlight-card {
+  background: var(--lem-bg-white);
+  border-radius: var(--lem-radius-md);
+  padding: 1.75rem;
+  border: 1px solid var(--lem-border);
+  box-shadow: var(--lem-shadow-sm);
+  transition: var(--lem-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.logros-eventos-module .lem-highlight-card:hover {
+  box-shadow: var(--lem-shadow-md);
+  border-color: rgba(58, 35, 110, 0.2);
+}
+
+.logros-eventos-module .lem-highlight-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  background: var(--lem-accent-glow);
+  color: var(--lem-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.logros-eventos-module .lem-highlight-card__title {
+  font-family: var(--lem-font-heading);
+  font-size: 1.25rem;
+  color: var(--lem-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.logros-eventos-module .lem-highlight-card__meta {
+  font-size: 0.85rem;
+  color: var(--lem-secondary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.logros-eventos-module .lem-highlight-card__desc {
+  font-size: 0.9375rem;
+  color: var(--lem-text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------------
+   3. Filtros Dinámicos
+   -------------------------------------------------------------------------- */
+.logros-eventos-module .lem-filters-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  max-width: 1140px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.logros-eventos-module .lem-filter-btn {
+  background: var(--lem-bg-white);
+  border: 1px solid var(--lem-border);
+  color: var(--lem-text-main);
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--lem-transition);
+}
+
+.logros-eventos-module .lem-filter-btn:hover {
+  background: var(--lem-bg-soft);
+  border-color: var(--lem-secondary);
+  color: var(--lem-secondary);
+}
+
+.logros-eventos-module .lem-filter-btn.active {
+  background: var(--lem-primary);
+  border-color: var(--lem-primary);
+  color: var(--lem-text-inverse);
+  box-shadow: 0 4px 12px rgba(26, 43, 76, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   4. Cronología de Eventos (Grid / Tarjetas)
+   -------------------------------------------------------------------------- */
+.logros-eventos-module .lem-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1140px;
+  margin: 0 auto 4rem auto;
+}
+
+.logros-eventos-module .lem-event-card {
+  background: var(--lem-bg-card);
+  border: 1px solid var(--lem-border);
+  border-radius: var(--lem-radius-md);
+  overflow: hidden;
+  box-shadow: var(--lem-shadow-sm);
+  transition: var(--lem-transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.logros-eventos-module .lem-event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--lem-shadow-lg);
+  border-color: rgba(26, 43, 76, 0.15);
+}
+
+.logros-eventos-module .lem-event-card__header {
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  position: relative;
+}
+
+.logros-eventos-module .lem-event-card__date-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--lem-bg-soft);
+  border: 1px solid var(--lem-border);
+  border-radius: 8px;
+  padding: 0.35rem 0.65rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--lem-primary);
+}
+
+.logros-eventos-module .lem-event-card__category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--lem-secondary);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.logros-eventos-module .lem-event-card__title {
+  font-family: var(--lem-font-heading);
+  font-size: 1.2rem;
+  color: var(--lem-primary);
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+  padding-right: 3.5rem;
+}
+
+.logros-eventos-module .lem-event-card__body {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.logros-eventos-module .lem-event-card__meta-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  font-size: 0.85rem;
+  color: var(--lem-text-muted);
+}
+
+.logros-eventos-module .lem-event-card__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.logros-eventos-module .lem-event-card__desc {
+  font-size: 0.92rem;
+  color: var(--lem-text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.logros-eventos-module .lem-event-card__footer {
+  padding: 1rem 1.5rem;
+  background: var(--lem-bg-soft);
+  border-top: 1px solid var(--lem-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logros-eventos-module .lem-btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--lem-secondary);
+  text-decoration: none;
+  transition: var(--lem-transition);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.logros-eventos-module .lem-btn-link:hover {
+  color: var(--lem-primary);
+  text-decoration: underline;
+}
+
+.logros-eventos-module .lem-btn-link--disabled {
+  color: #94A3B8;
+  cursor: not-allowed;
+}
+
+.logros-eventos-module .lem-btn-link--disabled:hover {
+  text-decoration: none;
+  color: #94A3B8;
+}
+
+/* --------------------------------------------------------------------------
+   5. Galería Visual de Evidencias Fotográficas (CON FALLBACK ELEGANTE)
+   -------------------------------------------------------------------------- */
+.logros-eventos-module .lem-gallery-section {
+  max-width: 1140px;
+  margin: 0 auto 4rem auto;
+  background: var(--lem-bg-soft);
+  border-radius: var(--lem-radius-lg);
+  padding: 3rem 2rem;
+  border: 1px solid var(--lem-border);
+}
+
+.logros-eventos-module .lem-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.logros-eventos-module .lem-gallery-card {
+  background: var(--lem-bg-white);
+  border-radius: var(--lem-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--lem-border);
+  box-shadow: var(--lem-shadow-sm);
+  transition: var(--lem-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.logros-eventos-module .lem-gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--lem-shadow-md);
+}
+
+.logros-eventos-module .lem-gallery-card__img-box {
+  width: 100%;
+  height: 180px;
+  background: #E2E8F0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logros-eventos-module .lem-gallery-card__img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fallback visual cuando la foto no existe aún */
+.logros-eventos-module .lem-gallery-card__fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25rem;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #F1F5F9, #E2E8F0);
+  color: var(--lem-text-muted);
+}
+
+.logros-eventos-module .lem-gallery-card__fallback-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+
+.logros-eventos-module .lem-gallery-card__fallback-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--lem-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.logros-eventos-module .lem-gallery-card__fallback-file {
+  font-family: monospace;
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  color: var(--lem-primary);
+  border: 1px solid #CBD5E1;
+}
+
+.logros-eventos-module .lem-gallery-card__content {
+  padding: 1rem 1.25rem;
+  flex-grow: 1;
+}
+
+.logros-eventos-module .lem-gallery-card__event-title {
+  font-family: var(--lem-font-heading);
+  font-size: 0.95rem;
+  color: var(--lem-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.logros-eventos-module .lem-gallery-card__date {
+  font-size: 0.75rem;
+  color: var(--lem-text-muted);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   6. Sección Visible de Fuentes Públicas Verificadas
+   -------------------------------------------------------------------------- */
+.logros-eventos-module .lem-sources-section {
+  max-width: 1140px;
+  margin: 0 auto 4rem auto;
+  background: var(--lem-bg-white);
+  border-radius: var(--lem-radius-lg);
+  padding: 3rem 2rem;
+  border: 1px solid var(--lem-border);
+  box-shadow: var(--lem-shadow-sm);
+}
+
+.logros-eventos-module .lem-sources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.logros-eventos-module .lem-source-card {
+  background: var(--lem-bg-soft);
+  border-radius: var(--lem-radius-md);
+  padding: 1.5rem;
+  border: 1px solid var(--lem-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.logros-eventos-module .lem-source-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-start;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.logros-eventos-module .lem-source-card__status--verified {
+  background: var(--lem-success-bg);
+  color: var(--lem-success);
+}
+
+.logros-eventos-module .lem-source-card__status--pending {
+  background: var(--lem-pending-bg);
+  color: var(--lem-pending);
+}
+
+.logros-eventos-module .lem-source-card__title {
+  font-family: var(--lem-font-heading);
+  font-size: 1.1rem;
+  color: var(--lem-primary);
+  margin-bottom: 0.5rem;
+}
+
+.logros-eventos-module .lem-source-card__desc {
+  font-size: 0.875rem;
+  color: var(--lem-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.logros-eventos-module .lem-source-card__link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--lem-secondary);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.logros-eventos-module .lem-source-card__link:hover {
+  text-decoration: underline;
+  color: var(--lem-primary);
+}
+
+/* --------------------------------------------------------------------------
+   7. Sección de Eventos Futuros (Oficial / Transparente)
+   -------------------------------------------------------------------------- */
+.logros-eventos-module .lem-future-events-card {
+  max-width: 1140px;
+  margin: 0 auto 4rem auto;
+  background: linear-gradient(135deg, rgba(26, 43, 76, 0.03), rgba(58, 35, 110, 0.05));
+  border: 1px dashed var(--lem-secondary);
+  border-radius: var(--lem-radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.logros-eventos-module .lem-future-events-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.logros-eventos-module .lem-future-events-card__title {
+  font-family: var(--lem-font-heading);
+  font-size: 1.5rem;
+  color: var(--lem-primary);
+  margin-bottom: 0.75rem;
+}
+
+.logros-eventos-module .lem-future-events-card__desc {
+  font-size: 1rem;
+  color: var(--lem-text-muted);
+  max-width: 650px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+}
+
+.logros-eventos-module .lem-future-events-card__note {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  background: #FFFBEB;
+  color: #B45309;
+  border: 1px solid #FCD34D;
+  border-radius: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Modal / Visor de Evidencias Fotograficas
+   -------------------------------------------------------------------------- */
+.logros-eventos-module .lem-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.logros-eventos-module .lem-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.logros-eventos-module .lem-modal__content {
+  background: var(--lem-bg-white);
+  border-radius: var(--lem-radius-md);
+  max-width: 700px;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  box-shadow: var(--lem-shadow-lg);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.logros-eventos-module .lem-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--lem-bg-soft);
+  border: 1px solid var(--lem-border);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--lem-transition);
+}
+
+.logros-eventos-module .lem-modal__close:hover {
+  background: #E2E8F0;
+}
+
+.logros-eventos-module .lem-modal__title {
+  font-family: var(--lem-font-heading);
+  font-size: 1.35rem;
+  color: var(--lem-primary);
+  margin-bottom: 1rem;
+  padding-right: 2.5rem;
+}
+
+.logros-eventos-module .lem-modal__img-placeholder {
+  background: var(--lem-bg-soft);
+  border: 2px dashed var(--lem-border);
+  border-radius: var(--lem-radius-sm);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--lem-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.logros-eventos-module .lem-modal__img-placeholder code {
+  background: #E2E8F0;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--lem-primary);
+}
+
+.logros-eventos-module .lem-modal__file-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.logros-eventos-module .lem-modal__file-item {
+  background: var(--lem-bg-soft);
+  border: 1px solid var(--lem-border);
+  border-radius: var(--lem-radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .logros-eventos-module {
+    padding: 2.5rem 1rem;
+  }
+
+  .logros-eventos-module .lem-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .logros-eventos-module .lem-events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logros-eventos-module .lem-gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .logros-eventos-module .lem-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
