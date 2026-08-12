@@ -41,7 +41,7 @@ Este módulo representa el canal oficial de comunicación e interacción entre e
 
 ## 📁 Archivos Generados en `contenido/06-contacto/`
 
-- [contacto-footer.html](file:///c:/Users/BRAYAN/.gemini/antigravity-ide/scratch/pagina-web-locxue/contenido/06-contacto/contacto-footer.html): Fragmento HTML modular listo para ser integrado en `web/index.html`.
-- [contacto-footer.css](file:///c:/Users/BRAYAN/.gemini/antigravity-ide/scratch/pagina-web-locxue/contenido/06-contacto/contacto-footer.css): Hoja de estilos BEM completamente namespaced y responsive.
-- [contacto-footer.js](file:///c:/Users/BRAYAN/.gemini/antigravity-ide/scratch/pagina-web-locxue/contenido/06-contacto/contacto-footer.js): Lógica JavaScript para validación, respuestas en tiempo real y animaciones con `IntersectionObserver`.
-- [Contacto-Footer-Vista-Previa.html](file:///c:/Users/BRAYAN/.gemini/antigravity-ide/scratch/pagina-web-locxue/contenido/06-contacto/Contacto-Footer-Vista-Previa.html): Página web completa autónoma para visualizar y probar el módulo de inmediato.
+- [contacto-footer.html](contacto-footer.html): Fragmento HTML modular listo para ser integrado en `web/index.html`.
+- [contacto-footer.css](contacto-footer.css): Hoja de estilos BEM completamente namespaced y responsive.
+- [contacto-footer.js](contacto-footer.js): Lógica JavaScript para validación, respuestas en tiempo real y animaciones con `IntersectionObserver`.
+- [Contacto-Footer-Vista-Previa.html](Contacto-Footer-Vista-Previa.html): Página web completa autónoma para visualizar y probar el módulo de inmediato.

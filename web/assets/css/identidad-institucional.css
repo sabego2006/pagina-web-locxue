@@ -565,3 +565,25 @@
     padding: 1.5rem;
   }
 }
+
+/* ==========================================================================
+   Animaciones de Reveal (controladas por identidad-institucional.js)
+   ========================================================================== */
+.identidad__reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.identidad__reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .identidad__reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
