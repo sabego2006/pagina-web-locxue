@@ -643,3 +643,25 @@
 .footer-locxue__author strong {
   color: #FFFFFF;
 }
+
+/* ==========================================================================
+   Animaciones de Reveal (controladas por contacto-footer.js)
+   ========================================================================== */
+.contacto__reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.contacto__reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contacto__reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
