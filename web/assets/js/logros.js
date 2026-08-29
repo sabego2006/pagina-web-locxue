@@ -92,6 +92,8 @@
 
     if (!modal || !openBtns.length) return;
 
+    var modalPlaceholder = modal ? modal.querySelector('.lem-modal__img-placeholder') : null;
+
     openBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
         var eventName = btn.getAttribute('data-event-title') || 'Evidencia Fotográfica';
@@ -105,9 +107,10 @@
             if (file) {
               var li = document.createElement('li');
               li.className = 'lem-modal__file-item';
-              li.innerHTML = 
+              var imgSrc = file.indexOf('assets/') === 0 ? file : 'assets/img/' + file;
+              li.innerHTML =
                 '<div style="width: 100%;">' +
-                  '<img src="assets/img/' + file + '" alt="' + file + '" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 0.5rem; display: block;" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">' +
+                  '<img src="' + imgSrc + '" alt="' + file + '" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 0.5rem; display: block;" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">' +
                   '<div class="lem-gallery-card__fallback" style="display: none; padding: 1.5rem; border: 1px dashed #CBD5E1; border-radius: 8px;">' +
                     '<span class="lem-gallery-card__fallback-icon">🖼️</span>' +
                     '<span class="lem-gallery-card__fallback-text">Fotografía pendiente de incorporar</span>' +
@@ -119,6 +122,8 @@
           });
         }
 
+        if (modalPlaceholder) modalPlaceholder.style.display = 'none';
+
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
       });
@@ -127,6 +132,8 @@
     function closeModal() {
       modal.classList.remove('active');
       document.body.style.overflow = '';
+      if (modalPlaceholder) modalPlaceholder.style.display = '';
+      if (modalFiles) modalFiles.innerHTML = '';
     }
 
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
