@@ -8,7 +8,7 @@ Este directorio (`contenido/02-equipo/`) contiene todo el material estructurado 
    - Fragmento HTML modular con todos los contenedores y marcadores de posición (*placeholders*).
    - Incluye:
      - **Profesor Líder**: Tarjeta principal para el docente que lidera el semillero.
-     - **Fundadores**: Tarjetas para los fundadores pioneros.
+     - **Miembros antiguos**: Tarjetas para los miembros antiguos y pioneros.
      - **17 Integrantes**: Grid responsivo con exactamente 17 tarjetas listos para cada estudiante o investigador activo.
 
 2. **`equipo.css`**:
