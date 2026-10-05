@@ -29,9 +29,7 @@
     <nav class="nav" aria-label="Navegación principal">
       <a class="nav__logo" href="#identidad" aria-label="LOCXUE — ir al inicio">
         <div class="nav__logo-brand">
-          <svg class="nav__logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/branding/logo-mark.png" alt="" class="nav__logo-icon" aria-hidden="true">
           <span class="nav__logo-text">LOCXUE</span>
         </div>
       </a>
@@ -51,6 +49,22 @@
       </ul>
     </nav>
   </header>
+
+  <!-- Banner de marca: versión negativa oficial del logotipo (símbolo + nombre en blanco,
+       tomada del kit de marca) sobre el púrpura institucional, y foto grupal de semilleristas -->
+  <div class="brand-banner">
+    <div class="brand-banner__container">
+      <div class="brand-banner__identity">
+        <img src="assets/img/branding/logo-negative.png" alt="LOCXUE — Semillero de Investigación" class="brand-banner__logo">
+        <p class="brand-banner__tagline">Semillero de Investigación · Universidad de Cundinamarca</p>
+      </div>
+      <div class="brand-banner__team">
+        <div class="brand-banner__team-frame">
+          <img src="assets/img/equipo/equipo-completo.jpg" alt="Foto grupal de los semilleristas de LOCXUE" class="brand-banner__team-photo" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
 
   <main id="main">
 
@@ -1280,19 +1294,19 @@
         </p>
         <span class="lem-future-events-card__note">ℹ️ Estado: Sin eventos futuros programados por el momento</span>
       </div>
-    </section>
 
-    <!-- Modal de Evidencias Fotográficas -->
-    <div id="lem-evidence-modal" class="lem-modal" role="dialog" aria-modal="true" aria-labelledby="lem-modal-title">
-      <div class="lem-modal__content">
-        <button id="lem-modal-close" class="lem-modal__close" aria-label="Cerrar modal">&times;</button>
-        <h3 id="lem-modal-title" class="lem-modal__title">Evidencias Fotográficas del Evento</h3>
-        <div class="lem-modal__img-placeholder">
-          <p>📷 <strong>Visor de Evidencias Históricas</strong></p>
+      <!-- Modal de Evidencias Fotográficas -->
+      <div id="lem-evidence-modal" class="lem-modal" role="dialog" aria-modal="true" aria-labelledby="lem-modal-title">
+        <div class="lem-modal__content">
+          <button id="lem-modal-close" class="lem-modal__close" aria-label="Cerrar modal">&times;</button>
+          <h3 id="lem-modal-title" class="lem-modal__title">Evidencias Fotográficas del Evento</h3>
+          <div class="lem-modal__img-placeholder">
+            <p>📷 <strong>Visor de Evidencias Históricas</strong></p>
+          </div>
+          <ul id="lem-modal-files" class="lem-modal__file-list"></ul>
         </div>
-        <ul id="lem-modal-files" class="lem-modal__file-list"></ul>
       </div>
-    </div>
+    </section>
 
     <!-- ============================================================
          MÓDULO 06: Redes Sociales, Contacto y Pie de Página (Footer)
