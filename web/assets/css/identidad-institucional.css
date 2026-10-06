@@ -5,9 +5,9 @@
 
 .identidad {
   /* --- Tokens de marca (obligatorios, manual de identidad) --- */
-  --locxue-azul: #1A2B4C;
+  --locxue-azul: #0C1940;
   --locxue-azul-suave: #26375c;
-  --locxue-morado: #3A236E;
+  --locxue-morado: #642EA0;
   --locxue-morado-hover: #4d2f8f;
   --locxue-bg: #FFFFFF;
   --locxue-bg-alt: #F4F6F9;
@@ -18,7 +18,7 @@
   --locxue-font-body: "Inter", "Roboto", Helvetica, Arial, sans-serif;
 
   --locxue-radio: 4px;
-  --locxue-sombra: 0 24px 48px -24px rgba(26, 43, 76, 0.35);
+  --locxue-sombra: 0 24px 48px -24px rgba(12, 25, 64, 0.35);
 
   position: relative;
   isolation: isolate;
@@ -445,7 +445,7 @@
 .identidad__valor:focus-within {
   transform: translateY(-4px);
   border-color: var(--locxue-morado);
-  box-shadow: 0 16px 32px -20px rgba(58, 35, 110, 0.45);
+  box-shadow: 0 16px 32px -20px rgba(100, 46, 160, 0.45);
 }
 
 .identidad__valor-icon {

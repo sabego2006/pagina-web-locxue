@@ -1,7 +1,9 @@
 /* ==========================================================================
    Semillero LOCXUE — Hoja de estilos principal
-   Tokens autoritativos definidos en CLAUDE.md (docs/backlog/diseño y tipografia.jpeg)
-   Paleta: primario #1A2B4C, secundario #3A236E, fondos #FFFFFF / #F4F6F9.
+   Tokens autoritativos: Branding Kit oficial (docs/branding-kit/Branding Locxue/
+   Paleta de Colores Locxue.pdf). Reemplaza la paleta provisional previa.
+   Navy #0C1940 (dominante) · Púrpura #642EA0 (acento de marca) · Naranja
+   #E8762A (reservado exclusivamente a CTAs/alertas) · Noche #060C22 (máx. contraste).
    Tipografía: Playfair Display (titulares), Inter (cuerpo).
    ========================================================================== */
 
@@ -9,16 +11,23 @@
    1. Tokens (custom properties)
    -------------------------------------------------------------------------- */
 :root {
-  /* Color */
-  --color-primary: #1A2B4C;          /* azul marino corporativo */
-  --color-secondary: #3A236E;        /* violeta institucional */
+  /* Color — Branding Kit oficial Locxue */
+  --color-primary: #0C1940;          /* Locxue Navy — dominante institucional */
+  --color-primary-medium: #1A2D6B;   /* Navy Medio — hover de botones, tarjetas oscuras */
+  --color-primary-light: #2E4799;    /* Navy Claro — estados activos, links */
+  --color-secondary: #642EA0;        /* Púrpura Locxue — acento de marca */
+  --color-secondary-medium: #6B39A8; /* Púrpura Medio — gradientes, hover de púrpura */
+  --color-accent-cta: #E8762A;       /* Naranja CTA — exclusivo para botones de acción y alertas */
+  --color-accent-cta-hover: #FF9B45; /* Naranja Medio — hover del CTA */
+  --color-dark: #060C22;             /* Noche Locxue — footers y fondos de máximo contraste */
   --color-bg-white: #FFFFFF;
-  --color-bg-soft: #F4F6F9;
-  --color-text: #1A2B4C;
+  --color-bg-soft: #E4E8F5;          /* Azul Niebla — fondos sutiles */
+  --color-bg-soft-alt: #EDE5F8;      /* Lila Niebla — secciones de énfasis suave */
+  --color-text: #0C1940;
   --color-text-inverse: #FFFFFF;
   --color-muted: #5A6478;
   --color-border: #E2E6EE;
-  --color-overlay: rgba(26, 43, 76, 0.65);
+  --color-overlay: rgba(12, 25, 64, 0.65);
 
   /* Tipografía */
   --font-heading: 'Playfair Display', Georgia, serif;
@@ -213,15 +222,16 @@ ul {
 }
 
 .btn--primary {
-  background-color: var(--color-secondary);
+  /* Naranja CTA: reservado por el branding kit exclusivamente para acciones principales */
+  background-color: var(--color-accent-cta);
   color: var(--color-text-inverse);
-  border: 2px solid var(--color-secondary);
+  border: 2px solid var(--color-accent-cta);
 }
 
 .btn--primary:hover,
 .btn--primary:focus-visible {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: var(--color-accent-cta-hover);
+  border-color: var(--color-accent-cta-hover);
   color: var(--color-text-inverse);
 }
 
@@ -344,7 +354,7 @@ ul {
   text-orientation: mixed;
   font-family: var(--font-heading);
   font-size: clamp(2rem, 6vw, 5rem);
-  color: rgba(58, 35, 110, 0.08);
+  color: rgba(100, 46, 160, 0.08);
   letter-spacing: 0.3em;
   pointer-events: none;
   user-select: none;
@@ -371,13 +381,106 @@ ul {
 .header {
   position: sticky;
   inset-block-start: 0;
-  background-color: rgba(26, 43, 76, 0.95);
+  background-color: rgba(12, 25, 64, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: var(--color-text-inverse);
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(26, 43, 76, 0.25);
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%) 1;
+  box-shadow: 0 4px 20px rgba(12, 25, 64, 0.25);
+}
+
+/* Banner de marca: versión negativa oficial del logotipo (del kit de marca — símbolo
+   y nombre "LOCXUE" en blanco) sobre el púrpura institucional, y foto grupal de
+   semilleristas en disposición partida. No es sticky — vive debajo del header de
+   navegación y encima del contenido de <main>. */
+.brand-banner {
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-medium) 100%);
+}
+
+.brand-banner__container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: var(--space-6);
+  padding-block: var(--space-6);
+  padding-inline: var(--space-3);
+}
+
+.brand-banner__identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+}
+
+.brand-banner__logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.brand-banner__tagline {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--fs-small);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Marco tipo "copia impresa": mate blanco alrededor de la foto, en vez de un
+   recorte a sangre — separa la fotografía del fondo púrpura con intención. */
+.brand-banner__team {
+  width: 100%;
+  background-color: var(--color-bg-white);
+  padding: 10px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 45px rgba(6, 12, 34, 0.35);
+}
+
+.brand-banner__team-frame {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: calc(var(--radius-md) - 6px);
+}
+
+.brand-banner__team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 768px) {
+  .brand-banner__team-frame {
+    height: 380px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-banner__container {
+    grid-template-columns: 1fr 1.35fr;
+    gap: var(--space-8);
+    padding-block: var(--space-8);
+  }
+
+  .brand-banner__identity {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .brand-banner__logo {
+    max-width: 340px;
+  }
+
+  .brand-banner__team-frame {
+    height: 460px;
+  }
 }
 
 .nav {
@@ -407,9 +510,9 @@ ul {
 }
 
 .nav__logo-icon {
-  width: 28px;
-  height: 28px;
-  color: #FFFFFF;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
@@ -515,8 +618,8 @@ ul {
   inset: 0;
   background:
     linear-gradient(var(--color-overlay), var(--color-overlay)),
-    radial-gradient(circle at 30% 30%, rgba(58, 35, 110, 0.35), transparent 60%),
-    radial-gradient(circle at 80% 70%, rgba(58, 35, 110, 0.2), transparent 55%);
+    radial-gradient(circle at 30% 30%, rgba(100, 46, 160, 0.35), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(100, 46, 160, 0.2), transparent 55%);
   z-index: 0;
 }
 

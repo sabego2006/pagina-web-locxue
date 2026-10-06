@@ -1,18 +1,18 @@
 /* ============================================================
    ESTILOS COMPONENTE: Barra de Navegación Superior (Navbar)
-   Paleta: Fondo #1A2B4C con efecto glassmorphism, indicador activo blanco
+   Paleta: Fondo #0C1940 con efecto glassmorphism, indicador activo blanco
    ============================================================ */
 .header {
   position: sticky;
   top: 0;
   inset-block-start: 0;
-  background-color: rgba(26, 43, 76, 0.95);
+  background-color: rgba(12, 25, 64, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: #FFFFFF;
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(26, 43, 76, 0.25);
+  box-shadow: 0 4px 20px rgba(12, 25, 64, 0.25);
 }
 
 .nav {

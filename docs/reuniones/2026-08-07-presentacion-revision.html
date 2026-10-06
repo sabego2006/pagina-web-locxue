@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LOCXUE · Revisión de avance — 7 de agosto de 2026</title>
+<meta name="description" content="Presentación de revisión de avance del sitio web del Semillero de Investigación LOCXUE. Reunión de equipo, 7 de agosto de 2026.">
+<meta name="theme-color" content="#1A2B4C">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap">
+<style>
+/* ==========================================================================
+   LOCXUE — Deck de revisión de avance (7-ago-2026)
+   Tokens tomados VERBATIM de web/assets/css/styles.css:11-53
+   ========================================================================== */
+:root{
+  --color-primary:#1A2B4C;
+  --color-secondary:#3A236E;
+  --color-bg-white:#FFFFFF;
+  --color-bg-soft:#F4F6F9;
+  --color-text:#1A2B4C;
+  --color-text-inverse:#FFFFFF;
+  --color-muted:#5A6478;
+  --color-border:#E2E6EE;
+  --color-overlay:rgba(26,43,76,.65);
+
+  --font-heading:'Playfair Display',Georgia,serif;
+  --font-body:'Inter',Roboto,Helvetica,Arial,sans-serif;
+  --lh-body:1.6;
+  --lh-heading:1.2;
+
+  --space-1:.5rem;  --space-2:1rem;   --space-3:1.5rem;
+  --space-4:2rem;   --space-6:3rem;   --space-8:4rem;
+
+  --container-max:1200px;
+  --radius-sm:6px;  --radius-md:12px; --radius-lg:20px;
+  --shadow-sm:0 1px 2px rgba(26,43,76,.08);
+  --shadow-md:0 4px 12px rgba(26,43,76,.12);
+  --shadow-lg:0 12px 35px rgba(17,25,46,.22);
+  --transition-base:200ms ease;
+
+  /* Deck-specific — derivados del módulo Equipo (equipo.css) */
+  --grad-dark:linear-gradient(135deg,#11192E 0%,#17233D 50%,#251745 100%);
+  --eyebrow:#A5B4FC;
+  --eyebrow-dash:#818CF8;
+  --lead-light:#CBD5E1;
+  --ok:#1F7A4D;   --ok-bg:#E4F4EB;
+  --warn:#8A5A00; --warn-bg:#FBF0DC;
+  --bad:#A32C2C;  --bad-bg:#FBE6E6;
+  --chrome-h:52px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  font-size:clamp(.95rem,.55vw + .82rem,1.05rem);
+  line-height:var(--lh-body);
+  color:var(--color-text);
+  background:var(--color-primary);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+h1,h2,h3,h4{font-family:var(--font-heading);line-height:var(--lh-heading);color:var(--color-primary)}
+ul{list-style:none}
+a{color:var(--color-secondary);text-decoration:none;transition:color var(--transition-base)}
+a:hover{color:var(--color-primary)}
+:focus-visible{outline:2px solid var(--eyebrow);outline-offset:3px;border-radius:4px}
+strong{font-weight:600}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.86em;background:rgba(58,35,110,.09);color:var(--color-secondary);padding:.1em .38em;border-radius:4px;word-break:break-word}
+.slide--dark code{background:rgba(255,255,255,.12);color:#D9E0F5}
+
+/* ---------- Chrome del deck ---------- */
+.chrome{
+  position:fixed;inset-block-start:0;inset-inline:0;height:var(--chrome-h);z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);
+  padding:0 var(--space-3);
+  background:rgba(26,43,76,.95);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.1);
+  box-shadow:0 4px 20px rgba(26,43,76,.25);
+  color:#fff;
+}
+.chrome__brand{display:flex;align-items:center;gap:.55rem;min-width:0}
+.chrome__mark{width:22px;height:22px;flex:none;color:#fff}
+.chrome__word{font-family:var(--font-heading);font-weight:700;font-size:1.05rem;letter-spacing:.08em}
+.chrome__sep{width:1px;height:18px;background:rgba(255,255,255,.22);flex:none}
+.chrome__ctx{font-size:.76rem;color:rgba(255,255,255,.66);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chrome__right{display:flex;align-items:center;gap:.4rem;flex:none}
+.counter{font-size:.8rem;font-variant-numeric:tabular-nums;color:rgba(255,255,255,.8);min-width:4.2rem;text-align:right}
+.counter b{color:#fff;font-weight:600}
+.progress{position:fixed;inset-block-start:var(--chrome-h);inset-inline:0;height:3px;background:rgba(255,255,255,.1);z-index:1000}
+.progress__bar{height:100%;width:0;background:linear-gradient(90deg,#818CF8,#A5B4FC);transition:width 300ms ease}
+
+.iconbtn{
+  width:38px;height:38px;display:grid;place-items:center;flex:none;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+  color:#fff;border-radius:var(--radius-sm);cursor:pointer;
+  transition:background var(--transition-base),border-color var(--transition-base),transform var(--transition-base);
+}
+.iconbtn:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.3)}
+.iconbtn:active{transform:scale(.94)}
+.iconbtn svg{width:17px;height:17px}
+.iconbtn[disabled]{opacity:.32;cursor:not-allowed}
+.iconbtn[disabled]:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16)}
+
+/* ---------- Slides ---------- */
+.deck{padding-block-start:var(--chrome-h)}
+.slide{
+  display:none;
+  min-height:calc(100vh - var(--chrome-h));
+  padding:var(--space-6) var(--space-3) var(--space-8);
+  background:var(--color-bg-white);
+  position:relative;overflow:hidden;
+}
+.slide.is-active{display:flex;flex-direction:column;justify-content:center}
+.slide--alt{background:var(--color-bg-soft)}
+.slide--dark{background:var(--color-primary);color:#fff}
+.slide--grad{background:var(--grad-dark);color:#fff}
+.slide--dark h1,.slide--dark h2,.slide--dark h3,.slide--dark h4,
+.slide--grad h1,.slide--grad h2,.slide--grad h3,.slide--grad h4{color:#fff}
+.slide__inner{width:100%;max-width:var(--container-max);margin-inline:auto;position:relative;z-index:1}
+
+/* Marca de agua vertical — firma del sistema de diseño.
+   Se usan propiedades FÍSICAS a propósito: con writing-mode:vertical-rl los ejes
+   lógicos se invierten (inset-block pasa a ser horizontal), y las propiedades
+   lógicas terminan estirando el bloque a todo el ancho en vez de anclarlo. */
+.wm{
+  position:absolute;top:50%;right:var(--space-2);transform:translateY(-50%);
+  max-height:100%;
+  writing-mode:vertical-rl;text-orientation:mixed;
+  font-family:var(--font-heading);font-size:clamp(3rem,8vw,6.5rem);
+  color:rgba(58,35,110,.07);letter-spacing:.3em;
+  pointer-events:none;user-select:none;z-index:0;
+}
+.slide--dark .wm,.slide--grad .wm{color:rgba(255,255,255,.055)}
+
+/* ---------- Tipografía de slide ---------- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--color-secondary);margin-bottom:.7rem;
+}
+.eyebrow::before{content:'—';color:var(--color-secondary);font-weight:700}
+.slide--dark .eyebrow,.slide--grad .eyebrow{color:var(--eyebrow)}
+.slide--dark .eyebrow::before,.slide--grad .eyebrow::before{color:var(--eyebrow-dash)}
+
+.s-title{font-size:clamp(1.7rem,3.1vw,2.5rem);margin-bottom:.65rem}
+.s-lede{max-width:70ch;color:var(--color-muted);font-size:1.02rem;margin-bottom:var(--space-3)}
+.slide--dark .s-lede,.slide--grad .s-lede{color:var(--lead-light)}
+
+/* ---------- Portada ---------- */
+.cover{text-align:left;max-width:60rem}
+.cover__title{font-size:clamp(2.4rem,6.2vw,4.4rem);margin-bottom:var(--space-2);letter-spacing:-.01em}
+.cover__sub{font-size:clamp(1.05rem,1.7vw,1.35rem);color:var(--lead-light);max-width:52ch;margin-bottom:var(--space-4)}
+.cover__meta{display:flex;flex-wrap:wrap;gap:var(--space-1) var(--space-3);padding-top:var(--space-3);border-top:1px solid rgba(255,255,255,.16)}
+.cover__meta div{display:flex;flex-direction:column;gap:.15rem}
+.cover__meta dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.11em;color:var(--eyebrow)}
+.cover__meta dd{font-size:.98rem;color:#fff;font-weight:500}
+
+/* ---------- Grids ---------- */
+.grid{display:grid;gap:var(--space-3)}
+.grid--2{grid-template-columns:1fr}
+.grid--3{grid-template-columns:1fr}
+.grid--4{grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){
+  .grid--2{grid-template-columns:repeat(2,1fr)}
+  .grid--3{grid-template-columns:repeat(3,1fr)}
+  .grid--4{grid-template-columns:repeat(4,1fr)}
+}
+
+/* ---------- Cards ---------- */
+.card{
+  background:var(--color-bg-white);border:1px solid var(--color-border);
+  border-radius:var(--radius-md);padding:var(--space-3);box-shadow:var(--shadow-sm);
+  transition:box-shadow var(--transition-base),transform var(--transition-base);
+}
+.card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.slide--dark .card,.slide--grad .card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);box-shadow:none}
+.slide--dark .card:hover,.slide--grad .card:hover{background:rgba(255,255,255,.08)}
+.card__head{display:flex;align-items:center;gap:.6rem;margin-bottom:.55rem}
+.card__ico{width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:var(--radius-sm);background:rgba(58,35,110,.09);color:var(--color-secondary)}
+.card__ico svg{width:18px;height:18px}
+.slide--dark .card__ico,.slide--grad .card__ico{background:rgba(255,255,255,.1);color:var(--eyebrow)}
+.card__title{font-size:1.08rem;margin:0}
+.card__meta{font-size:.82rem;color:var(--color-muted)}
+.slide--dark .card__meta,.slide--grad .card__meta{color:var(--lead-light)}
+.card p{font-size:.93rem;color:var(--color-muted)}
+.slide--dark .card p,.slide--grad .card p{color:var(--lead-light)}
+
+/* ---------- Stats ---------- */
+.stat{text-align:center;padding:var(--space-3) var(--space-2);background:var(--color-bg-white);border:1px solid var(--color-border);border-radius:var(--radius-md);box-shadow:var(--shadow-sm)}
+.slide--dark .stat,.slide--grad .stat{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);box-shadow:none}
+.stat__value{font-family:var(--font-heading);font-size:clamp(1.9rem,3.4vw,2.6rem);color:var(--color-secondary);display:block;line-height:1}
+.slide--dark .stat__value,.slide--grad .stat__value{color:var(--eyebrow)}
+.stat__label{font-size:.8rem;color:var(--color-muted);display:block;margin-top:.45rem;line-height:1.4}
+.slide--dark .stat__label,.slide--grad .stat__label{color:var(--lead-light)}
+.stat--flag .stat__value{color:var(--bad)}
+.slide--dark .stat--flag .stat__value{color:#FF9E9E}
+
+/* ---------- Badges ---------- */
+.badge{display:inline-flex;align-items:center;gap:.32rem;font-size:.73rem;font-weight:600;padding:.24rem .55rem;border-radius:999px;white-space:nowrap;line-height:1.35}
+.badge svg{width:12px;height:12px;flex:none}
+.badge--ok{background:var(--ok-bg);color:var(--ok)}
+.badge--warn{background:var(--warn-bg);color:var(--warn)}
+.badge--bad{background:var(--bad-bg);color:var(--bad)}
+.badge--neutral{background:rgba(58,35,110,.09);color:var(--color-secondary)}
+.slide--dark .badge--ok,.slide--grad .badge--ok{background:rgba(52,211,153,.16);color:#7BE8B4}
+.slide--dark .badge--warn,.slide--grad .badge--warn{background:rgba(251,191,36,.16);color:#F8D488}
+.slide--dark .badge--bad,.slide--grad .badge--bad{background:rgba(248,113,113,.16);color:#FFA8A8}
+.slide--dark .badge--neutral,.slide--grad .badge--neutral{background:rgba(255,255,255,.11);color:var(--eyebrow)}
+
+/* ---------- Tablas ---------- */
+.tablewrap{overflow-x:auto;border:1px solid var(--color-border);border-radius:var(--radius-md);background:#fff}
+.slide--dark .tablewrap,.slide--grad .tablewrap{border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.04)}
+table{width:100%;border-collapse:collapse;font-size:.87rem;min-width:620px}
+th,td{text-align:left;padding:.62rem .8rem;border-bottom:1px solid var(--color-border);vertical-align:top}
+.slide--dark th,.slide--dark td,.slide--grad th,.slide--grad td{border-color:rgba(255,255,255,.1)}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--color-muted);font-weight:600;background:var(--color-bg-soft);position:sticky;top:0}
+.slide--dark th,.slide--grad th{background:rgba(255,255,255,.07);color:var(--eyebrow)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(58,35,110,.035)}
+.slide--dark tbody tr:hover,.slide--grad tbody tr:hover{background:rgba(255,255,255,.045)}
+td code{font-size:.8em}
+.t-hu{font-weight:600;color:var(--color-secondary);white-space:nowrap}
+.slide--dark .t-hu,.slide--grad .t-hu{color:var(--eyebrow)}
+.t-muted{color:var(--color-muted)}
+.slide--dark .t-muted,.slide--grad .t-muted{color:var(--lead-light)}
+
+/* ---------- Listas ---------- */
+.blist li{position:relative;padding-inline-start:1.35rem;margin-bottom:.5rem;font-size:.92rem;color:var(--color-muted);line-height:1.55}
+.blist li::before{content:'';position:absolute;inset-inline-start:.25rem;inset-block-start:.62em;width:5px;height:5px;border-radius:50%;background:var(--color-secondary)}
+.slide--dark .blist li,.slide--grad .blist li{color:var(--lead-light)}
+.slide--dark .blist li::before,.slide--grad .blist li::before{background:var(--eyebrow-dash)}
+.blist li:last-child{margin-bottom:0}
+
+.checks li{position:relative;padding-inline-start:1.6rem;margin-bottom:.5rem;font-size:.89rem;color:var(--color-muted);line-height:1.5}
+.checks li::before{
+  content:'';position:absolute;inset-inline-start:0;inset-block-start:.28em;
+  width:14px;height:14px;border-radius:4px;border:1.5px solid var(--color-secondary);opacity:.55;
+}
+.slide--dark .checks li,.slide--grad .checks li{color:var(--lead-light)}
+.slide--dark .checks li::before,.slide--grad .checks li::before{border-color:var(--eyebrow)}
+.checks li:last-child{margin-bottom:0}
+.checks strong{color:var(--color-text)}
+.slide--dark .checks strong,.slide--grad .checks strong{color:#fff}
+
+/* ---------- Timeline ---------- */
+.tl{position:relative;padding-inline-start:var(--space-4);border-inline-start:2px solid var(--color-secondary);margin-top:var(--space-2)}
+.slide--dark .tl,.slide--grad .tl{border-color:var(--eyebrow-dash)}
+.tl__item{position:relative;margin-bottom:var(--space-3)}
+.tl__item:last-child{margin-bottom:0}
+.tl__item::before{content:'';position:absolute;inset-inline-start:calc(-1 * var(--space-4) - 6px);inset-block-start:.45em;width:10px;height:10px;border-radius:50%;background:var(--color-secondary);border:2px solid #fff}
+.slide--alt .tl__item::before{border-color:var(--color-bg-soft)}
+.slide--dark .tl__item::before,.slide--grad .tl__item::before{background:var(--eyebrow);border-color:var(--color-primary)}
+.tl__date{display:inline-block;font-family:var(--font-heading);font-size:1.16rem;color:var(--color-secondary);margin-bottom:.1rem}
+.slide--dark .tl__date,.slide--grad .tl__date{color:var(--eyebrow)}
+.tl__title{font-size:1rem;margin-bottom:.15rem}
+.tl__body{font-size:.88rem;color:var(--color-muted)}
+.slide--dark .tl__body,.slide--grad .tl__body{color:var(--lead-light)}
+
+/* ---------- Bloques especiales ---------- */
+.callout{
+  border-inline-start:3px solid var(--color-secondary);
+  background:rgba(58,35,110,.06);
+  padding:var(--space-2) var(--space-3);border-radius:var(--radius-sm);
+  font-size:.92rem;color:var(--color-text);
+}
+.slide--dark .callout,.slide--grad .callout{background:rgba(255,255,255,.07);border-color:var(--eyebrow);color:var(--lead-light)}
+.callout--warn{border-color:#B4791A;background:rgba(180,121,26,.09)}
+.slide--dark .callout--warn,.slide--grad .callout--warn{background:rgba(251,191,36,.11);border-color:#F8D488}
+
+.codeblock{
+  background:#111A2E;color:#C9D4F0;border-radius:var(--radius-sm);
+  padding:var(--space-2);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
+  font-size:.8rem;line-height:1.7;overflow-x:auto;border:1px solid rgba(255,255,255,.1);
+}
+.codeblock .mk{color:#FF9E9E;font-weight:600}
+.codeblock .cm{color:#7E8CAE}
+
+.swatches{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.sw{display:flex;align-items:center;gap:.55rem;font-size:.82rem;color:var(--color-muted)}
+.sw__chip{width:34px;height:34px;border-radius:var(--radius-sm);border:1px solid rgba(0,0,0,.12);flex:none;box-shadow:var(--shadow-sm)}
+.slide--dark .sw,.slide--grad .sw{color:var(--lead-light)}
+.sw b{display:block;color:var(--color-text);font-family:ui-monospace,Consolas,monospace;font-size:.8rem}
+.slide--dark .sw b,.slide--grad .sw b{color:#fff}
+
+.bar{display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem;font-size:.85rem}
+.bar__label{flex:none;width:9.5rem;color:var(--color-muted);text-align:right}
+.slide--dark .bar__label,.slide--grad .bar__label{color:var(--lead-light)}
+.bar__track{flex:1;height:14px;background:var(--color-bg-soft);border-radius:999px;overflow:hidden;border:1px solid var(--color-border)}
+.slide--dark .bar__track,.slide--grad .bar__track{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12)}
+.bar__fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--color-secondary),#6B4BA8);width:0;transition:width 700ms cubic-bezier(.2,.7,.3,1)}
+.is-active .bar__fill{width:var(--w)}
+.slide--dark .bar__fill,.slide--grad .bar__fill{background:linear-gradient(90deg,var(--eyebrow-dash),var(--eyebrow))}
+.bar__num{flex:none;width:2.6rem;font-variant-numeric:tabular-nums;font-weight:600;color:var(--color-secondary)}
+.slide--dark .bar__num,.slide--grad .bar__num{color:var(--eyebrow)}
+
+.owner{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;font-family:ui-monospace,Consolas,monospace;color:var(--color-secondary);background:rgba(58,35,110,.08);padding:.2rem .5rem;border-radius:999px}
+.owner svg{width:12px;height:12px}
+.slide--dark .owner,.slide--grad .owner{color:var(--eyebrow);background:rgba(255,255,255,.1)}
+
+.tasks{display:grid;gap:var(--space-2);grid-template-columns:1fr}
+@media(min-width:760px){.tasks{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1180px){.tasks{grid-template-columns:repeat(3,1fr)}}
+.task{background:#fff;border:1px solid var(--color-border);border-left:3px solid var(--color-secondary);border-radius:var(--radius-sm);padding:var(--space-2);box-shadow:var(--shadow-sm)}
+.task__head{margin-bottom:.5rem}
+.task__area{font-size:.95rem;font-family:var(--font-heading);color:var(--color-primary);display:block;margin-bottom:.28rem}
+.task__path{font-size:.72rem;font-family:ui-monospace,Consolas,monospace;color:var(--color-muted);display:block;margin-top:.28rem;word-break:break-all}
+
+.split{display:grid;gap:var(--space-3);grid-template-columns:1fr;align-items:start}
+@media(min-width:860px){.split{grid-template-columns:1.05fr .95fr}}
+.panel{background:var(--color-bg-soft);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3)}
+.slide--dark .panel,.slide--grad .panel{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
+.panel h4{font-size:1rem;margin-bottom:.6rem}
+.panel--flag{background:var(--bad-bg);border-color:#F0C9C9}
+.slide--dark .panel--flag{background:rgba(248,113,113,.1);border-color:rgba(248,113,113,.28)}
+
+.kv{display:grid;grid-template-columns:auto 1fr;gap:.42rem var(--space-2);font-size:.87rem}
+.kv dt{color:var(--color-muted);white-space:nowrap}
+.kv dd{color:var(--color-text);font-weight:500}
+.slide--dark .kv dt,.slide--grad .kv dt{color:var(--lead-light)}
+.slide--dark .kv dd,.slide--grad .kv dd{color:#fff}
+
+/* ---------- Overview ---------- */
+.overview{
+  position:fixed;inset:0;z-index:1200;background:rgba(17,25,46,.97);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  padding:calc(var(--chrome-h) + var(--space-3)) var(--space-3) var(--space-3);
+  overflow-y:auto;display:none;
+}
+.overview.is-open{display:block}
+.overview__grid{max-width:1100px;margin-inline:auto;display:grid;gap:var(--space-2);grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.ov{
+  text-align:left;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius-sm);padding:.7rem .8rem;color:#fff;cursor:pointer;
+  transition:background var(--transition-base),border-color var(--transition-base),transform var(--transition-base);
+  min-height:64px;display:flex;flex-direction:column;gap:.25rem;
+}
+.ov:hover{background:rgba(255,255,255,.13);border-color:var(--eyebrow);transform:translateY(-2px)}
+.ov.is-current{border-color:var(--eyebrow);background:rgba(129,140,248,.2)}
+.ov__n{font-size:.68rem;color:var(--eyebrow);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.ov__t{font-size:.83rem;line-height:1.35;font-weight:500}
+
+/* ---------- Navegación lateral ---------- */
+.edge{display:none;position:fixed;inset-block:var(--chrome-h) 0;width:70px;z-index:900;border:0;background:transparent;cursor:pointer}
+.edge--prev{inset-inline-start:0}
+.edge--next{inset-inline-end:0}
+/* Solo en pantallas anchas, donde no alcanzan a solaparse con el contenido */
+@media(min-width:1420px){.edge{display:block}}
+
+.hint{position:fixed;inset-block-end:.9rem;inset-inline-end:1rem;z-index:900;font-size:.72rem;color:var(--color-muted);background:rgba(255,255,255,.92);border:1px solid var(--color-border);border-radius:999px;padding:.3rem .7rem;box-shadow:var(--shadow-sm);transition:opacity 400ms ease}
+.hint.is-gone{opacity:0;pointer-events:none}
+.hint kbd{font-family:inherit;font-weight:600;background:var(--color-bg-soft);border:1px solid var(--color-border);border-radius:4px;padding:.05rem .3rem;font-size:.7rem;color:var(--color-secondary)}
+
+/* ---------- Motion ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.is-active [data-stagger]{animation:rise 420ms cubic-bezier(.2,.7,.3,1) backwards;animation-delay:calc(var(--i,0) * 55ms)}
+
+/* ---------- Responsive ---------- */
+@media(max-width:760px){
+  .slide{padding:var(--space-4) var(--space-2) var(--space-6)}
+  .wm{font-size:3rem;opacity:.6}
+  .bar__label{width:6.2rem;font-size:.78rem}
+  .chrome__ctx,.chrome__sep{display:none}
+  .cover__meta{gap:var(--space-2)}
+}
+
+/* ---------- Reduced motion (replica styles.css:773-793) ---------- */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .is-active [data-stagger]{animation:none}
+  .bar__fill{transition:none}
+}
+
+/* ---------- Impresión / PDF ---------- */
+@media print{
+  @page{size:A4 landscape;margin:12mm}
+  body{background:#fff;font-size:10.5pt}
+  .chrome,.progress,.edge,.hint,.overview{display:none!important}
+  .deck{padding:0}
+  .slide{display:flex!important;flex-direction:column;justify-content:flex-start;min-height:auto;page-break-after:always;break-after:page;padding:0 0 8mm;background:#fff!important;color:#000!important}
+  .slide:last-child{page-break-after:auto;break-after:auto}
+  .slide--dark,.slide--grad{background:#fff!important;color:#000!important}
+  .slide--dark h1,.slide--dark h2,.slide--dark h3,.slide--grad h1,.slide--grad h2,.slide--grad h3,
+  .cover__title,.cover__sub,.slide--dark .s-lede,.slide--grad .s-lede,
+  .slide--dark .card p,.slide--grad .card p,.slide--dark .blist li,.slide--grad .blist li,
+  .slide--dark .checks li,.slide--grad .checks li,.slide--dark .stat__label,.slide--grad .stat__label,
+  .slide--dark .kv dd,.slide--grad .kv dd{color:#000!important}
+  .slide--dark .card,.slide--grad .card,.slide--dark .panel,.slide--grad .panel,
+  .slide--dark .stat,.slide--grad .stat{background:#fff!important;border:1px solid #999!important}
+  .wm{display:none}
+  .card,.panel,.task,.stat,.tablewrap{box-shadow:none!important;break-inside:avoid}
+  .is-active [data-stagger]{animation:none}
+  .bar__fill{width:var(--w)!important;background:#3A236E!important}
+  a{color:#000!important;text-decoration:underline}
+  .codeblock{background:#fff!important;color:#000!important;border:1px solid #999!important}
+}
+</style>
+</head>
+<body>
+
+<!-- Sprite de iconos (Lucide) — SVG inline, sin emoji -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.5L4.2 19a2 2 0 001.7 3h12.2a2 2 0 001.7-3L14 9.5V2M9 2h6M7.5 14h9"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.2"/><circle cx="17.5" cy="10.5" r="1.2"/><circle cx="8.5" cy="7.5" r="1.2"/><circle cx="6.5" cy="12.5" r="1.2"/><path d="M12 2a10 10 0 000 20c.9 0 1.5-.7 1.5-1.5 0-.4-.2-.8-.4-1-.3-.3-.4-.6-.4-1 0-.9.7-1.5 1.5-1.5H16a6 6 0 006-6c0-5-4.5-9-10-9z"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1 0-2.9a2 2 0 00-3 0z"/><path d="M12 15l-3-3a22 22 0 012-4.6A11.9 11.9 0 0122 2c0 2.7-.8 7.7-6 11a22 22 0 01-4 2z"/><path d="M9 12H4s.5-3 2-4c1.7-1 5 0 5 0M12 15v5s3-.5 4-2c1-1.7 0-5 0-5"/></symbol>
+  <symbol id="i-git" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6"/><circle cx="18" cy="8" r="3"/><path d="M18 11c0 4-6 3-6 7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 015.8 1c0 2-3 3-3 3M12 17h.01"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+</svg>
+
+<header class="chrome">
+  <div class="chrome__brand">
+    <svg class="chrome__mark" aria-hidden="true"><use href="#i-layers"/></svg>
+    <span class="chrome__word">LOCXUE</span>
+    <span class="chrome__sep" aria-hidden="true"></span>
+    <span class="chrome__ctx" id="ctx">Revisión de avance · 7-ago-2026</span>
+  </div>
+  <div class="chrome__right">
+    <span class="counter" aria-live="polite"><b id="cur">1</b> / <span id="tot">20</span></span>
+    <button class="iconbtn" id="btnOverview" type="button" aria-label="Ver todas las diapositivas"><svg aria-hidden="true"><use href="#i-grid"/></svg></button>
+    <button class="iconbtn" id="btnPrev" type="button" aria-label="Diapositiva anterior"><svg aria-hidden="true"><use href="#i-prev"/></svg></button>
+    <button class="iconbtn" id="btnNext" type="button" aria-label="Diapositiva siguiente"><svg aria-hidden="true"><use href="#i-next"/></svg></button>
+  </div>
+</header>
+<div class="progress"><div class="progress__bar" id="bar"></div></div>
+
+<button class="edge edge--prev" id="edgePrev" type="button" aria-label="Anterior"></button>
+<button class="edge edge--next" id="edgeNext" type="button" aria-label="Siguiente"></button>
+
+<main class="deck" id="deck">
+
+<!-- ══ 1 · PORTADA ══════════════════════════════════════════════════ -->
+<section class="slide slide--grad" data-title="Portada">
+  <div class="wm" aria-hidden="true">LOCXUE</div>
+  <div class="slide__inner cover">
+    <p class="eyebrow" data-stagger>Semillero de Investigación · Universidad de Cundinamarca</p>
+    <h1 class="cover__title" data-stagger>Revisión de avance</h1>
+    <p class="cover__sub" data-stagger>Qué construimos, cómo encaja, qué falta y quién hace qué antes de la entrega.</p>
+    <dl class="cover__meta" data-stagger>
+      <div><dt>Reunión</dt><dd>Viernes 7 de agosto · 20:00</dd></div>
+      <div><dt>Entrega</dt><dd>Lunes 10 de agosto de 2026</dd></div>
+      <div><dt>Dominio</dt><dd>locxue.org</dd></div>
+      <div><dt>Equipo</dt><dd>8 integrantes · 8 áreas</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ══ 2 · OBJETIVO Y AGENDA ════════════════════════════════════════ -->
+<section class="slide" data-title="Objetivo y agenda">
+  <div class="wm" aria-hidden="true">AGENDA</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Por qué estamos aquí</p>
+    <h2 class="s-title" data-stagger>Cuatro objetivos para esta hora</h2>
+    <p class="s-lede" data-stagger>Cada uno trabajó en su carpeta. Esta es la primera vez que vemos el proyecto completo, junto, en un mismo lugar.</p>
+    <div class="grid grid--4">
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3 class="card__title">Conocernos</h3></div>
+        <p>Que cada quien vea lo que construyeron los demás. Seis módulos que hasta hoy vivían por separado.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-target"/></svg></span><h3 class="card__title">Ver el avance real</h3></div>
+        <p>Dónde estamos frente a los requerimientos del backlog, sin maquillaje ni cifras infladas.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-code"/></svg></span><h3 class="card__title">Entender lo técnico</h3></div>
+        <p>Stack, sistema de diseño, flujo de despliegue y las reglas que nos evitan pisarnos entre nosotros.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-list"/></svg></span><h3 class="card__title">Repartir lo que falta</h3></div>
+        <p>Salir con tareas concretas por área, ejecutables sábado y domingo. Nadie se va sin saber qué le toca.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:var(--space-3)" data-stagger>
+      <strong>Regla de la reunión:</strong> el crédito es de quien hizo el trabajo; los problemas son del equipo. Ningún hallazgo técnico de esta presentación tiene nombre propio.
+    </div>
+  </div>
+</section>
+
+<!-- ══ 3 · DÓNDE ESTAMOS ════════════════════════════════════════════ -->
+<section class="slide slide--alt" data-title="Dónde estamos hoy">
+  <div class="wm" aria-hidden="true">ESTADO</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Fotografía honesta</p>
+    <h2 class="s-title" data-stagger>Dónde estamos hoy</h2>
+    <p class="s-lede" data-stagger>Construimos mucho en muy poco tiempo. El problema no es la cantidad de trabajo: es que está repartido en seis carpetas y todavía no se ve junto en la página.</p>
+
+    <div class="grid grid--4" style="margin-bottom:var(--space-3)">
+      <div class="stat" data-stagger><span class="stat__value">7</span><span class="stat__label">personas con código subido</span></div>
+      <div class="stat" data-stagger><span class="stat__value">25</span><span class="stat__label">commits en el repositorio</span></div>
+      <div class="stat" data-stagger><span class="stat__value">6</span><span class="stat__label">módulos de contenido construidos</span></div>
+      <div class="stat stat--flag" data-stagger><span class="stat__value">1<span style="font-size:.5em;opacity:.65"> / 6</span></span><span class="stat__label">integrados en la página final</span></div>
+    </div>
+
+    <div class="split">
+      <div data-stagger>
+        <h4 style="margin-bottom:.7rem">Avance por módulo, medido en contenido real</h4>
+        <div class="bar"><span class="bar__label">Institucional</span><span class="bar__track"><span class="bar__fill" style="--w:90%"></span></span><span class="bar__num">90%</span></div>
+        <div class="bar"><span class="bar__label">Logros y eventos</span><span class="bar__track"><span class="bar__fill" style="--w:85%"></span></span><span class="bar__num">85%</span></div>
+        <div class="bar"><span class="bar__label">Contacto y redes</span><span class="bar__track"><span class="bar__fill" style="--w:75%"></span></span><span class="bar__num">75%</span></div>
+        <div class="bar"><span class="bar__label">Proyectos</span><span class="bar__track"><span class="bar__fill" style="--w:60%"></span></span><span class="bar__num">60%</span></div>
+        <div class="bar"><span class="bar__label">Equipo</span><span class="bar__track"><span class="bar__fill" style="--w:35%"></span></span><span class="bar__num">35%</span></div>
+        <div class="bar"><span class="bar__label">Publicaciones</span><span class="bar__track"><span class="bar__fill" style="--w:15%"></span></span><span class="bar__num">15%</span></div>
+      </div>
+      <div class="panel" data-stagger>
+        <h4>La brecha que hay que cerrar</h4>
+        <ul class="blist">
+          <li><strong>22 bloques</strong> de <code>index.html</code> siguen diciendo «Contenido pendiente por integrar».</li>
+          <li>Los <strong>4 contadores</strong> de la página marcan <code>0</code>, aunque las cifras reales ya existen.</li>
+          <li><strong>0 fotografías</strong> reales en todo el repositorio: los 20 avatares son el mismo marcador genérico.</li>
+          <li>El módulo de <strong>Equipo</strong> es el único que ya vive dentro de la página publicada.</li>
+        </ul>
+        <p style="font-size:.86rem;margin-top:.8rem;color:var(--color-muted)">Ninguno de estos puntos es trabajo perdido — es trabajo hecho que todavía no se conectó.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 4 · REQUERIMIENTOS ═══════════════════════════════════════════ -->
+<section class="slide" data-title="Qué nos pidieron construir">
+  <div class="wm" aria-hidden="true">BACKLOG</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>El documento que manda</p>
+    <h2 class="s-title" data-stagger>Qué nos pidieron construir</h2>
+    <p class="s-lede" data-stagger><em>Backlog Página Web Locxue</em> define el alcance: <strong>7 épicas</strong> y <strong>13 historias de usuario</strong> (la numeración salta HU-05 y HU-07). Todo lo que hacemos tiene que poder rastrearse hasta una de ellas.</p>
+    <div class="grid grid--3">
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-building"/></svg></span><h3 class="card__title">1 · Identidad institucional</h3></div>
+        <p class="card__meta">HU-01 · HU-02 · HU-03</p>
+        <p>Información general, historia con línea de tiempo, y misión / visión / objetivos.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3 class="card__title">2 · Equipo</h3></div>
+        <p class="card__meta">HU-04</p>
+        <p>Integrantes con foto, nombre completo, rol en el semillero y bloque de ex-miembros.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-flask"/></svg></span><h3 class="card__title">3 · Proyectos</h3></div>
+        <p class="card__meta">HU-06</p>
+        <p>Título, descripción, estado, línea de investigación asociada y fecha de ejecución.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-book"/></svg></span><h3 class="card__title">4 · Publicaciones y productos</h3></div>
+        <p class="card__meta">HU-08 · HU-09</p>
+        <p>Artículos, ponencias y capítulos con autor, fecha y medio; prototipos y software.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-award"/></svg></span><h3 class="card__title">5 y 6 · Logros y eventos</h3></div>
+        <p class="card__meta">HU-10 · HU-11 · HU-12 · HU-13</p>
+        <p>Premios y distinciones con entidad y fecha, eventos con evidencia fotográfica y agenda futura.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><h3 class="card__title">7 · Redes y contacto</h3></div>
+        <p class="card__meta">HU-14 · HU-15</p>
+        <p>Iconos que redirigen correctamente y formulario que llega al correo institucional.</p>
+      </div>
+    </div>
+    <div class="callout callout--warn" style="margin-top:var(--space-3)" data-stagger>
+      <strong>Restricción que nunca se negocia:</strong> no inventamos información institucional. Si un dato no está verificado, no se publica. Una sección honestamente vacía vale más que una llena de datos falsos.
+    </div>
+  </div>
+</section>
+
+<!-- ══ 5 · STACK Y ARQUITECTURA ═════════════════════════════════════ -->
+<section class="slide slide--alt" data-title="Stack y arquitectura">
+  <div class="wm" aria-hidden="true">STACK</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Cómo está hecho</p>
+    <h2 class="s-title" data-stagger>Stack y arquitectura</h2>
+    <p class="s-lede" data-stagger>Decisión tomada y cerrada: <strong>HTML5 + CSS3 + JavaScript puro</strong>. Sin framework, sin build, sin dependencias, sin CI. Cualquier integrante puede abrir el proyecto con doble clic y entenderlo.</p>
+    <div class="split">
+      <div data-stagger>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Carpeta</th><th>Para qué sirve</th></tr></thead>
+            <tbody>
+              <tr><td><code>web/</code></td><td>El sitio que se publica. <code>index.html</code>, <code>assets/css</code>, <code>assets/js</code>, <code>assets/img</code>.</td></tr>
+              <tr><td><code>contenido/</code></td><td>Seis carpetas numeradas, una por área. <strong>Aquí trabaja cada integrante.</strong></td></tr>
+              <tr><td><code>docs/</code></td><td>Gobernanza: backlog, contexto, reuniones, actas, manual de contribución.</td></tr>
+              <tr><td><code>fuentes recopiladas/</code></td><td>Material crudo (<code>.docx</code>, imágenes) del que se redacta el contenido.</td></tr>
+              <tr><td><code>qa/</code></td><td>Reservado para pruebas y aseguramiento de calidad.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel" data-stagger>
+        <h4>Por qué esta decisión</h4>
+        <ul class="blist">
+          <li><strong>Continuidad.</strong> El sitio debe seguir vivo cuando ninguno de nosotros esté. Sin dependencias no hay nada que se rompa con el tiempo.</li>
+          <li><strong>Cero fricción.</strong> No hay que instalar nada para contribuir.</li>
+          <li><strong>Despliegue instantáneo.</strong> Un <code>push</code> a <code>main</code> publica. No hay pipeline que falle.</li>
+        </ul>
+        <h4 style="margin-top:var(--space-2)">La regla que nos protege</h4>
+        <p style="font-size:.9rem;color:var(--color-muted)">Cada quien commitea <strong>solo dentro de su carpeta</strong> de <code>contenido/</code>. Integración es la única que toca <code>web/</code>. Así es como evitamos conflictos de merge — y esta semana aprendimos por qué importa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 6 · SISTEMA DE DISEÑO ════════════════════════════════════════ -->
+<section class="slide" data-title="Sistema de diseño">
+  <div class="wm" aria-hidden="true">DISEÑO</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>El lenguaje visual común</p>
+    <h2 class="s-title" data-stagger>Sistema de diseño</h2>
+    <p class="s-lede" data-stagger>Esta presentación está construida con exactamente los mismos tokens que la página. Si tu módulo usa otros colores u otra tipografía, hay que alinearlo.</p>
+    <div class="split">
+      <div data-stagger>
+        <h4 style="margin-bottom:.8rem">Paleta</h4>
+        <div class="swatches" style="margin-bottom:var(--space-3)">
+          <span class="sw"><span class="sw__chip" style="background:#1A2B4C"></span><span>Primario<b>#1A2B4C</b></span></span>
+          <span class="sw"><span class="sw__chip" style="background:#3A236E"></span><span>Secundario<b>#3A236E</b></span></span>
+          <span class="sw"><span class="sw__chip" style="background:#F4F6F9"></span><span>Fondo suave<b>#F4F6F9</b></span></span>
+          <span class="sw"><span class="sw__chip" style="background:#FFFFFF"></span><span>Fondo base<b>#FFFFFF</b></span></span>
+          <span class="sw"><span class="sw__chip" style="background:#5A6478"></span><span>Texto tenue<b>#5A6478</b></span></span>
+          <span class="sw"><span class="sw__chip" style="background:#E2E6EE"></span><span>Bordes<b>#E2E6EE</b></span></span>
+        </div>
+        <h4 style="margin-bottom:.5rem">Tipografía</h4>
+        <p style="font-family:var(--font-heading);font-size:1.9rem;line-height:1.15;margin-bottom:.15rem">Playfair Display</p>
+        <p class="card__meta" style="margin-bottom:.9rem">Solo para <code>h1</code>, <code>h2</code>, <code>h3</code> · pesos 600 y 700</p>
+        <p style="font-size:1.05rem;font-weight:500;margin-bottom:.15rem">Inter — cuerpo de texto y menús</p>
+        <p class="card__meta">Pesos 400, 500 y 600. Optimiza la lectura en móvil.</p>
+      </div>
+      <div class="panel" data-stagger>
+        <h4>Detalles que dan identidad</h4>
+        <ul class="blist">
+          <li><strong>Marca de agua vertical.</strong> El nombre LOCXUE girado sobre el borde derecho, con opacidad muy baja. Es la firma del sistema — está en cada diapositiva de esta presentación.</li>
+          <li><strong>Alternancia de fondos.</strong> Blanco → gris suave → azul oscuro, sección tras sección, para dar ritmo al recorrido.</li>
+          <li><strong>Recuadro hero oscuro.</strong> Gradiente diagonal de azul a violeta para los encabezados de sección destacados.</li>
+          <li><strong>Superposición por capas.</strong> Bloques de texto sólidos sobre fondos, con jerarquía de profundidad.</li>
+        </ul>
+        <div class="callout" style="margin-top:var(--space-2);font-size:.87rem">
+          Los tokens ya están migrados en <code>styles.css</code>. Nadie debería escribir un color en crudo: se usa la variable.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 7 · DESPLIEGUE ═══════════════════════════════════════════════ -->
+<section class="slide slide--dark" data-title="Despliegue e infraestructura">
+  <div class="wm" aria-hidden="true">DEPLOY</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>De nuestro computador a internet</p>
+    <h2 class="s-title" data-stagger>Cómo se publica el sitio</h2>
+    <p class="s-lede" data-stagger>Todo está montado y esperando contenido. El camino de un cambio hasta <strong>locxue.org</strong> son dos pasos.</p>
+    <div class="grid grid--4" style="margin-bottom:var(--space-3)">
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-git"/></svg></span><h3 class="card__title">1 · Push</h3></div>
+        <p>Los cambios entran a <code>main</code> por Pull Request, nunca directo.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-rocket"/></svg></span><h3 class="card__title">2 · Publicación</h3></div>
+        <p>GitHub Pages sirve la carpeta <code>/web</code> automáticamente. Sin pipeline.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-target"/></svg></span><h3 class="card__title">3 · Dominio</h3></div>
+        <p><code>locxue.org</code> vía <code>CNAME</code> + registros DNS. HTTPS por Let's Encrypt.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><h3 class="card__title">4 · Formulario</h3></div>
+        <p>Formspree recibe los mensajes y los reenvía al correo institucional.</p>
+      </div>
+    </div>
+    <div class="split">
+      <div class="panel" data-stagger>
+        <h4>Archivos de infraestructura ya creados</h4>
+        <dl class="kv">
+          <dt><code>CNAME</code></dt><dd>Vincula el dominio locxue.org</dd>
+          <dt><code>.nojekyll</code></dt><dd>Evita que GitHub procese el sitio</dd>
+          <dt><code>404.html</code></dt><dd>Página de error con la identidad del semillero</dd>
+          <dt><code>robots.txt</code></dt><dd>Permite la indexación por buscadores</dd>
+          <dt><code>sitemap.xml</code></dt><dd>Mapa del sitio para Google</dd>
+        </dl>
+      </div>
+      <div class="panel" data-stagger>
+        <h4>Optimización para buscadores y redes</h4>
+        <ul class="blist">
+          <li>Etiquetas <strong>Open Graph</strong> y <strong>Twitter Card</strong> para que el enlace se vea bien al compartirlo.</li>
+          <li><strong>JSON-LD</strong> de tipo <em>Organization</em>, declarando a la Universidad de Cundinamarca como organización madre.</li>
+          <li>URL canónica, <code>theme-color</code> y favicon en SVG y PNG.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 8 · MAPA DEL EQUIPO ══════════════════════════════════════════ -->
+<section class="slide slide--alt" data-title="Mapa del equipo">
+  <div class="wm" aria-hidden="true">EQUIPO</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Quién construyó qué</p>
+    <h2 class="s-title" data-stagger>Mapa del equipo</h2>
+    <p class="s-lede" data-stagger>Ocho áreas funcionales, una carpeta por área. Identificamos a cada quien por su usuario de GitHub, que es como aparece en el historial del repositorio.</p>
+    <div class="tablewrap" data-stagger>
+      <table>
+        <thead><tr><th>Área funcional</th><th>Usuario</th><th>Carpeta</th><th>Commits</th></tr></thead>
+        <tbody>
+          <tr><td>Información Institucional</td><td><code>@sarhamoon8</code></td><td><code>contenido/01-institucional/</code></td><td>1</td></tr>
+          <tr><td>Equipo</td><td><code>@JulianZAR</code> · <code>@sabego2006</code></td><td><code>contenido/02-equipo/</code></td><td>2 · 3</td></tr>
+          <tr><td>Proyectos</td><td><code>@Juanes-Torres</code></td><td><code>contenido/03-proyectos/</code></td><td>2</td></tr>
+          <tr><td>Publicaciones y Productos</td><td><code>@juandro-sudo</code></td><td><code>contenido/04-publicaciones/</code></td><td>2</td></tr>
+          <tr><td>Logros, Eventos y Convocatorias</td><td><code>@natmontenegro01-afk</code></td><td><code>contenido/05-logros-eventos/</code></td><td>2</td></tr>
+          <tr><td>Redes Sociales y Contacto</td><td><code>@BrayanSarmiento28</code></td><td><code>contenido/06-contacto/</code></td><td>4</td></tr>
+          <tr><td>Diseño</td><td class="t-muted">Angélica</td><td><code>docs/backlog/</code> · material gráfico</td><td class="t-muted">—</td></tr>
+          <tr><td>Frontend, Diseño e Integración</td><td><code>@sabego2006</code></td><td><code>web/</code></td><td>12</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:var(--space-3)" data-stagger>
+      <strong>Nota de proceso:</strong> el historial registra 10 identidades distintas para 7 personas, porque algunos hemos commiteado con correos diferentes. Se corrige con un archivo <code>.mailmap</code> — así GitHub cuenta bien el aporte de cada quien.
+    </div>
+  </div>
+</section>
+
+<!-- ══ 9 · MÓDULO 01 ════════════════════════════════════════════════ -->
+<section class="slide" data-title="Módulo · Institucional">
+  <div class="wm" aria-hidden="true">01</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Módulo 01 · Información institucional</p>
+    <h2 class="s-title" data-stagger>Identidad del semillero <span class="badge badge--ok" style="vertical-align:middle;font-size:.6em"><svg aria-hidden="true"><use href="#i-check"/></svg> Completo</span></h2>
+    <p style="margin-bottom:var(--space-3)" data-stagger><span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @sarhamoon8</span></p>
+    <div class="split">
+      <div data-stagger>
+        <h4 style="margin-bottom:.7rem">Lo que ya está escrito y verificado</h4>
+        <dl class="kv" style="margin-bottom:var(--space-2)">
+          <dt>Institución</dt><dd>Universidad de Cundinamarca</dd>
+          <dt>Facultad</dt><dd>Ingeniería</dd>
+          <dt>Programa</dt><dd>Ingeniería de Sistemas y Computación</dd>
+          <dt>Sede</dt><dd>Fusagasugá</dd>
+          <dt>Grupo base</dt><dd>INGENIUM SUTA</dd>
+          <dt>Adscripción</dt><dd>Banco de Semilleros de Investigación UDEC</dd>
+          <dt>Trayectoria</dt><dd>Desde 2013</dd>
+        </dl>
+        <ul class="blist">
+          <li>Misión y visión institucionales completas, en texto verbatim.</li>
+          <li><strong>6 objetivos</strong> específicos y <strong>4 valores</strong>: confianza y crecimiento, pensamiento crítico, trabajo colaborativo y apropiación social.</li>
+          <li>Las <strong>2 líneas de investigación</strong> translocales y la propuesta de valor.</li>
+          <li>Módulo con HTML, CSS y JS propios, más vista previa independiente y archivo de referencias con las fuentes citadas.</li>
+        </ul>
+      </div>
+      <div class="panel" data-stagger>
+        <h4>Qué falta</h4>
+        <ul class="checks">
+          <li><strong>Historia (HU-02).</strong> Es el único requerimiento del backlog que no existe en ninguna parte del proyecto. El material sí está escrito en el documento fuente — falta pasarlo a línea de tiempo.</li>
+          <li><strong>Confirmar nombres vigentes.</strong> El propio archivo de referencias marca como no verificados al docente líder y al coordinador estudiantil de 2026.</li>
+          <li><strong>Versión corta para la portada.</strong> El texto actual es extenso; la página de inicio necesita un resumen.</li>
+        </ul>
+        <div class="callout" style="margin-top:var(--space-2);font-size:.86rem">
+          Este módulo hizo bien lo más difícil: <strong>citó sus fuentes y dijo explícitamente qué no pudo verificar.</strong> Ese es el estándar.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 10 · MÓDULO 02 ═══════════════════════════════════════════════ -->
+<section class="slide slide--alt" data-title="Módulo · Equipo">
+  <div class="wm" aria-hidden="true">02</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Módulo 02 · Equipo</p>
+    <h2 class="s-title" data-stagger>Nuestro equipo <span class="badge badge--warn" style="vertical-align:middle;font-size:.6em"><svg aria-hidden="true"><use href="#i-alert"/></svg> Parcial</span> <span class="badge badge--neutral" style="vertical-align:middle;font-size:.6em">Único integrado</span></h2>
+    <p style="margin-bottom:var(--space-3)" data-stagger><span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @JulianZAR</span> <span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @sabego2006</span></p>
+    <div class="split">
+      <div data-stagger>
+        <h4 style="margin-bottom:.7rem">Lo construido</h4>
+        <ul class="blist">
+          <li>Estructura de tres niveles: <strong>docente líder</strong>, <strong>fundadores</strong> e <strong>integrantes</strong>.</li>
+          <li>Encabezado con recuadro hero oscuro y marca de agua — el patrón visual que después se reutilizó en el resto del sitio.</li>
+          <li>Rejilla adaptable: 1 columna en móvil, hasta 4 en escritorio.</li>
+          <li><strong>Es el único módulo que ya está dentro de <code>index.html</code></strong> y se ve publicado.</li>
+        </ul>
+        <div class="grid grid--3" style="margin-top:var(--space-3)">
+          <div class="stat"><span class="stat__value">4<span style="font-size:.5em;opacity:.65"> / 17</span></span><span class="stat__label">integrantes con datos reales</span></div>
+          <div class="stat"><span class="stat__value">0<span style="font-size:.5em;opacity:.65"> / 3</span></span><span class="stat__label">fundadores identificados</span></div>
+          <div class="stat stat--flag"><span class="stat__value">0</span><span class="stat__label">fotografías reales</span></div>
+        </div>
+      </div>
+      <div class="panel" data-stagger>
+        <h4>Qué falta</h4>
+        <ul class="checks">
+          <li><strong>13 integrantes</strong> siguen como <code>[ Nombre Integrante N ]</code>. Necesitamos de cada quien: nombre completo, semestre, rol en el semillero, correo y GitHub.</li>
+          <li><strong>Fotografías.</strong> Los 20 avatares son el mismo marcador genérico. El backlog las pide explícitamente.</li>
+          <li><strong>Fundadores.</strong> Tres tarjetas vacías. O conseguimos los nombres o quitamos el bloque.</li>
+          <li><strong>Ex-miembros.</strong> El backlog lo pide y no existe. Hay que decidir si entra o se declara fuera de alcance.</li>
+          <li><strong>Dos correcciones de dato</strong> detectadas en las tarjetas actuales (un dominio de correo y un usuario de GitHub mal escrito).</li>
+        </ul>
+        <div class="callout callout--warn" style="margin-top:var(--space-2);font-size:.86rem">
+          Criterio propuesto: <strong>borrar las tarjetas sobrantes</strong> en vez de publicarlas vacías. Un equipo de 8 personas reales se ve mejor que 17 casillas a medio llenar.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 11 · MÓDULO 03 ═══════════════════════════════════════════════ -->
+<section class="slide" data-title="Módulo · Proyectos">
+  <div class="wm" aria-hidden="true">03</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Módulo 03 · Proyectos</p>
+    <h2 class="s-title" data-stagger>Proyectos de investigación <span class="badge badge--warn" style="vertical-align:middle;font-size:.6em"><svg aria-hidden="true"><use href="#i-alert"/></svg> Real pero corto</span></h2>
+    <p style="margin-bottom:var(--space-3)" data-stagger><span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @Juanes-Torres</span></p>
+    <div class="split">
+      <div data-stagger>
+        <h4 style="margin-bottom:.7rem">Dos proyectos documentados con fuente verificable</h4>
+        <div class="tl">
+          <div class="tl__item">
+            <span class="tl__date">2013</span>
+            <h4 class="tl__title">Planeación de un taller práctico de Scrum</h4>
+            <p class="tl__body">Intercambio documentado en la lista Ágiles Colombia. Estado declarado con honestidad: <em>documentado, sin evidencia de ejecución posterior</em>.</p>
+          </div>
+          <div class="tl__item">
+            <span class="tl__date">2014</span>
+            <h4 class="tl__title">Primer Agile Open Fusagasugá</h4>
+            <p class="tl__body">Finalizado el 26 de abril. Formato Open Space con Scrum, XP, Lean, Kanban, Software Craftsmanship y Coding Dojos. LOCXUE como organizador y anfitrión.</p>
+          </div>
+        </div>
+        <p style="font-size:.87rem;color:var(--color-muted);margin-top:var(--space-2)">Acompañados de <strong>4 fuentes citadas con enlace vivo</strong> y una tarjeta explícita de «próximos registros» en lugar de relleno.</p>
+      </div>
+      <div class="panel" data-stagger>
+        <h4>La decisión que vale la pena destacar</h4>
+        <p style="font-size:.9rem;color:var(--color-muted);margin-bottom:var(--space-2)">Este módulo dejó el espacio del gráfico estadístico <strong>deliberadamente vacío</strong>, con una nota en el código: <em>«no se genera un gráfico de ejemplo para no mostrar datos ficticios»</em>.</p>
+        <p style="font-size:.9rem;color:var(--color-muted);margin-bottom:var(--space-3)">Es exactamente el criterio que pide el proyecto. Dos proyectos verificados valen más que diez inventados.</p>
+        <h4>Qué falta</h4>
+        <ul class="checks">
+          <li><strong>Línea de investigación asociada.</strong> El backlog la exige como campo obligatorio de cada proyecto y hoy no aparece en las tarjetas.</li>
+          <li><strong>Versión resumida</strong> de 3 tarjetas para la página de inicio.</li>
+          <li><strong>Verificar los 4 enlaces</strong> de fuentes antes de publicar.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 12 · MÓDULO 04 ═══════════════════════════════════════════════ -->
+<section class="slide slide--alt" data-title="Módulo · Publicaciones">
+  <div class="wm" aria-hidden="true">04</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Módulo 04 · Publicaciones y productos</p>
+    <h2 class="s-title" data-stagger>Publicaciones <span class="badge badge--bad" style="vertical-align:middle;font-size:.6em"><svg aria-hidden="true"><use href="#i-x"/></svg> Estructura sin contenido</span></h2>
+    <p style="margin-bottom:var(--space-3)" data-stagger><span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @juandro-sudo</span></p>
+    <div class="split">
+      <div data-stagger>
+        <h4 style="margin-bottom:.7rem">Lo construido</h4>
+        <ul class="blist">
+          <li>Página completa y estilizada con <strong>tres paneles</strong>: biblioteca de publicaciones, portafolio de productos y registro de trabajos de grado.</li>
+          <li><strong>Criterio de inclusión definido</strong>: solo entra lo que acredite explícitamente a LOCXUE por afiliación, agradecimientos, memorias SIUDEC o RedCOLSI. Es una decisión editorial sólida.</li>
+          <li><strong>6 fuentes de búsqueda</strong> identificadas con enlaces: Repositorio Institucional UdeC, CvLAC, GrupLAC de Ingenium Suta, memorias SIUDEC, RedCOLSI y Google Scholar.</li>
+        </ul>
+        <div class="callout" style="margin-top:var(--space-2);font-size:.88rem">
+          El andamiaje está listo. Lo que falta es cargarle datos — no rehacerlo.
+        </div>
+      </div>
+      <div class="panel panel--flag" data-stagger>
+        <h4>Es la sección más vacía del sitio</h4>
+        <p style="font-size:.9rem;margin-bottom:var(--space-2)">Los tres paneles muestran hoy «próximamente disponible». <strong>Cero publicaciones listadas.</strong></p>
+        <p style="font-size:.9rem;margin-bottom:var(--space-2)">Pero el material existe: en el documento fuente de este mismo módulo ya hay <strong>dos ítems reales identificados</strong> — una ponencia en memorias SIUDEC 2013 y un trabajo de grado registrado en CvLAC.</p>
+        <h4 style="margin-top:var(--space-3)">Qué falta</h4>
+        <ul class="checks">
+          <li><strong>Decisión de equipo:</strong> ¿cargamos los dos ítems reales este fin de semana o congelamos la sección con un estado vacío honesto? <em>Se decide en la última diapositiva.</em></li>
+          <li><strong>Pestaña inalcanzable.</strong> El panel de trabajos de grado existe pero no tiene botón que lo abra — nadie puede llegar a él.</li>
+          <li><strong>Enlaces pendientes</strong> a GrupLAC, CvLAC y Repositorio, señalados en el propio historial del módulo.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 13 · MÓDULO 05 ═══════════════════════════════════════════════ -->
+<section class="slide" data-title="Módulo · Logros y eventos">
+  <div class="wm" aria-hidden="true">05</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Módulo 05 · Logros, eventos y convocatorias</p>
+    <h2 class="s-title" data-stagger>Logros y eventos <span class="badge badge--ok" style="vertical-align:middle;font-size:.6em"><svg aria-hidden="true"><use href="#i-check"/></svg> El más completo</span></h2>
+    <p style="margin-bottom:var(--space-3)" data-stagger><span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @natmontenegro01-afk</span></p>
+    <div class="grid grid--4" style="margin-bottom:var(--space-3)">
+      <div class="stat" data-stagger><span class="stat__value">11</span><span class="stat__label">eventos académicos documentados</span></div>
+      <div class="stat" data-stagger><span class="stat__value">1</span><span class="stat__label">premio nacional</span></div>
+      <div class="stat" data-stagger><span class="stat__value">2</span><span class="stat__label">clasificaciones RedCOLSI</span></div>
+      <div class="stat" data-stagger><span class="stat__value">10+</span><span class="stat__label">años de trayectoria</span></div>
+    </div>
+    <div class="split">
+      <div data-stagger>
+        <h4 style="margin-bottom:.7rem">Hitos destacados que ya están escritos</h4>
+        <div class="tl">
+          <div class="tl__item">
+            <span class="tl__date">2014</span>
+            <h4 class="tl__title">Premio Rymel Serrano Uribe — 1er puesto</h4>
+            <p class="tl__body">Universidad Cooperativa de Colombia, con el proyecto ASJUREM (Asistencia Jurídica Empresarial), surgido de Startup Weekend Ibagué.</p>
+          </div>
+          <div class="tl__item">
+            <span class="tl__date">2016</span>
+            <h4 class="tl__title">Ponencia internacional en Ágiles 2016, Quito</h4>
+            <p class="tl__body">«LocXue: Cinco generaciones de agilidad en la Educación». El semillero representando a la universidad fuera del país.</p>
+          </div>
+          <div class="tl__item">
+            <span class="tl__date">2019</span>
+            <h4 class="tl__title">Consolidación de la comunidad LOCXUE</h4>
+            <p class="tl__body">Además: XVII RedCOLSI Nacional en Tunja, Ágiles Colombia 2018, talleres de gamificación y Canvas, y el IV Foro Internacional de Ingeniería de Software.</p>
+          </div>
+        </div>
+      </div>
+      <div class="panel" data-stagger>
+        <h4>Qué falta</h4>
+        <ul class="checks">
+          <li><strong>Las 4 cifras para la portada.</strong> Los contadores de la página de inicio marcan cero. Estos números ya existen — solo hay que conectarlos.</li>
+          <li><strong>Evidencia fotográfica.</strong> El documento fuente nombra archivos de fotos que no están en el repositorio. El backlog las pide para los eventos.</li>
+          <li><strong>Fuente pública por evento</strong> en el archivo de referencias, para que cada hito sea verificable.</li>
+          <li><strong>Eventos futuros.</strong> El backlog pide una agenda con fecha, hora y modalidad. Si no hay nada programado, se dice explícitamente.</li>
+        </ul>
+        <div class="callout" style="margin-top:var(--space-2);font-size:.86rem">
+          Este módulo es el que más contenido verificado aporta al sitio. Con las fotos quedaría completo.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 14 · MÓDULO 06 ═══════════════════════════════════════════════ -->
+<section class="slide slide--alt" data-title="Módulo · Contacto y redes">
+  <div class="wm" aria-hidden="true">06</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Módulo 06 · Redes sociales y contacto</p>
+    <h2 class="s-title" data-stagger>Contacto, redes y pie de página <span class="badge badge--warn" style="vertical-align:middle;font-size:.6em"><svg aria-hidden="true"><use href="#i-alert"/></svg> Casi listo</span></h2>
+    <p style="margin-bottom:var(--space-3)" data-stagger><span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @BrayanSarmiento28</span></p>
+    <div class="split">
+      <div data-stagger>
+        <h4 style="margin-bottom:.7rem">Lo construido</h4>
+        <ul class="blist">
+          <li><strong>Formulario completo con validación</strong>: nombre, correo, perfil o rol con 5 opciones, y mensaje.</li>
+          <li><strong>Correo institucional oficial</strong> identificado y verificado.</li>
+          <li><strong>Centro de 6 canales sociales</strong> con iconos, abriendo en pestaña nueva.</li>
+          <li><strong>Pie de página institucional</strong> con la ficha completa del semillero.</li>
+          <li>Además de su módulo, aportó la <strong>barra de navegación superior</strong> con scrollspy y estado activo — el componente que hoy usa todo el sitio.</li>
+        </ul>
+      </div>
+      <div class="panel" data-stagger>
+        <h4>Qué falta</h4>
+        <ul class="checks">
+          <li><strong>Las URLs de redes son genéricas.</strong> Los 6 enlaces apuntan al dominio raíz (<code>instagram.com</code>, <code>linkedin.com</code>…) en vez de al perfil del semillero. El backlog exige que redirijan correctamente — hoy ese criterio no se cumple.</li>
+          <li><strong>Definir el correo oficial.</strong> Hay dos direcciones distintas circulando entre este módulo y la página de inicio. Una tiene que ganar.</li>
+          <li><strong>Un ancla rota</strong> en el pie de página apunta a una sección que se llama distinto.</li>
+          <li><strong>Un rótulo</strong> del formulario quedó en inglés.</li>
+        </ul>
+        <div class="callout callout--warn" style="margin-top:var(--space-2);font-size:.86rem">
+          <strong>Duplicación a resolver:</strong> hoy conviven dos formularios — el de Formspree en la página de inicio y un Google Form en este módulo. Mantener los dos confunde a quien escribe.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 15 · INTEGRACIÓN ═════════════════════════════════════════════ -->
+<section class="slide slide--dark" data-title="Trabajo de integración">
+  <div class="wm" aria-hidden="true">WEB</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Frontend, diseño e integración</p>
+    <h2 class="s-title" data-stagger>El andamiaje que sostiene todo</h2>
+    <p class="s-lede" data-stagger>Es el trabajo menos visible del proyecto: nadie lo nota cuando está bien hecho, pero sin él ningún módulo llega a internet.</p>
+    <div class="grid grid--3">
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-code"/></svg></span><h3 class="card__title">Interacción</h3></div>
+        <ul class="blist" style="margin-top:.4rem">
+          <li>Menú móvil accesible, con <code>Escape</code> y foco gestionado</li>
+          <li>Desplazamiento suave compensando la altura del encabezado</li>
+          <li>Scrollspy: resalta la sección en la que estás</li>
+          <li>Aparición progresiva de secciones al hacer scroll</li>
+          <li>Contadores animados para las estadísticas</li>
+        </ul>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-palette"/></svg></span><h3 class="card__title">Sistema visual</h3></div>
+        <ul class="blist" style="margin-top:.4rem">
+          <li>Migración completa a los tokens oficiales de color y tipografía</li>
+          <li>Componentes reutilizables: tarjetas, estadísticas, línea de tiempo, formularios</li>
+          <li>Marca de agua vertical y recuadro hero oscuro</li>
+          <li>Rejillas adaptables en tres puntos de quiebre</li>
+        </ul>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-rocket"/></svg></span><h3 class="card__title">Publicación y hallazgo</h3></div>
+        <ul class="blist" style="margin-top:.4rem">
+          <li>Infraestructura completa de GitHub Pages</li>
+          <li>Etiquetas Open Graph, Twitter Card y JSON-LD</li>
+          <li>Mapa del sitio, <code>robots.txt</code> y página 404 propia</li>
+          <li>Favicon en SVG y PNG</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:var(--space-3)" data-stagger>
+      <h4>Accesibilidad, incorporada desde el principio</h4>
+      <p style="font-size:.9rem;color:var(--lead-light)">Enlace para saltar al contenido, atributos <code>aria</code> sincronizados en el menú, anillos de foco visibles para navegación por teclado, y respeto a la preferencia de <em>movimiento reducido</em> del sistema operativo. No es un extra: es parte de que el sitio sea institucional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 16 · MATRIZ HU ═══════════════════════════════════════════════ -->
+<section class="slide" data-title="Requerimientos: estado">
+  <div class="wm" aria-hidden="true">HU</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Contraste contra el backlog</p>
+    <h2 class="s-title" data-stagger>Las 13 historias, una por una</h2>
+    <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3)" data-stagger>
+      <span class="badge badge--ok"><svg aria-hidden="true"><use href="#i-check"/></svg> 3 cumplidas</span>
+      <span class="badge badge--warn"><svg aria-hidden="true"><use href="#i-alert"/></svg> 6 parciales</span>
+      <span class="badge badge--bad"><svg aria-hidden="true"><use href="#i-x"/></svg> 4 sin construir</span>
+    </div>
+    <div class="tablewrap" data-stagger>
+      <table>
+        <thead><tr><th>HU</th><th>Requerimiento</th><th>Estado</th><th>Qué falta</th></tr></thead>
+        <tbody>
+          <tr><td class="t-hu">HU-01</td><td>Información general del semillero</td><td><span class="badge badge--ok">Cumple</span></td><td class="t-muted">Confirmar nombre del tutor vigente</td></tr>
+          <tr><td class="t-hu">HU-02</td><td>Historia con línea de tiempo</td><td><span class="badge badge--bad">Falta</span></td><td class="t-muted">No existe la sección; el material sí está escrito</td></tr>
+          <tr><td class="t-hu">HU-03</td><td>Misión, visión y objetivos</td><td><span class="badge badge--ok">Cumple</span></td><td class="t-muted">Versión corta para la portada</td></tr>
+          <tr><td class="t-hu">HU-04</td><td>Integrantes con foto, rol y ex-miembros</td><td><span class="badge badge--warn">Parcial</span></td><td class="t-muted">13 nombres, todas las fotos, bloque de ex-miembros</td></tr>
+          <tr><td class="t-hu">HU-06</td><td>Proyectos de investigación</td><td><span class="badge badge--warn">Parcial</span></td><td class="t-muted">Campo «línea de investigación asociada»</td></tr>
+          <tr><td class="t-hu">HU-08</td><td>Publicaciones científicas</td><td><span class="badge badge--bad">Falta</span></td><td class="t-muted">Estructura lista, cero ítems cargados</td></tr>
+          <tr><td class="t-hu">HU-09</td><td>Productos de investigación</td><td><span class="badge badge--bad">Falta</span></td><td class="t-muted">Estructura lista, cero ítems cargados</td></tr>
+          <tr><td class="t-hu">HU-10</td><td>Logros institucionales</td><td><span class="badge badge--ok">Cumple</span></td><td class="t-muted">—</td></tr>
+          <tr><td class="t-hu">HU-11</td><td>Reconocimientos en la página principal</td><td><span class="badge badge--warn">Parcial</span></td><td class="t-muted">Imagen representativa y acceso al detalle</td></tr>
+          <tr><td class="t-hu">HU-12</td><td>Eventos realizados con evidencia</td><td><span class="badge badge--warn">Parcial</span></td><td class="t-muted">11 eventos escritos, sin fotografías</td></tr>
+          <tr><td class="t-hu">HU-13</td><td>Agenda de eventos futuros</td><td><span class="badge badge--bad">Falta</span></td><td class="t-muted">Definir si hay eventos programados</td></tr>
+          <tr><td class="t-hu">HU-14</td><td>Redes sociales que redirigen</td><td><span class="badge badge--warn">Parcial</span></td><td class="t-muted">Las 6 URLs apuntan al dominio raíz</td></tr>
+          <tr><td class="t-hu">HU-15</td><td>Formulario que llega al correo</td><td><span class="badge badge--warn">Parcial</span></td><td class="t-muted">Identificador de Formspree y elegir un solo formulario</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 17 · RIESGOS ═════════════════════════════════════════════════ -->
+<section class="slide slide--dark" data-title="Riesgos técnicos">
+  <div class="wm" aria-hidden="true">RIESGO</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Lo que puede salir mal el lunes</p>
+    <h2 class="s-title" data-stagger>Riesgos abiertos</h2>
+    <p class="s-lede" data-stagger>Todos tienen solución y todos son nuestros. Los listamos para cerrarlos, no para buscar culpables.</p>
+    <div class="split" style="margin-bottom:var(--space-3)">
+      <div class="panel panel--flag" data-stagger>
+        <h4><span class="badge badge--bad"><svg aria-hidden="true"><use href="#i-alert"/></svg> Crítico</span> &nbsp;Conflicto de fusión sin resolver en la rama publicada</h4>
+        <p style="font-size:.9rem;color:var(--lead-light);margin-bottom:var(--space-2)">La hoja de estilos de la rama que se publica quedó con marcadores de conflicto dentro del archivo:</p>
+        <div class="codeblock"><span class="mk">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>  <span class="cm">← línea 1</span>
+  :root { --color-primary: #1A2B4C; ... }
+<span class="mk">=======</span>       <span class="cm">← línea 917</span>
+  ...
+<span class="mk">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>  <span class="cm">← línea 1747</span></div>
+        <p style="font-size:.88rem;color:var(--lead-light);margin-top:var(--space-2)">Un marcador en la primera línea hace que el navegador descarte el bloque de variables completo, y con él toda la paleta y la tipografía del sitio.</p>
+        <p style="font-size:.88rem;color:#7BE8B4;margin-top:.6rem"><strong>La corrección ya existe:</strong> la rama de integración tiene el archivo limpio y resuelto. Publicar los cambios pendientes es justamente lo que lo arregla.</p>
+        <p style="font-size:.85rem;color:var(--lead-light);margin-top:.6rem"><em>Aprendizaje:</em> nos faltó verificar el archivo después de resolver un conflicto. Se soluciona revisando el resultado antes de fusionar a la rama principal.</p>
+      </div>
+      <div data-stagger>
+        <div class="panel" style="margin-bottom:var(--space-2)">
+          <h4><span class="badge badge--warn">Alto</span> &nbsp;Trabajo que el equipo no puede ver</h4>
+          <ul class="blist">
+            <li><strong>16 commits de integración sin publicar.</strong> El trabajo existe pero solo en un computador.</li>
+            <li><strong>Documentos de gobernanza sin versionar.</strong> El contexto, el backlog y el plan de despliegue no están en GitHub — nadie del equipo ha podido leerlos.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4><span class="badge badge--warn">Medio</span> &nbsp;Pendientes que bloquean la entrega</h4>
+          <ul class="blist">
+            <li><strong>Identificador de Formspree</strong> sin configurar: el formulario no envía nada todavía.</li>
+            <li><strong>Logo oficial en SVG</strong> pendiente. La barra de navegación muestra un icono genérico.</li>
+            <li><strong>Imagen para redes sociales</strong> en formato SVG, que las plataformas no renderizan. Debe ser PNG o JPG.</li>
+            <li><strong>Cero fotografías</strong> de personas y eventos en todo el repositorio.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="callout" data-stagger>
+      <strong>Plan B si el dominio no propaga a tiempo:</strong> publicamos en la dirección alterna de GitHub Pages y migramos a <code>locxue.org</code> cuando el DNS resuelva. La entrega no depende del dominio.
+    </div>
+  </div>
+</section>
+
+<!-- ══ 18 · TAREAS POR ROL ══════════════════════════════════════════ -->
+<section class="slide slide--alt" data-title="★ Tareas por rol · sáb y dom">
+  <div class="wm" aria-hidden="true">TAREAS</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Sábado 8 y domingo 9 de agosto</p>
+    <h2 class="s-title" data-stagger>Qué hace cada quien este fin de semana</h2>
+    <p class="s-lede" data-stagger>Tareas cortas, dentro de la carpeta que ya conocés, sin depender de nadie más. <strong>Entrega de contenido: sábado 8 a las 23:59.</strong> El domingo es para integrar.</p>
+    <div class="tasks">
+
+      <div class="task" data-stagger>
+        <div class="task__head">
+          <span class="task__area">Información Institucional</span>
+          <span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @sarhamoon8</span>
+          <span class="task__path">contenido/01-institucional/</span>
+        </div>
+        <ul class="checks">
+          <li><strong>Historia (HU-02):</strong> 5 o 6 hitos, año y una línea cada uno. El material ya está en tu documento fuente y el estilo de línea de tiempo ya existe — es transcribir.</li>
+          <li>Texto <strong>recortado a tamaño portada</strong> para el bloque de inicio y para misión / visión / valores.</li>
+          <li>Confirmar el texto final de las <strong>2 líneas de investigación</strong>.</li>
+          <li>Confirmar <strong>docente líder y coordinador</strong> vigentes 2026.</li>
+        </ul>
+      </div>
+
+      <div class="task" data-stagger>
+        <div class="task__head">
+          <span class="task__area">Equipo</span>
+          <span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @JulianZAR</span> <span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @sabego2006</span>
+          <span class="task__path">contenido/02-equipo/</span>
+        </div>
+        <ul class="checks">
+          <li><strong>Recolectar de los 8:</strong> nombre completo, semestre, rol en el semillero, correo institucional, GitHub y foto.</li>
+          <li><strong>Borrar las tarjetas sobrantes</strong> y dejar solo integrantes reales.</li>
+          <li>Corregir el <strong>dominio de correo</strong> del docente líder y el <strong>usuario de GitHub</strong> mal escrito.</li>
+          <li><strong>Unificar el marcado</strong> de todas las tarjetas y poner texto alternativo a cada foto.</li>
+        </ul>
+      </div>
+
+      <div class="task" data-stagger>
+        <div class="task__head">
+          <span class="task__area">Proyectos</span>
+          <span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @Juanes-Torres</span>
+          <span class="task__path">contenido/03-proyectos/</span>
+        </div>
+        <ul class="checks">
+          <li>Agregar el campo <strong>«línea de investigación asociada»</strong> a los 2 proyectos. Es requisito del backlog.</li>
+          <li>Entregar una <strong>versión resumida de 3 tarjetas</strong> para la página de inicio.</li>
+          <li><strong>Verificar que los 4 enlaces</strong> de fuentes sigan funcionando.</li>
+        </ul>
+      </div>
+
+      <div class="task" data-stagger>
+        <div class="task__head">
+          <span class="task__area">Publicaciones y Productos</span>
+          <span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @juandro-sudo</span>
+          <span class="task__path">contenido/04-publicaciones/</span>
+        </div>
+        <ul class="checks">
+          <li><strong>Arreglar la pestaña inalcanzable</strong> de trabajos de grado: el panel existe pero le falta el botón que lo abre.</li>
+          <li>Agregar los <strong>enlaces pendientes</strong> a GrupLAC, CvLAC y Repositorio UdeC.</li>
+          <li>Dejar el <strong>estado vacío bien redactado</strong>, con el criterio de inclusión visible.</li>
+          <li class="t-muted"><em>Cargar los 2 ítems reales queda sujeto a la decisión del equipo (última diapositiva).</em></li>
+        </ul>
+      </div>
+
+      <div class="task" data-stagger>
+        <div class="task__head">
+          <span class="task__area">Logros, Eventos y Convocatorias</span>
+          <span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @natmontenegro01-afk</span>
+          <span class="task__path">contenido/05-logros-eventos/</span>
+        </div>
+        <ul class="checks">
+          <li><strong>Las 4 cifras para los contadores</strong> de la portada: eventos, premio, clasificaciones y años. Hoy marcan cero.</li>
+          <li><strong>Fotografías de evidencia</strong> de los eventos, o confirmar por escrito que no existen.</li>
+          <li>Completar la <strong>fuente pública por evento</strong> en el archivo de referencias.</li>
+          <li><strong>Eventos futuros:</strong> uno o dos reales, o declarar que no hay programados.</li>
+        </ul>
+      </div>
+
+      <div class="task" data-stagger>
+        <div class="task__head">
+          <span class="task__area">Redes Sociales y Contacto</span>
+          <span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @BrayanSarmiento28</span>
+          <span class="task__path">contenido/06-contacto/</span>
+        </div>
+        <ul class="checks">
+          <li><strong>Las 6 URLs reales</strong> de las redes del semillero. Si una red no tiene cuenta, se quita el icono.</li>
+          <li><strong>Corregir el ancla rota</strong> del pie de página.</li>
+          <li><strong>Traducir el rótulo</strong> que quedó en inglés en el formulario.</li>
+          <li>Traer la <strong>recomendación sobre el formulario</strong>: Formspree o Google Form.</li>
+        </ul>
+      </div>
+
+      <div class="task" data-stagger>
+        <div class="task__head">
+          <span class="task__area">Diseño</span>
+          <span class="owner">Angélica</span>
+          <span class="task__path">docs/backlog/ · material gráfico</span>
+        </div>
+        <ul class="checks">
+          <li><strong>Logo oficial en SVG.</strong> Es lo que más bloquea: la barra de navegación sigue con un icono genérico.</li>
+          <li><strong>Imagen para redes</strong> en PNG o JPG, 1200×630. La actual es SVG y no se renderiza al compartir.</li>
+          <li><strong>Comprimir toda foto</strong> que llegue con más de 500 KB.</li>
+        </ul>
+      </div>
+
+      <div class="task" data-stagger>
+        <div class="task__head">
+          <span class="task__area">Frontend, Diseño e Integración</span>
+          <span class="owner"><svg aria-hidden="true"><use href="#i-git"/></svg> @sabego2006</span>
+          <span class="task__path">web/</span>
+        </div>
+        <ul class="checks">
+          <li><strong>Publicar los 16 commits</strong> pendientes — hoy nadie más ve el trabajo de integración.</li>
+          <li><strong>Resolver el conflicto</strong> de la hoja de estilos en la rama publicada.</li>
+          <li><strong>Versionar los documentos de gobernanza</strong> para que el equipo pueda leerlos.</li>
+          <li><strong>Integrar los 5 módulos restantes</strong> en la página el domingo por la mañana.</li>
+          <li>Configurar el <strong>identificador de Formspree</strong> y añadir el archivo <code>.mailmap</code>.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ 19 · CRONOGRAMA ══════════════════════════════════════════════ -->
+<section class="slide" data-title="Cronograma a la entrega">
+  <div class="wm" aria-hidden="true">RUTA</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>Tres días</p>
+    <h2 class="s-title" data-stagger>De hoy al lunes</h2>
+    <p class="s-lede" data-stagger>El domingo por la mañana es el punto de no retorno: lo que no esté entregado el sábado no alcanza a entrar.</p>
+    <div class="tl" data-stagger>
+      <div class="tl__item">
+        <span class="tl__date">Viernes 7 · esta noche</span>
+        <h4 class="tl__title">Revisión de avance y reparto</h4>
+        <p class="tl__body">Cerramos las decisiones pendientes y cada quien sale con su lista de tareas. Se publican los commits de integración y los documentos de gobernanza.</p>
+      </div>
+      <div class="tl__item">
+        <span class="tl__date">Sábado 8 · hasta 23:59</span>
+        <h4 class="tl__title">Entrega final de contenido</h4>
+        <p class="tl__body">Cada área sube lo suyo a su carpeta. Si algo no va a llegar, se avisa hoy mismo — no el domingo. Un aviso a tiempo se resuelve; una sorpresa el domingo, no.</p>
+      </div>
+      <div class="tl__item">
+        <span class="tl__date">Domingo 9 · 9:00 a.m.</span>
+        <h4 class="tl__title">Sincronización previa al despliegue</h4>
+        <p class="tl__body">Media hora, todo el equipo. Revisamos el sitio armado y damos el visto bueno. Después: integración de los módulos y fusión a la rama principal.</p>
+      </div>
+      <div class="tl__item">
+        <span class="tl__date">Lunes 10</span>
+        <h4 class="tl__title">Validación y entrega</h4>
+        <p class="tl__body">Pruebas en el dominio real: rendimiento, formulario, visualización en móvil y revisión de enlaces. Acta de cierre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 20 · DECISIONES ══════════════════════════════════════════════ -->
+<section class="slide slide--grad" data-title="Decisiones a cerrar hoy">
+  <div class="wm" aria-hidden="true">DECIDIR</div>
+  <div class="slide__inner">
+    <p class="eyebrow" data-stagger>No salimos sin esto</p>
+    <h2 class="s-title" data-stagger>Cinco decisiones para cerrar hoy</h2>
+    <p class="s-lede" data-stagger>Cada una bloquea trabajo de alguien. Se deciden ahora, en voz alta, y quedan en el acta.</p>
+    <div class="grid grid--2">
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-help"/></svg></span><h3 class="card__title">1 · Publicaciones</h3></div>
+        <p>Existen dos ítems reales sin cargar: una ponencia en memorias SIUDEC 2013 y un trabajo de grado en CvLAC. ¿Se cargan este fin de semana o se congela la sección con estado vacío honesto?</p>
+        <p style="font-size:.85rem;color:var(--eyebrow);margin-top:.5rem"><strong>Recomendación:</strong> cargarlos. El material ya está escrito; es transcripción, no investigación.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-help"/></svg></span><h3 class="card__title">2 · Ex-miembros</h3></div>
+        <p>El backlog pide el bloque, pero no tenemos datos de ex-integrantes en ninguna parte.</p>
+        <p style="font-size:.85rem;color:var(--eyebrow);margin-top:.5rem"><strong>Recomendación:</strong> declararlo fuera de alcance de esta primera versión y dejarlo documentado para la siguiente.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-help"/></svg></span><h3 class="card__title">3 · Un solo formulario</h3></div>
+        <p>Hoy conviven Formspree en la página de inicio y un Google Form en el módulo de contacto.</p>
+        <p style="font-size:.85rem;color:var(--eyebrow);margin-top:.5rem"><strong>Recomendación:</strong> Formspree, porque queda integrado en la página y no saca al visitante del sitio.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-help"/></svg></span><h3 class="card__title">4 · Correo oficial</h3></div>
+        <p>Circulan dos direcciones distintas entre el módulo de contacto y la página de inicio.</p>
+        <p style="font-size:.85rem;color:var(--eyebrow);margin-top:.5rem"><strong>Recomendación:</strong> confirmar cuál está activa de verdad y usar esa en todo el sitio, sin excepción.</p>
+      </div>
+      <div class="card" data-stagger>
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-help"/></svg></span><h3 class="card__title">5 · Fundadores</h3></div>
+        <p>Tres tarjetas de fundadores siguen vacías en el módulo de equipo.</p>
+        <p style="font-size:.85rem;color:var(--eyebrow);margin-top:.5rem"><strong>Recomendación:</strong> si no conseguimos los nombres hoy, se elimina el bloque. No se publica una sección de personas sin personas.</p>
+      </div>
+      <div class="card" data-stagger style="border-color:var(--eyebrow)">
+        <div class="card__head"><span class="card__ico"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3 class="card__title">Antes de cerrar</h3></div>
+        <p><strong>Ronda rápida:</strong> cada quien dice en una frase si su tarea del fin de semana es viable, y si algo lo bloquea.</p>
+        <p style="font-size:.85rem;color:var(--eyebrow);margin-top:.5rem">Un bloqueo dicho hoy se resuelve. Uno dicho el domingo, no.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="overview" id="overview" role="dialog" aria-modal="true" aria-label="Índice de diapositivas">
+  <div class="overview__grid" id="ovGrid"></div>
+</div>
+
+<p class="hint" id="hint">Usá <kbd>←</kbd> <kbd>→</kbd> para navegar · <kbd>Esc</kbd> para el índice</p>
+
+<script>
+(function () {
+  'use strict';
+
+  var slides   = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total    = slides.length;
+  var current  = 0;
+  var bar      = document.getElementById('bar');
+  var curEl    = document.getElementById('cur');
+  var totEl    = document.getElementById('tot');
+  var ctxEl    = document.getElementById('ctx');
+  var overview = document.getElementById('overview');
+  var ovGrid   = document.getElementById('ovGrid');
+  var btnPrev  = document.getElementById('btnPrev');
+  var btnNext  = document.getElementById('btnNext');
+  var hint     = document.getElementById('hint');
+
+  totEl.textContent = total;
+
+  /* ---- Índice de miniaturas ---- */
+  slides.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'ov';
+    b.innerHTML = '<span class="ov__n">' + String(i + 1).padStart(2, '0') + '</span>' +
+                  '<span class="ov__t"></span>';
+    b.querySelector('.ov__t').textContent = s.dataset.title || ('Diapositiva ' + (i + 1));
+    b.addEventListener('click', function () { closeOverview(); go(i); });
+    ovGrid.appendChild(b);
+  });
+  var ovItems = Array.prototype.slice.call(ovGrid.children);
+
+  /* ---- Navegación ---- */
+  function go(i) {
+    if (i < 0 || i >= total || i === current) { return; }
+    render(i);
+  }
+
+  function render(i) {
+    slides[current].classList.remove('is-active');
+    slides[current].setAttribute('aria-hidden', 'true');
+    current = i;
+
+    var slide = slides[current];
+    slide.classList.add('is-active');
+    slide.removeAttribute('aria-hidden');
+
+    // Índice de escalonado para la animación de entrada
+    Array.prototype.slice.call(slide.querySelectorAll('[data-stagger]'))
+      .forEach(function (el, n) { el.style.setProperty('--i', n); });
+
+    curEl.textContent = current + 1;
+    bar.style.width = ((current + 1) / total * 100) + '%';
+    ctxEl.textContent = slide.dataset.title || '';
+    btnPrev.disabled = current === 0;
+    btnNext.disabled = current === total - 1;
+
+    ovItems.forEach(function (o, n) { o.classList.toggle('is-current', n === current); });
+
+    if (history.replaceState) {
+      history.replaceState(null, '', '#slide-' + (current + 1));
+    }
+    window.scrollTo(0, 0);
+  }
+
+  function next() { go(current + 1); }
+  function prev() { go(current - 1); }
+
+  /* ---- Índice general ---- */
+  function openOverview() {
+    overview.classList.add('is-open');
+    ovItems[current].focus();
+  }
+  function closeOverview() {
+    overview.classList.remove('is-open');
+  }
+  function toggleOverview() {
+    overview.classList.contains('is-open') ? closeOverview() : openOverview();
+  }
+
+  /* ---- Teclado ---- */
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) { return; }
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      toggleOverview();
+      return;
+    }
+    if (overview.classList.contains('is-open')) { return; }
+
+    switch (e.key) {
+      case 'ArrowRight': case 'PageDown': case ' ': e.preventDefault(); next(); break;
+      case 'ArrowLeft':  case 'PageUp':           e.preventDefault(); prev(); break;
+      case 'Home':  e.preventDefault(); go(0); break;
+      case 'End':   e.preventDefault(); go(total - 1); break;
+    }
+    hideHint();
+  });
+
+  /* ---- Controles ---- */
+  btnNext.addEventListener('click', next);
+  btnPrev.addEventListener('click', prev);
+  document.getElementById('btnOverview').addEventListener('click', toggleOverview);
+  document.getElementById('edgeNext').addEventListener('click', next);
+  document.getElementById('edgePrev').addEventListener('click', prev);
+  overview.addEventListener('click', function (e) {
+    if (e.target === overview) { closeOverview(); }
+  });
+
+  /* ---- Deslizar en táctil ---- */
+  var x0 = null, y0 = null;
+  document.addEventListener('touchstart', function (e) {
+    x0 = e.changedTouches[0].clientX;
+    y0 = e.changedTouches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', function (e) {
+    if (x0 === null) { return; }
+    var dx = e.changedTouches[0].clientX - x0;
+    var dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      dx < 0 ? next() : prev();
+      hideHint();
+    }
+    x0 = y0 = null;
+  }, { passive: true });
+
+  /* ---- Pista de navegación ---- */
+  var hintTimer = setTimeout(hideHint, 7000);
+  function hideHint() {
+    clearTimeout(hintTimer);
+    hint.classList.add('is-gone');
+  }
+
+  /* ---- Impresión: mostrar todo ---- */
+  window.addEventListener('beforeprint', function () {
+    slides.forEach(function (s) { s.removeAttribute('aria-hidden'); });
+  });
+
+  /* ---- Arranque ---- */
+  var fromHash = parseInt((location.hash.match(/^#slide-(\d+)$/) || [])[1], 10);
+  var start = (fromHash >= 1 && fromHash <= total) ? fromHash - 1 : 0;
+
+  slides.forEach(function (s) {
+    s.classList.remove('is-active');
+    s.setAttribute('aria-hidden', 'true');
+  });
+  current = start;      // render() lo usa como "slide saliente"; apuntarlo al de entrada es inocuo
+  render(start);
+})();
+</script>
+</body>
+</html>

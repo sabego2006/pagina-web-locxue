@@ -12,7 +12,7 @@
   overflow: hidden;
   padding-block: clamp(3rem, 5vw, 5rem);
   background-color: #FFFFFF;
-  color: #1A2B4C;
+  color: #0C1940;
 }
 
 .equipo__container {
@@ -99,10 +99,10 @@
 .equipo__subseccion-titulo {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(1.5rem, 2.5vw, 2rem);
-  color: #1A2B4C;
+  color: #0C1940;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #3A236E;
+  border-bottom: 2px solid #642EA0;
   display: inline-block;
 }
 
@@ -121,18 +121,18 @@
 }
 
 .equipo__badge--lider {
-  background-color: #3A236E;
+  background-color: #642EA0;
   color: #FFFFFF;
 }
 
 .equipo__badge--fundador {
-  background-color: #1A2B4C;
+  background-color: #0C1940;
   color: #FFFFFF;
 }
 
 .equipo__badge--integrante {
   background-color: #F4F6F9;
-  color: #3A236E;
+  color: #642EA0;
   border: 1px solid #E2E6EE;
 }
 
@@ -146,16 +146,16 @@
   gap: 2rem;
   padding: 2.5rem;
   background-color: #F4F6F9;
-  border: 2px solid #3A236E;
+  border: 2px solid #642EA0;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(26, 43, 76, 0.08);
+  box-shadow: 0 4px 20px rgba(12, 25, 64, 0.08);
   transition: transform 300ms ease, box-shadow 300ms ease;
-  color: #1A2B4C;
+  color: #0C1940;
 }
 
 .equipo__lider-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(58, 35, 110, 0.15);
+  box-shadow: 0 8px 30px rgba(100, 46, 160, 0.15);
 }
 
 @media (min-width: 768px) {
@@ -170,8 +170,8 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #3A236E;
-  box-shadow: 0 4px 12px rgba(26, 43, 76, 0.15);
+  border: 4px solid #642EA0;
+  box-shadow: 0 4px 12px rgba(12, 25, 64, 0.15);
   flex-shrink: 0;
   background-color: #FFFFFF;
 }
@@ -186,7 +186,7 @@
 .equipo__nombre-lider {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.75rem;
-  color: #1A2B4C;
+  color: #0C1940;
   margin: 0;
 }
 
@@ -194,7 +194,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  color: #3A236E;
+  color: #642EA0;
 }
 
 .equipo__bio {
@@ -256,15 +256,15 @@
   background-color: #FFFFFF;
   border: 1px solid #E2E6EE;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(26, 43, 76, 0.05);
+  box-shadow: 0 2px 8px rgba(12, 25, 64, 0.05);
   transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
-  color: #1A2B4C;
+  color: #0C1940;
 }
 
 .equipo__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(58, 35, 110, 0.12);
-  border-color: #3A236E;
+  box-shadow: 0 6px 20px rgba(100, 46, 160, 0.12);
+  border-color: #642EA0;
 }
 
 .equipo__avatar-wrapper {
@@ -279,15 +279,15 @@
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #3A236E;
-  box-shadow: 0 2px 8px rgba(26, 43, 76, 0.1);
+  border: 3px solid #642EA0;
+  box-shadow: 0 2px 8px rgba(12, 25, 64, 0.1);
   background-color: #F4F6F9;
 }
 
 .equipo__nombre {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.25rem;
-  color: #1A2B4C;
+  color: #0C1940;
   margin-top: 0.5rem;
   margin-bottom: 0.25rem;
 }
@@ -296,7 +296,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #3A236E;
+  color: #642EA0;
   margin-bottom: 0.5rem;
 }
 
@@ -324,6 +324,6 @@
 }
 
 .equipo__social-link:hover {
-  color: #3A236E;
+  color: #642EA0;
   text-decoration: underline;
 }

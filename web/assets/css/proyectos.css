@@ -4,14 +4,14 @@
 
 .locxue-proyectos {
   /* --- Paleta institucional --- */
-  --lx-color-primary: #1A2B4C;   /* azul marino institucional */
-  --lx-color-secondary: #3A236E; /* morado institucional */
+  --lx-color-primary: #0C1940;   /* azul marino institucional */
+  --lx-color-secondary: #642EA0; /* morado institucional */
   --lx-color-bg: #FFFFFF;
   --lx-color-bg-alt: #F4F6F9;
 
-  --lx-color-primary-10: rgba(26, 43, 76, 0.08);
-  --lx-color-secondary-10: rgba(58, 35, 110, 0.08);
-  --lx-color-secondary-30: rgba(58, 35, 110, 0.3);
+  --lx-color-primary-10: rgba(12, 25, 64, 0.08);
+  --lx-color-secondary-10: rgba(100, 46, 160, 0.08);
+  --lx-color-secondary-30: rgba(100, 46, 160, 0.3);
 
   /* --- Tipografía --- */
   --lx-font-display: "Playfair Display", Georgia, "Times New Roman", serif;
@@ -109,7 +109,7 @@
   height: 100%;
   background: var(--lx-color-bg);
   border-radius: var(--lx-radius);
-  box-shadow: 0 1px 2px rgba(26, 43, 76, 0.06), 0 10px 24px rgba(26, 43, 76, 0.05);
+  box-shadow: 0 1px 2px rgba(12, 25, 64, 0.06), 0 10px 24px rgba(12, 25, 64, 0.05);
   overflow: hidden;
   opacity: 0;
   transform: translateY(14px);
@@ -120,7 +120,7 @@
 
 .proyecto-card:hover,
 .proyecto-card:focus-within {
-  box-shadow: 0 4px 10px rgba(26, 43, 76, 0.08), 0 18px 34px rgba(26, 43, 76, 0.1);
+  box-shadow: 0 4px 10px rgba(12, 25, 64, 0.08), 0 18px 34px rgba(12, 25, 64, 0.1);
   transform: translateY(-4px);
 }
 
@@ -367,7 +367,7 @@
 .locxue-proyectos__modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(26, 43, 76, 0.55);
+  background: rgba(12, 25, 64, 0.55);
   backdrop-filter: blur(2px);
 }
 
@@ -380,7 +380,7 @@
   background: var(--lx-color-bg);
   border-radius: var(--lx-radius);
   padding: 2.25rem 2rem;
-  box-shadow: 0 24px 60px rgba(26, 43, 76, 0.35);
+  box-shadow: 0 24px 60px rgba(12, 25, 64, 0.35);
   animation: lx-modal-in 220ms ease;
 }
 

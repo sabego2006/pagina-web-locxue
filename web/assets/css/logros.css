@@ -3,8 +3,8 @@
    ========================================================================== */
 
 .logros-eventos-module {
-  --lem-primary: #1A2B4C;
-  --lem-secondary: #3A236E;
+  --lem-primary: #0C1940;
+  --lem-secondary: #642EA0;
   --lem-accent: #D97706;
   --lem-accent-glow: rgba(217, 119, 6, 0.15);
   --lem-success: #059669;
@@ -18,9 +18,9 @@
   --lem-text-muted: #64748B;
   --lem-text-inverse: #FFFFFF;
   --lem-border: #E2E8F0;
-  --lem-shadow-sm: 0 2px 4px rgba(26, 43, 76, 0.04);
-  --lem-shadow-md: 0 10px 25px -5px rgba(26, 43, 76, 0.08), 0 8px 10px -6px rgba(26, 43, 76, 0.04);
-  --lem-shadow-lg: 0 20px 30px -10px rgba(26, 43, 76, 0.12);
+  --lem-shadow-sm: 0 2px 4px rgba(12, 25, 64, 0.04);
+  --lem-shadow-md: 0 10px 25px -5px rgba(12, 25, 64, 0.08), 0 8px 10px -6px rgba(12, 25, 64, 0.04);
+  --lem-shadow-lg: 0 20px 30px -10px rgba(12, 25, 64, 0.12);
   --lem-radius-sm: 8px;
   --lem-radius-md: 16px;
   --lem-radius-lg: 24px;
@@ -47,7 +47,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 1rem;
-  background: rgba(58, 35, 110, 0.08);
+  background: rgba(100, 46, 160, 0.08);
   color: var(--lem-secondary);
   font-size: 0.875rem;
   font-weight: 600;
@@ -107,7 +107,7 @@
 .logros-eventos-module .lem-stat-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--lem-shadow-md);
-  border-color: rgba(58, 35, 110, 0.2);
+  border-color: rgba(100, 46, 160, 0.2);
 }
 
 .logros-eventos-module .lem-stat-card__number {
@@ -169,7 +169,7 @@
 
 .logros-eventos-module .lem-highlight-card:hover {
   box-shadow: var(--lem-shadow-md);
-  border-color: rgba(58, 35, 110, 0.2);
+  border-color: rgba(100, 46, 160, 0.2);
 }
 
 .logros-eventos-module .lem-highlight-card__badge {
@@ -242,7 +242,7 @@
   background: var(--lem-primary);
   border-color: var(--lem-primary);
   color: var(--lem-text-inverse);
-  box-shadow: 0 4px 12px rgba(26, 43, 76, 0.2);
+  box-shadow: 0 4px 12px rgba(12, 25, 64, 0.2);
 }
 
 /* Eventos */
@@ -269,7 +269,7 @@
 .logros-eventos-module .lem-event-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--lem-shadow-lg);
-  border-color: rgba(26, 43, 76, 0.15);
+  border-color: rgba(12, 25, 64, 0.15);
 }
 
 .logros-eventos-module .lem-event-card__header {
@@ -567,7 +567,7 @@
 .logros-eventos-module .lem-future-events-card {
   max-width: 1140px;
   margin: 0 auto 4rem auto;
-  background: linear-gradient(135deg, rgba(26, 43, 76, 0.03), rgba(58, 35, 110, 0.05));
+  background: linear-gradient(135deg, rgba(12, 25, 64, 0.03), rgba(100, 46, 160, 0.05));
   border: 1px dashed var(--lem-secondary);
   border-radius: var(--lem-radius-lg);
   padding: 2.5rem 2rem;
